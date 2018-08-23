@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nihongoapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="topics.scss">
+    <link rel="javascript" href="topics.js">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    
+  </head>
+
+<body class ="topics">
+
+<div class="new">
+<h1>新しい文法項目を登録する</h1>
+
+<%= form_for @newTopic, :url => {:action => 'create'} do |f| %>
+  <%= f.text_area :title, :size=>"30x2" %>
+  <br>
+  <%= f.submit ' CREATE ', class: 'btn-5 btn-sm' %>
+<% end %>
+
+</div>
+
+<div class ="post">
+    
+<h1>日本語の使い方一覧</h1>
+<br>
+<div class="searchbox">
+<%= form_tag topics_index_path, :method => 'get' do %>
+  <p class = "searchbox">
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Item Search",:name => nil %>
+  </p>
+<% end %>
+</div>
+
+<div class="index">
+<ul>
+  <% @topics.each do |topic| %>
+    <li><%= link_to topic.title, topics_show_path(topic.id) %>
+    <%= link_to '[削除]', topic_delete_path(topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
+  <% end %>
+</ul>
+</div>
+</div>
+
+</body>

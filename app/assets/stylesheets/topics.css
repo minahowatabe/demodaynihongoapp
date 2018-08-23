@@ -1,0 +1,116 @@
+@charset "UTF-8";
+.topics {
+  text-align: center; }
+
+.post {
+  padding-top: 10px; }
+
+.posts {
+  text-align: center; }
+
+.new {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFCCCC;
+  border: 2px dashed #444444;
+  width: 60%; }
+
+/* pc 768px以上 */
+.wrap {
+  overflow: hidden;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.main {
+  float: left;
+  width: 400px;
+  height: auto; }
+
+.examplepost {
+  float: right;
+  width: 530px;
+  border-top: 1px solid #333; }
+
+.examplepost li a {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #333;
+  text-decoration: none;
+  color: #333; }
+
+/* スマホ　767px以下 */
+@media only screen and (max-width: 767px) {
+  .wrap {
+    width: 100%; }
+
+  .main {
+    float: none;
+    width: 90%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; }
+
+  .examplepost {
+    /*　floatを解除 */
+    float: none;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; } }
+.examplepost {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; }
+
+.eachpost {
+  margin: 10px 0px;
+  border-color: #FF99CC;
+  border-style: solid; }
+
+.eachpost .box-title {
+  position: relative;
+  display: inline-block;
+  top: -2px;
+  left: -2px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  font-size: 17px;
+  background: lightpink;
+  color: #ffffff;
+  font-weight: bold; }
+
+.eachpost p {
+  margin: 0;
+  padding: 0; }
+
+hr {
+  border-style: dashed;
+  /* 線種 */
+  border-color: #FF99CC; }
+
+.index li {
+  font-size: 2rem; }
+
+.index ul {
+  border: solid 2px lightpink;
+  padding: 0 0.5em;
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
+
+ul li {
+  text-align: left;
+  line-height: 1.5;
+  padding: 0.5em 0 0.5em 1.4em;
+  border-bottom: dashed 1px silver;
+  list-style-type: none !important; }
+
+ul li:last-of-type {
+  border-bottom: none; }
+
+/*# sourceMappingURL=topics.css.map */

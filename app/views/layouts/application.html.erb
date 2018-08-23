@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nihongoapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<div id="menuArea">
+  <input type="checkbox" id="menuToggle"></input>
+
+<label for="menuToggle" class="menuOpen">
+  <div class="open"></div>
+</label>
+
+<div class="menu menuEffects">
+  <label for="menuToggle"></label>
+  <div class="menuContent">
+    <ul>
+      <li><a href="/">TOP</a></li>
+      <li><a href="/topics/about/">ABOUT</a></li>
+      <li><a href="/topics/index">Post</a></li>
+      <li><a href="#">Column</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+
+    <%= yield %>
+  </body>
+</html>
