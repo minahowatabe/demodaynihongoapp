@@ -27,7 +27,7 @@
 
 <div class ="post">
     
-<h1>日本語の使い方一覧</h1>
+<h1>募集中の文法項目一覧</h1>
 <br>
 <div class="searchbox">
 <%= form_tag topics_index_path, :method => 'get' do %>
@@ -43,6 +43,7 @@
   <% @topics.each do |topic| %>
     <li><%= link_to topic.title, topics_show_path(topic.id) %>
     <%= link_to '[削除]', topic_delete_path(topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
+<!--ページ遷移せず編集できるように、編集ボタンをいれたい-->
   <% end %>
 </ul>
 </div>
