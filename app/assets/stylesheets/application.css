@@ -22,7 +22,7 @@ body{
   margin:0;
 }
 
-.container {
+.menu.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,13 +79,14 @@ body{
 /* Magic Stuff End -> */
 
 
+/*メニュー*/
 /*menu*/
 /*input {*/
 /*  display: none;*/
 /*}*/
 
 .open {
-  background-color: lightpink;
+  background-color: #ffff66;
   width: 24px;
   height: 4px;
   display: block;
@@ -97,7 +98,7 @@ body{
 
 .open:before {
   content: "";
-  background-color: lightpink;
+  background-color: #ffff66;
   width: 24px;
   height: 4px;
   display: block;
@@ -110,7 +111,7 @@ body{
 
 .open:after {
   content: "";
-  background-color: lightpink;
+  background-color: #ffff66;
   width: 24px;
   height: 4px;
   display: block;
@@ -119,6 +120,13 @@ body{
   top: 4px;
   transform: rotate(0deg);
   transition: all 0.3s ease;
+}
+
+.titles{
+  /*font-family: 'Baloo', cursive;*/
+  /*font-family: 'Unica One', cursive;*/
+  /*font-family: 'Electrolize', sans-serif;*/
+  font-family: 'Kite One', sans-serif;
 }
 
 .menuOpen {
@@ -144,7 +152,7 @@ body{
   height: 100%;
   top: 0;
   left: 0;
-  background: lightpink;
+  background: #ffff66;
   /*background: rgba(255, 135, 2, 0.9);*/
 }
 
@@ -160,8 +168,8 @@ body{
 
 .menu .menuContent {
   position: relative;
-  top: 20%;
-  font-size: 40px;
+  top: 10%;
+  font-size: 35px;
   text-align: center;
   padding-bottom: 10px;
   margin-top: 10px;
@@ -174,8 +182,10 @@ body{
 }
 
 .menu ul li a {
+  text-align: left;
+  margin-left: 30px;
   display: block;
-  color: white;
+  color: silver;
   text-decoration: none;
   transition: color 0.2s;
   font-family: Trebuchet MS;
@@ -184,11 +194,11 @@ body{
 }
 
 .menu ul li a:hover {
-  color: lightpink;
+  color: darkgray;
 }
 
 .menu ul li:hover {
-  background: lightgray;
+  background: #ffff8f;
 }
 
 .menuEffects {

@@ -1,10 +1,51 @@
-.topics{
-    text-align: center;
+// index2カラムレイアウト
+/* pc 768px以上 */
+
+.wrapper{
+	overflow: hidden;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+// .left{
+// 	float: left;
+// 	width: 500px;
+// 	height: auto;
+// 	text-align: center;
+// // 	background-color: #ddd;
+// }
+
+// .right{
+// 	float: right;
+// 	width: 530px;
+// 	border-top: 1px solid #333;
+// }
+
+// 表を大きくしたい　paddingとりたい　効いてない
+.table td{
+    padding: 10px;
+}
+
+.index tr{
+    padding: 10px;
+}
+
+.index.abstract p{
+	font-size: 2rem;
+}
+.explanation{
+    text-align:right;
+}
+
+// .right{
+//     width:600px;
+// }
 
 .post{
     padding-top: 10px;
 }
+
 
 .posts{
     text-align: center;
@@ -83,6 +124,7 @@
    border-style:solid;
 }
 
+// 投稿番号
 .eachpost .box-title {
     position: relative;
     display: inline-block;

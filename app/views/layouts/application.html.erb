@@ -6,9 +6,48 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kite+One" rel="stylesheet">
   </head>
 
   <body>
+  
+  <!--ナビゲーションバー    -->
+  <nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+  				<span class="sr-only">Toggle navigation</span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+  			<a class="navbar-brand titles" href="/">
+  				Nihongo No tsukaikata Lab.
+  			</a>
+  		</div>
+  		
+  		<div class="collapse navbar-collapse" id="navbarEexample7">
+  			<ul class="nav navbar-nav">
+  				<li><a href="/">TOP</a></li>
+  				<li class="active"><a href="/topics/index">Nihong-Hunt</a></li>
+  				<li><a href="/columns/index">COLUMN</a></li>
+  				<li class="active"><a href="/questions/index">QABoard</a></li>
+  				<li><a href="/">Lesson-idea</a></li>
+  				<li class="active"><a href="/">LAB.</a></li>
+  			</ul>
+  			<p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link">ゲスト</a> さん。</p>
+  		</div>
+  	</div>
+  </nav>
+<!--navbar終わり-->
+
+
+
+<!--サイドメニュー-->
 <div id="menuArea">
   <input type="checkbox" id="menuToggle"></input>
 
@@ -21,16 +60,18 @@
   <div class="menuContent">
     <ul>
       <li><a href="/">TOP</a></li>
-      <li><a href="/topics/about/">ABOUT</a></li>
-      <li><a href="/topics/index">Post</a></li>
-      <li><a href="#">Column</a></li>
+      <li><a href="/topics/about/">ABOUT アプリ開発の目的 </a></li>
+      <li><a href="/topics/index">Nihongo-Hunt 生きた日本語を集める </a></li>
+      <li><a href="/columns/index">Column 日本語教師の本音コラム </a></li>
+      <li><a href="/questions/index">*for teachers* QABoard アドバイスを求める場所</a></li>
+      <li><a href="/questions/index">*for teachers* questionnaire 選択式アンケート</a></li>
     </ul>
   </div>
 </div>
 </div>
-
-
-
+<!--終わり-->
+    
     <%= yield %>
+  
   </body>
 </html>

@@ -16,7 +16,7 @@
 <div class="wrap">
  
  <div class="main">
-<h4>文法項目：</h4><h2><%= @topic.title %></h2>
+<h4>文法項目：</h4><h2>【<%= @topic.title %>】</h2>
 <br>
 <div class="searchbox">
 <%= form_tag topics_show_path, :method => 'get' do %>
@@ -27,17 +27,20 @@
 <% end %>
 </div>
 <br>
+
 <h3>投稿する</h3>
 <%= form_for @newpost, :url => post_create_path do |f| %>
   <p>実例</p>
   <p><%= f.text_area :example, :size=>"35x8" %></p>
-  <p>発話状況</p>
+  <p>huntした状況</p>
   <p><%= f.text_area :memo, :size=>"30x3" %></p>
   <%= f.hidden_field :topic_id %>
   <%= f.submit ' CREATE ', class: 'btn-5 btn-sm'  %>
 <% end %>
 
 </div>
+
+
 
 <div class = "examplepost">
  
@@ -46,8 +49,8 @@
   <span class="box-title"><%= idx + 1 %>.</span>
   <p>実例:<%= simple_format(post.example) %></p>
   <hr>
-  <p>発話状況: <%= simple_format(post.memo) %>
-  <%= link_to '[削除]', post_delete_path(post.id), 
+  <p>発話状況: <%= simple_format(post.memo) %></p>
+  <p><%= link_to '[削除]', post_create_path(@topic.id), 
 #   [post.topic,post],
                         method: :delete, 
                         data: {confirm: "削除してもよろしいですか？"}  %></p>

@@ -1,0 +1,27 @@
+
+<h1><%= @question.title %></h1>
+<h4><%= @question.content %></h4>
+
+<br>
+<h3>回答する</h3>
+<%= form_for @newanswer, :url => answers_create_path do |f| %>
+  <p>お名前</p>
+  <p><%= f.text_field :name %></p>
+  <p>本文</p>
+  <p><%= f.text_area :body %></p>
+  <%= f.hidden_field :question_id %>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<h3>みんなの回答</h3>
+<% @answers.each_with_index do |answer , idx| %>
+  <p>
+    <%= idx + 1 %>. <%= answer.name %> : <%= answer.body %>
+  </p>
+  <p><%= link_to '[削除]', answers_create_path(@question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
+<% end %>
+
+<div class ="linkbtn">
+  <%= link_to "  index  ", questions_index_path, class: "btn btn-2" %>
+</div>

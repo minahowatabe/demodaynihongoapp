@@ -1,52 +1,132 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Nihongoapp</title>
-    <%= csrf_meta_tags %>
+<div class="container wrapper">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="topics.scss">
-    <link rel="javascript" href="topics.js">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    
-  </head>
+  <div class="rowA">
+ 
+  <div class="abstract col-md-5 col-xs-10 panel panel-default">
+   <div class="panel-heading">
+	   "Nihongo-Hunt!"の使い方
+	  </div>
+	  <div class="panel-body">
+		  ★ねらい
+		   <br>"Nihongo-Hunt!!"は、あなたが「実際に使った、聞いた日本語」を集めるページです。
+		   日本語を学ぶ人が知りたかったり、理解したかったりするのは「リアルな日本語の表現」です。
+		   また、教える時に日本語の表現の意味や機能を分析する時にも、「リアルなサンプル」はとても大切なリソースになります。
+		   <br>
+		   <br>
+		  ★huntしてほしいもの
+		   <br>「あなたがさっき話した言葉」「だれかにもらったメッセージ」「通勤中聞こえてきた会話」「中吊りに書いてあった文言」「ドラマで聞いたセリフ」……などなど、
+	    全部、有用なリソースになります。みなさんのまわりにある日本語、たくさんhuntして教えてください。	 
+		   <br>
+		   <br>
+		   ★使い方
+		   <br>➡	文法項目リストから 項目を選んで、リアルな日本語の表現とそのhuntした状況を、投稿ページからご投稿ください！
+     <br>
+		   <br>★ あなたの投稿が明日の日本語教育に役立ちます！
+	  </div>
+  </div>
 
-<body class ="topics">
 
-<div class="new">
-<h1>新しい文法項目を登録する</h1>
+<!--タイトルバー・検索窓・文法項目一覧 右寄せ-->
+<div class="container">
+ <div class ="rowB">
 
-<%= form_for @newTopic, :url => {:action => 'create'} do |f| %>
-  <%= f.text_area :title, :size=>"30x2" %>
+  <h3 class ="post offset-col-md-6 col-md-6 col-xs-12">➡ 文法項目一覧</h3>  
+  <p class ="explanation offset-col-md-6 col-md-6 col-xs-12">文法項目を選択すると、投稿ページに移ります。 </p>
+ </div>
   <br>
-  <%= f.submit ' CREATE ', class: 'btn-5 btn-sm' %>
-<% end %>
+</div>
+
+<div class="container">
+ <div class ="rowC">
+
+  <div class="searchbox">
+    <div class="offset-col-md-6 col-md-6 col-xs-12"><%= form_tag topics_index_path, :method => 'post' do %>
+     <p class = "searchbox"></p>
+    </div>
+     <%= text_field_tag :search, params[:search] %>
+     <%= submit_tag "Item Search",:name => nil %>
+     </p>
+     <% end %>
+    </div>
+    </div>
+  </div>
+ 
+ </div>
+</div> 
+
+<div class="container">
+  <div class="rowD">
+   <p class="col-md-6 col-xs-12"></p>
+   <p class="col-md-6 col-xs-12">【初級A2レベル】</p>
+
+   <!--<p></p>-->
+   <!--<p>【初級A2レベル】</p>-->
+  </div> 
+   <!--<div class="index col-md-6 col-xs-12">-->
+   <!-- <p class ="offset-col-md-6 col-md-6 col-xs-12">【初級A2レベル】</p>-->
+ 
+   <p class="col-md-6 col-xs-12"></p>
+  
+   <!--table式文法項目一覧-->
+    <table border="1 index">
+    <tr>
+     <th>文法項目</th>  
+     <th>総回答数</th>
+     <th>クリア</th> 
+    </tr>
+     <% @topics.each do |topic| %>
+    <tr>
+     <td><%= link_to topic.title, topics_show_path(topic.id) %></td>
+     <!--下のtdに総回答数-->
+     <td></td>
+     <!--下のtdに回答済みならスタンプ-->
+     <td></td>
+    </tr>
+   <% end %>
+   </table>
+   <!--一覧終わり    -->
+  </div>
+  
+   </div>
+  </div>
+</div>
 
 </div>
 
-<div class ="post">
-    
-<h1>募集中の文法項目一覧</h1>
-<br>
-<div class="searchbox">
-<%= form_tag topics_index_path, :method => 'get' do %>
-  <p class = "searchbox">
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Item Search",:name => nil %>
-  </p>
-<% end %>
-</div>
 
-<div class="index">
-<ul>
-  <% @topics.each do |topic| %>
-    <li><%= link_to topic.title, topics_show_path(topic.id) %>
-    <%= link_to '[削除]', topic_delete_path(topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
-<!--ページ遷移せず編集できるように、編集ボタンをいれたい-->
-  <% end %>
-</ul>
-</div>
-</div>
+
+
 
 </body>
+
+
+
+<!--<div class="wrapper">-->
+<!-- <div class ="left">-->
+
+<!--文法項目の登録は不要-->
+<!--<div class="new">-->
+<!--<h1>新しい文法項目を登録する</h1>-->
+<!--<%#= form_for @newTopic, :url => {:action => 'create'} do |f| %>-->
+<!--  <%#= f.text_area :title, :size=>"30x2" %>-->
+<!--  <br>-->
+<!--  <%#= f.submit ' CREATE ', class: 'btn-5 btn-sm' %>-->
+<!--<%# end %>-->
+<!--</div>-->
+
+    <!--文法項目リスト-->
+     <!--<ul>-->
+     <!-- <%# @topics.each do |topic| %>-->
+     <!-- <li><%#= link_to topic.title, topics_show_path(topic.id) %>-->
+      <%#= link_to '[削除]', topic_delete_path(topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
+      <!--ページ遷移せず編集できるように、編集ボタンをいれたい-->
+     <!-- <%# end %>-->
+     <!--</ul>-->
+    <!--終わり   -->
+
+
+<!--【概要】"Nihongo-Quest!!"は、あなたが「実際に使った、聞いた日本語」を投稿して、スタンプを集めていくゲームです。下のリストから  項目を選んで「最近、こんな言い方をしたかも。」「こんな言い方を聞いた！」という、リアルな日本語の表現を、投稿ページからご投稿ください！１つ投稿するごとに、スタンプを１つ獲得でき、獲得したスタンプ数はマイページで確認できます！-->
+
+<!--【教育上のメリット】-->
+<!--・リアルな日本語の使われ方がわかる-->
+<!--・文法の意味・機能分析に役立つ-->

@@ -1,5 +1,16 @@
 // CSS Needed to make it work (Wrote not using SCSS at all copy and paste away)
 // copy and paste into your CSS and the cursor should appear when typing begins
+
+// 背景画像（読まれていない）
+.about {
+  background:#ddd url(about.png) no-repeat center center;
+  background-size:cover;
+//   background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
+//   background-size:cover;
+  margin:0
+}
+// 終わり
+
 .text-js{
   opacity: 0;
 }
@@ -25,9 +36,6 @@
 }
 
 
-
-
-
 // Rest of CSS (Purely for this pen)
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
@@ -38,9 +46,10 @@
   font-family: "Open Sans", sans-serif
 }
 .about{
-  background:white;     
+  background:white;
 //   background: linear-gradient(135deg,#00C4FF,#9D1BB2);
   height: 100vh;
+  padding-top:20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,29 +66,26 @@
   }
 }
 
-.twitterLink{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 10px 15px;
-  z-index: 3;
-  svg{
-    width: 25px;
-  }
-}
 
-.credit{
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: black;
-  text-decoration: none;
-}
+// .twitterLink{
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   margin: 10px 15px;
+//   z-index: 3;
+//   svg{
+//     width: 25px;
+//   }
+// }
 
-
-
-
+// .credit{
+//   position: fixed;
+//   bottom: 20px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   color: black;
+//   text-decoration: none;
+// }
 
 
 // 黄色文字のエフェクト

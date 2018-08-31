@@ -1,9 +1,18 @@
 @charset "UTF-8";
+ul.list {
+  display: table;
+  width: 100%; }
+
+ul.list > li:nth-child(2n+1) {
+  clear: both; }
+
+ul.list > li {
+  display: table-cell;
+  float: left;
+  width: 50%; }
+
 .topics {
   text-align: center; }
-
-.post {
-  padding-top: 10px; }
 
 .posts {
   text-align: center; }
@@ -54,7 +63,7 @@
     margin-bottom: 30px; }
 
   .examplepost {
-    /*　floatを解除 */
+    /*floatを解除 */
     float: none;
     width: 90%;
     margin-left: auto;
@@ -91,26 +100,5 @@ hr {
   border-style: dashed;
   /* 線種 */
   border-color: #FF99CC; }
-
-.index li {
-  font-size: 2rem; }
-
-.index ul {
-  border: solid 2px lightpink;
-  padding: 0 0.5em;
-  position: relative;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto; }
-
-ul li {
-  text-align: left;
-  line-height: 1.5;
-  padding: 0.5em 0 0.5em 1.4em;
-  border-bottom: dashed 1px silver;
-  list-style-type: none !important; }
-
-ul li:last-of-type {
-  border-bottom: none; }
 
 /*# sourceMappingURL=topics.css.map */
