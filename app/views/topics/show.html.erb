@@ -51,8 +51,7 @@
   <p>実例:<%= simple_format(post.example) %></p>
   <hr>
   <p>発話状況: <%= simple_format(post.memo) %></p>
-  <p><%= link_to '[削除]', post_create_path(@topic.id), 
-#   [post.topic,post],
+  <p><%= link_to '[削除]', post_delete_path(topic.id), 
                         method: :delete, 
                         data: {confirm: "削除してもよろしいですか？"}  %></p>
 

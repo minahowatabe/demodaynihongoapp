@@ -40,8 +40,8 @@
   <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
   <ul>
    <% @questions.each do |question| %>
-   <li><%= link_to question.title, questions_index_path(question.id) %>
-       <%= link_to '[削除]', questions_index_path(question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+   <li><%= link_to question.title, questions_show_path(question.id) %>
+       <%= link_to '[削除]', questions_create_path, method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
    </li>
    <% end %>
   </ul>
