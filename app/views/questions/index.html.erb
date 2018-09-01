@@ -1,6 +1,5 @@
 <div class="container qa">
 <div class="rowA qa">
-  
  <div class="col-md-8 col-xs-10 panel panel-default qa">
 	<div class="panel-heading">
 		QABoardの使い方
@@ -23,12 +22,12 @@
 <div class="container qa">
 <div class="rowB qa">
 <div class="col-md-8 col-xs-10 panel panel-default qa">
-<h1>質問する</h1>
-<p>一覧にはタイトルのみ表示されるので、内容がわかりやすいものを。</p>
+<h2>質問する</h2>
+<p>☞一覧にはタイトルのみ表示されるので、内容がわかりやすいものを。</p>
 <%= form_for @newQuestion, :url => {:action => 'create'} do |f| %>
-     title: <%= f.text_field :title %><br>
-  question:<%= f.text_field :content %>
-  <%= f.submit %>
+<p class="indentback"> title: <%= f.text_field :title, :size=>"50x2" %></p><br>
+  question:<%= f.text_area :content, :size=>"60x6"  %>
+  <%= f.submit ' CREATE question ', class:'btn-5 btn-sm' %>
 <% end %>
 </div>
 </div>
@@ -36,10 +35,9 @@
 
 <div class="container qa">
 <div class="rowC qa">
-
 <div class="col-md-8 col-xs-10 panel panel-default qa">
- <h1>みんなの質問</h1>
-  <p>タイトルを選ぶと、詳細ページに移ります。</p>
+ <h2>みんなの質問</h2>
+  <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
   <ul>
    <% @questions.each do |question| %>
    <li><%= link_to question.title, questions_index_path(question.id) %>

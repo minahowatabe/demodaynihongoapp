@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
  
 #  質問掲示板ページ
+  # resources :questions
   get 'questions/index'
   get 'questions/show/:id' => 'questions#show', as: :questions_show
   post 'questions/create' => 'questions#create'

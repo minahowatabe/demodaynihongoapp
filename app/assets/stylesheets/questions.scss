@@ -6,7 +6,7 @@
 .qa{
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+    padding: 5px;
     font-size: 1.5rem;
 }
 
@@ -18,4 +18,32 @@
 .qa li{
     list-style: none;
     font-size: 1.5rem;
+}
+
+.indentback{
+    text-indent:3rem;
+}
+
+/* 吹き出し本体 - 普通の吹き出し */
+.balloon1{
+  position: relative;
+  padding: 10px;
+  background-color: #fff3ad;
+  border-radius: 10px;         /* 角丸を指定 */
+  width: 70%;
+  height: auto;
+  margin: 10px;
+}
+/* 三角アイコン - 普通の吹き出し */
+.balloon1::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 20px;
+  border-right: 15px solid #fff3ad;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
 }

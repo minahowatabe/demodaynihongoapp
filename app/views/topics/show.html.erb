@@ -29,6 +29,7 @@
 <br>
 
 <h3>投稿する</h3>
+<p>ダイアログ（対話形式）またはセンテンスでご記入ください。<br>どんな状況での発話だったか簡単に教えてください。</p>
 <%= form_for @newpost, :url => post_create_path do |f| %>
   <p>実例</p>
   <p><%= f.text_area :example, :size=>"35x8" %></p>

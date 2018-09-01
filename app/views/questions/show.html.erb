@@ -1,26 +1,46 @@
+<div class="container qa">
+<div class="rowA qa">
+ <div class="col-md-8 col-xs-10 panel panel-default qa">
+	<div class="panel-heading">
+   質問
+  </div>
+	<div class="panel-body">
+   <h2><%= @question.title %></h2>
+   <h4><%= @question.content %></h4>
+  </div>
+</div>
+</div>
+</div>
 
-<h1><%= @question.title %></h1>
-<h4><%= @question.content %></h4>
-
-<br>
-<h3>回答する</h3>
+<div class="container qa">
+<div class="rowB qa">
+<div class="col-md-8 col-xs-10 panel panel-default qa">
+  <div class="panel-heading">
+   回答する
+  </div>
+  <br>
 <%= form_for @newanswer, :url => answers_create_path do |f| %>
-  <p>お名前</p>
-  <p><%= f.text_field :name %></p>
-  <p>本文</p>
-  <p><%= f.text_area :body %></p>
+  <p>お名前:<%= f.text_field :name, :size=>"15x2"  %></p>
+  <p>回答：<%= f.text_area :body, :size=>"80x4" %></p>
   <%= f.hidden_field :question_id %>
-  <%= f.submit %>
+  <%= f.submit ' ANSWER ', class:'btn-5 btn-sm' %>
 <% end %>
+</div>
+</div>
+</div>
 
-<br>
-<h3>みんなの回答</h3>
+<div class="container qa">
+<h2>みんなの回答</h2>
+
 <% @answers.each_with_index do |answer , idx| %>
+<div class="balloon1">
   <p>
-    <%= idx + 1 %>. <%= answer.name %> : <%= answer.body %>
+    <%= idx + 1 %>. <%= answer.name %>さん : <%= answer.body %>
   </p>
   <p><%= link_to '[削除]', answers_create_path(@question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
+</div>
 <% end %>
+</div>
 
 <div class ="linkbtn">
   <%= link_to "  index  ", questions_index_path, class: "btn btn-2" %>
