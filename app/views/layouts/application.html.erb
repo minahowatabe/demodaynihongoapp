@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kite+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    
   </head>
 
   <body>
-  
+    
   <!--ナビゲーションバー    -->
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
   	<div class="container-fluid">
   		<div class="navbar-header">
   			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
@@ -25,54 +27,119 @@
   				<span class="icon-bar"></span>
   				<span class="icon-bar"></span>
   			</button>
-  			<a class="navbar-brand titles" href="/">
-  				Nihongo No tsukaikata Lab.
+  			<a class="navbar-brand headertitles" href="/">
+  				Nihongo_No_tsukaikata_LAB.
   			</a>
   		</div>
   		
   		<div class="collapse navbar-collapse" id="navbarEexample7">
-  			<ul class="nav navbar-nav">
-  				<li><a href="/">TOP</a></li>
-  				<li class="active"><a href="/topics/index">Nihong-Hunt</a></li>
-  				<li><a href="/columns/index">COLUMN</a></li>
-  				<li class="active"><a href="/questions/index">QABoard</a></li>
-  				<li><a href="/">Lesson-idea</a></li>
-  				<li class="active"><a href="/">LAB.</a></li>
-  			</ul>
-  			<p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link">ゲスト</a> さん。</p>
+  			<div class="nav navbar-nav">
+  	 	   <%# if user_signed_in? %>
+  				<li><%= link_to 'TOP', root_path %></li>
+  				<li class="active"><%= link_to 'ABOUT', abouts_index_path %></li>
+  				<li><%= link_to 'Real Nihongo Collection', topics_path %></li>
+  				<li><%#= link_to 'Column', columns_index_path %></li>
+  				<li class="active"><%= link_to 'QABoard', questions_path %></li>
+  				<li><%= link_to 'Lesson Tips&Idea', ideas_path %></li>
+  				<li class="active"><%= link_to 'Tsukaikata Lab.', labs_path %></li>
+  			<%# else %>
+          <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn btn-lightgreen100_ftg btn-lg btnsizec' %>
+          <%#= link_to "LOG IN", new_user_session_path, class: 'btn btn-amber200_ftg btn-lg btnsizeb' %>
+          <%#= link_to "TOP", root_path, class: 'btn btn-biuegray200_flt btn-lg btnsizeb' %>
+        <%# end %>
+
+  			</div>
+  			<p class="navbar-text navbar-right">Hello, <a href="#" class="navbar-link">
+  			  <% if user_signed_in? %>
+  			  <%#= image_tag current_user.avatar_url %>
+          <%= current_user.name %></a> さん</p>
+          <% end %>
   		</div>
   	</div>
   </nav>
 <!--navbar終わり-->
 
+<!--ログインnavbar-->
+    <nav class="thinline">
+    </nav>
+    
+    <div class="container-fluid">
+    <div class="rowB">
+    <% if user_signed_in? %>
+      <%= link_to "LOG OUT ", destroy_user_session_path, method: :delete, class: 'btn btn-3'%>
+      <%= link_to "TOP", root_path, class: 'btn btn-5' %>
+    <% else %>
+      <%= link_to "SIGN UP", new_user_registration_path, class: 'btn btn-1' %>
+      <%= link_to "LOG IN", new_user_session_path, class: 'btn btn-4' %>
+      <%= link_to "TOP", root_path, class: 'btn btn-2' %>
+    <% end %>
+    </div>
+    </div>
+   <br>
+<!--ログインnavbarおわり-->
+
+   <div class="noticearea">
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+   </div>
+  
+    <!--<nav class="thinline">-->
+    <!--</nav>-->
+
+
+<!--全画面メニュースマホ用-->
+
+
+
+
+
+
+
+
+
+
+<!--全画面メニュースマホ用おわり-->
+
 
 
 <!--サイドメニュー-->
-<div id="menuArea">
-  <input type="checkbox" id="menuToggle"></input>
+<!--<div id="menuArea">-->
+<!--  <input type="checkbox" id="menuToggle"></input>-->
 
-<label for="menuToggle" class="menuOpen">
-  <div class="open"></div>
-</label>
+<!--<label for="menuToggle" class="menuOpen">-->
+<!--  <div class="open"></div>-->
+<!--</label>-->
 
-<div class="menu menuEffects">
-  <label for="menuToggle"></label>
-  <div class="menuContent">
-    <ul>
-      <li><a href="/">TOP</a></li>
-      <li><a href="/topics/about/">ABOUT </a></li>
-      <li><a href="/topics/index">Nihongo-Hunt!!</a></li>
-      <li><a href="/columns/index">Column</a></li>
-      <li><a href="/questions/index">*for teachers* QABoard</a></li>
-      <li><a href="/questions/index">*for teachers* Lesson idea</a></li>
-      <li><a href="/questions/index">*for teachers* Lab.</a></li>
-    </ul>
-  </div>
-</div>
-</div>
+<!--<div class="menu menuEffects">-->
+<!--  <label for="menuToggle"></label>-->
+<!--  <div class="menuContent">-->
+<!--    <ul>-->
+<!--      <li><a href="/">TOP</a></li>-->
+<!--      <li><a href="/topics/about/">ABOUT </a></li>-->
+<!--      <li><a href="/topics/index">Nihongo-Hunt!!</a></li>-->
+<!--      <li><a href="/columns/index">Column</a></li>-->
+<!--      <li><a href="/questions/index">*for teachers* QABoard</a></li>-->
+<!--      <li><a href="/questions/index">*for teachers* Lesson idea</a></li>-->
+<!--      <li><a href="/questions/index">*for teachers* Lab.</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
 <!--終わり-->
     
     <%= yield %>
   
+      <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Nihongo_No_Tsukaikata_LAB. 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    
   </body>
 </html>

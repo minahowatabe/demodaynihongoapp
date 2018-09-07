@@ -1,69 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Nihongoapp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="topics.scss">
-    <link rel="javascript" href="topics.js">
-    
-  </head>
-
 <body class ="posts">
 
-<div class="wrap">
+ <div class="wrap">
  
- <div class="main">
-<h4>文法項目：</h4><h2>【<%= @topic.title %>】</h2>
-<br>
-<div class="searchbox">
-<%= form_tag topics_show_path, :method => 'get' do %>
-  <p class = "searchbox">
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search",:name => nil %>
-  </p>
-<% end %>
-</div>
-<br>
+  <div class="main">
+    <h4>文法項目：</h4><h2>【<%= @topic.title %>】</h2>
+    
+    <br>
+    
+    <div class="searchbox">
+     <%= form_tag topic_path, :method => 'get' do %>
+      <p class = "searchbox">
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search",:name => nil %>
+      </p>
+     <% end %>
+    </div>
+    <br>
 
-<h3>投稿する</h3>
-<p>ダイアログ（対話形式）またはセンテンスでご記入ください。<br>どんな状況での発話だったか簡単に教えてください。</p>
-<%= form_for @newpost, :url => post_create_path do |f| %>
-  <p>実例</p>
-  <p><%= f.text_area :example, :size=>"35x8" %></p>
-  <p>huntした状況</p>
-  <p><%= f.text_area :memo, :size=>"30x3" %></p>
-  <%= f.hidden_field :topic_id %>
-  <%= f.submit ' CREATE ', class: 'btn-5 btn-sm'  %>
-<% end %>
-
-</div>
-
-
-
-<div class = "examplepost">
- 
-<% @posts.each_with_index do |post , idx| %>
-<div class = eachpost>   
-  <span class="box-title"><%= idx + 1 %>.</span>
-  <p>実例:<%= simple_format(post.example) %></p>
-  <hr>
-  <p>発話状況: <%= simple_format(post.memo) %></p>
-  <p><%= link_to '[削除]', post_delete_path(topic.id), 
-                        method: :delete, 
-                        data: {confirm: "削除してもよろしいですか？"}  %></p>
 
  </div>
-
-<% end %>
 </div>
+
+
+  <div class = "examplepost">
+   
+    <% @posts.each_with_index do |post , idx| %>
+     <div class = eachpost>   
+      <span class="box-title"><%= idx + 1 %>.</span>
+      <p>実例:<%= simple_format(post.example) %></p>
+      <hr>
+      <p>発話状況: <%= simple_format(post.memo) %></p>
+      <p><%= link_to '[削除]', post_path(@topic.id), 
+                            method: :delete, 
+                            data: {confirm: "削除してもよろしいですか？"}  %></p>
+
+     </div>
+  
+　  <% end %>
+  </div>
 
 </div>
 
 <div class ="linkbtn">
-  <%= link_to "  index  ", topics_index_path,class: "btn btn-2" %>
+  <%= link_to "  index  ", topics_path,class: "btn btn-2" %>
 </div>
 
 </body>

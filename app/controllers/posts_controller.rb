@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post].permit(:topic_id, :example, :memo))
     @post.save
@@ -16,4 +16,5 @@ class PostController < ApplicationController
     @posts_count = Post.where(post_id: @post.id).count
     @posts = @posts.search(params[:search])
   end
+    
 end

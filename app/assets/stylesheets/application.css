@@ -15,12 +15,42 @@
  *= require_self
  */
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.thinline{
+    width: 100%;
+    height:30px;
+    margin-top: 20px;
+}
+
+.headerbtn{
+    text-align:right;
+}
+
+.rowB{
+  padding-top: 40px;
+}
+
+.linkbtn{
+  text-align: center;
+}
+
+
+
+
 /* <- Demo Stuff Start */
 
 body{
   font-family: 'Montserrat', sans-serif;
   margin:0;
+  background-color: #f3f3f3;
 }
+
 
 .menu.container {
   display: flex;
@@ -122,7 +152,7 @@ body{
   transition: all 0.3s ease;
 }
 
-.titles{
+.headertitles{
   /*font-family: 'Baloo', cursive;*/
   /*font-family: 'Unica One', cursive;*/
   /*font-family: 'Electrolize', sans-serif;*/
@@ -186,7 +216,7 @@ body{
   margin-left: 30px;
   display: block;
   color: silver;
-  text-decoration: none;
+  text-decoration: noconne;
   transition: color 0.2s;
   font-family: Trebuchet MS;
   text-transform: uppercase;

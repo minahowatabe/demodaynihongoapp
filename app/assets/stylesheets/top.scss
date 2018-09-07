@@ -1,6 +1,47 @@
+
+// @media only screen and (max-width: 750px) {
+// img { max-width: 100%; }
+// }
+
+.space{
+  height:350px;
+  width: auto;
+}
+
+.logowrap{
+  width: 600px;
+  height: 300px;
+}
+
+.linkwrap{
+  width: 600px;
+  height: 300px;
+}
+
+.linkimage{
+  // width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+// [class^="img-flex-"] {
+// 	margin-bottom: 20px;
+// 	display: -webkit-flex;
+// 	display: flex;
+// 	-webkit-justify-content: space-between;
+// 	justify-content: space-between;
+// }
+
+// .img-flex-2 img { width: 49%; height: 49%; }
+// .img-flex-3 img { width: 32%; height: 32%; }
+// .img-flex-4 img { width: 24%; height: 24%; }
+
 // 円の描画
 .parent {
   text-align: center;
+  padding-top: -100px;
 }
 
 .circle{
@@ -10,7 +51,7 @@
   border-radius: 50%;
   background: none;
   border: dotted 6px #ffff66;
-  margin: 45px;
+  // margin: 30px;
 }
 // 円終わり
 
@@ -19,7 +60,7 @@ html,body{
   height:100%
 }
 .top {
-  background:#ddd url(top-denim-ver.jpg) no-repeat center center;
+  background:#ddd url(graywall.jpg) no-repeat center center;
   background-size:cover;
 //   background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
 //   background-size:cover;

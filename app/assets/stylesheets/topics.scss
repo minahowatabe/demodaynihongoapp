@@ -1,3 +1,5 @@
+ 
+
 // index2カラムレイアウト
 /* pc 768px以上 */
 
@@ -7,6 +9,13 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.centerlogo{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}　 
+
 
 // .left{
 // 	float: left;
@@ -22,7 +31,13 @@
 // 	border-top: 1px solid #333;
 // }
 
-// 表を大きくしたい　paddingとりたい　効いてない
+
+
+.image{
+    text-align: left;
+}
+
+// 表を大きくしたい paddingとりたい 効いてない
 .table td{
     padding: 10px;
 }
@@ -86,6 +101,8 @@
 	text-decoration: none;
 	color: #333;
 }
+
+
 
 /* スマホ　767px以下 */
 @media only screen and (max-width: 767px) {

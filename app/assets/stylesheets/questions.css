@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.qa{
+
+.balloon1 p{
+    color: black;
+}
+
+.container_qa{
+    padding-left: 40px;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;

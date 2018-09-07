@@ -1,26 +1,51 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Nihongoapp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="top.scss">
-    <link rel="javascript" href="top.js">
-  </head>
-  
 <body class = "top">
     
-<div class="parent">
-  <a class="circle" href="~"></a>
-</div>
+<!--<div class="logowrap">-->
+<!--  <div class="rowA">-->
+<!--   <div class="centerlogo">-->
+     
+    <!--<a class="circle" href="~"></a>-->
 
-<div class="logo"><b>N<span>ih</span>og<span>o_</span>No</b>
-<br>
-<b>T<span>su</span>kai<span>k</span>a<span>t</span>a</b>
-<br>
-<b>_L<span>a</span>B.</b></div>
+  <!--ロゴ横長-->
+    <!--<div class="logo"><b>N<span>ih</span>ong<span>o_</span>No</b><b>_T<span>su</span>kai<span>k</span>a<span>t</span>a</b><b>_L<span>A</span>B.</b></div>-->
+  
+  <!--ロゴ３行-->
+    <div class="logo"><b>N<span>ih</span>ong<span>o_</span>No</b>
+    <br>
+    <b>T<span>su</span>kai<span>k</span>a<span>t</span>a</b>
+    <br>
+    <b>_L<span>A</span>B.</b></div>
+
+<!--   </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--<div class="linkwrap">-->
+<!--  <div class="rowB">-->
+    
+    <%#= link_to image_tag('btn.png'), '/books/index' %>
+    <%#= link_to image_tag('hontokodomo.png'), root_path, :size =>'200x200' %>
+
+   <div class="space"></div>
+
+   <div class ="linkimage col-md-12 xs-12">
+     <div class="col-md-2 col-xs-3 linkimage">
+      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
+     </div>
+     <div class="col-md-2 col-xs-3 linkimage">
+      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
+     </div>
+     <div class="col-md-2 col-xs-3 linkimage">
+      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
+     </div>
+     <div class="col-md-2 col-xs-3 linkimage">
+      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
+     </div>
+  </div>  
+  
+<!--  </div>-->
+<!--</div>-->
 
 
 </body>

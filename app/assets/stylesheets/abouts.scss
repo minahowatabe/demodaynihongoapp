@@ -1,0 +1,91 @@
+// Place all the styles related to the abouts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// about画面
+
+
+.container_about{
+    width: 70%;
+    height: 200px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align :center;
+}
+
+
+// リストの黒丸削除
+
+ul{
+    list-style: none;
+}
+//黒丸おわり
+
+
+p{
+    font-size: 1.5rem;
+}
+
+
+.titles{
+  text-align: center;
+  font-family: 'Julius Sans One', sans-serif;
+  padding: 10px;
+  background-color: lightyellow;
+}
+
+
+.text-js{
+  opacity: 0;
+}
+.cursor{
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: white;
+  z-index: 1;
+  animation: flash 0.5s none infinite alternate;
+}
+@keyframes flash{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+// Rest of CSS (Purely for this pen)
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+*{
+  margin: 0;
+  padding: 0;
+  boz-sizing: border-box;
+  font-family: "Open Sans", sans-serif
+}
+.about{
+  background:white;
+//   background: linear-gradient(135deg,#00C4FF,#9D1BB2);
+  height: 100vh;
+  padding-top:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// Text Can be styled just like normal
+.headline{
+  margin: 20px;
+  color: black;
+  font-size: 32px;
+  text-align: center;
+  h1{
+    letter-spacing: 1.6px;
+    font-weight: 300;
+  }
+}

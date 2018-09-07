@@ -1,4 +1,4 @@
-<div class="container qa">
+<div class="container_qa">
 <div class="rowA qa">
  <div class="col-md-8 col-xs-10 panel panel-default qa">
 	<div class="panel-heading">
@@ -12,14 +12,14 @@
 </div>
 </div>
 
-<div class="container qa">
+<div class="container_qa">
 <div class="rowB qa">
 <div class="col-md-8 col-xs-10 panel panel-default qa">
   <div class="panel-heading">
    回答する
   </div>
   <br>
-<%= form_for @newanswer, :url => answers_create_path do |f| %>
+<%= form_for @newanswer, :url => answer_path do |f| %>
   <p>お名前:<%= f.text_field :name, :size=>"15x2"  %></p>
   <p>回答：<%= f.text_area :body, :size=>"80x4" %></p>
   <%= f.hidden_field :question_id %>
@@ -29,7 +29,7 @@
 </div>
 </div>
 
-<div class="container qa">
+<div class="container_qa">
 <h2>みんなの回答</h2>
 
 <% @answers.each_with_index do |answer , idx| %>
@@ -37,11 +37,12 @@
   <p>
     <%= idx + 1 %>. <%= answer.name %>さん : <%= answer.body %>
   </p>
-  <p><%= link_to '[削除]', answers_create_path(@question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
+  <p><%= link_to '[削除]', answer_path(@question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
 </div>
+
 <% end %>
 </div>
 
 <div class ="linkbtn">
-  <%= link_to "  index  ", questions_index_path, class: "btn btn-2" %>
+  <%= link_to "  index  ", questions_path, class: "btn btn-2" %>
 </div>

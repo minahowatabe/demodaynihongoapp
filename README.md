@@ -7,7 +7,7 @@ Things you may want to cover:
 
 <h2>Description</h2>
 <p>日本語教師と日本語教師志望者のためのwebサイトです。</p>
-<p>先生が悩んだ時、困った時、ヒントが得られたり、相談できたりするサイトを目指しています。<br>
+<p>先生が悩んだ時や困った時、ヒントが得られたり、相談できたりするサイトを目指しています。<br>
 　また、日本語教育に興味のある人には、日本語教育のことを知ってもらう1つのチャネルになればと思っています。</p>
 <p>●教師向けコンテンツ
 <br>　・普段話されている「リアルな日本語」の収集コーナー
@@ -18,11 +18,15 @@ Things you may want to cover:
 <br>　・日本語教師の本音コラム</p>
 
 <h2>Requirement</h2>
-<p>Ruby 2.4.1
-Rails 5.1.5
-PostgreSQL 10.1
-Bootstrap 3
-Function
+<p>Ruby 2.4.1</p>
+<p>Rails 5.1.5</p>
+<p>PostgreSQL 10.1</p>
+<p>Bootstrap 3</p>
+
+<h2>Function</h2>
+
+
+
 チームのCRUD処理
 管理者ユーザのCRUD処理
 選手のCRUD処理

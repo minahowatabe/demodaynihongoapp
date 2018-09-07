@@ -9,6 +9,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
 gem 'font-awesome-rails'
+gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'better_errors'
+  gem 'pry-rails'
 end
 
 group :development do

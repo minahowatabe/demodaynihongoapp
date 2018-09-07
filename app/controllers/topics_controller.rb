@@ -9,6 +9,7 @@ class TopicsController < ApplicationController
     @topics = Topic.all
     @newTopic = Topic.new
     @topics = @topics.search(params[:search])
+    @newpost = Post.new(topic_id: params[:id])     
   end
 
   def create
@@ -28,4 +29,8 @@ class TopicsController < ApplicationController
    @newpost = Post.new(topic_id: params[:id]) 
    @posts = Post.where(topic_id: params[:id]) 
   end
+
+ private
+
+
 end

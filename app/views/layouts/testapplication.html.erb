@@ -1,0 +1,41 @@
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  	<div class="container-fluid">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+  				<span class="sr-only">Toggle navigation</span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+  			<a class="navbar-brand headertitles" href="/">
+  				Nihongo No tsukaikata Lab.
+  			</a>
+  		</div>
+  		
+  		<div class="collapse navbar-collapse" id="navbarEexample7">
+  			<div class="nav navbar-nav">
+  	 	   <%# if user_signed_in? %>
+  				<li><%= link_to 'TOP', root_path %></li>
+  				<li class="active"><%= link_to 'ABOUT', about_topics_path %></li>
+  				<li><%= link_to 'Real Nihongo Collection', topics_path %></li>
+  				<li><%#= link_to 'Column', columns_index_path %></li>
+  				<li class="active"><%= link_to 'QABoard', questions_path %></li>
+  				<li><%= link_to 'Before Lesson', root_path %></li>
+  				<li class="active"><%= link_to 'In Lesson', root_path %></li>
+  			<%# else %>
+          <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn btn-lightgreen100_ftg btn-lg btnsizec' %>
+          <%#= link_to "LOG IN", new_user_session_path, class: 'btn btn-amber200_ftg btn-lg btnsizeb' %>
+          <%#= link_to "TOP", root_path, class: 'btn btn-biuegray200_flt btn-lg btnsizeb' %>
+        <%# end %>
+
+  			</div>
+  			<p class="navbar-text navbar-right">Hello, <a href="#" class="navbar-link">
+  			  <% if user_signed_in? %>
+  			  <%#= image_tag current_user.avatar_url %>
+          <%= current_user.name %></a> さん</p>
+          <% end %>
+  		</div>
+  	</div>
+  </nav>
+<!--navbar終わり-->
+

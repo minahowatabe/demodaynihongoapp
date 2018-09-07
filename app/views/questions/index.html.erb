@@ -1,50 +1,91 @@
-<div class="container qa">
+<h1 class="titles">QA Board</h1>
+
+<div class="container_qa">
 <div class="rowA qa">
  <div class="col-md-8 col-xs-10 panel panel-default qa">
-	<div class="panel-heading">
-		QABoardの使い方
+ 	<div class="panel-heading">
+ 		QABoardの使い方
+ 	</div>
+ 	<div class="panel-body">
+ 		授業の準備中に、なかなかいい伝え方が浮かばなくて長い時間悩んだり、
+ 		文法の分析がうまく進まなくて苦しんだり、
+ 		違和感のある会話や文を目にして「あれ？これ、どう教えよう…？」と思ったり、
+ 		「みんなならどうする？？」って、相談したい時、ありませんか。
+ 	  いい授業をするための質問なら、なんでもOK。
+ 	  ここでアドバイスし合って、いい授業をしていきましょう！	
+ 	</div>
 	</div>
-	<div class="panel-body">
-		授業の準備中に、なかなかいい伝え方が浮かばなくて長い時間悩んだり、
-		文法の分析がうまく進まなくて苦しんだり、
-		違和感のある会話や文を目にして「あれ？これ、どう教えよう…？」と思ったり、
-		「みんなならどうする？？」って、相談したい時、ありませんか。
-	  いい授業をするための質問なら、なんでもOK。
-	  ここでアドバイスし合って、いい授業をしていきましょう！	
-	</div>
- </div>
  <div class="col-md-4 col-xs-2">
-   <%= image_tag 'hontokodomo.png', :size =>'200x200' %>
+   <%= image_tag 'postit.jpg', :size =>'300x200' %>
  </div>
 </div>
 </div>
 
-<div class="container qa">
-<div class="rowB qa">
-<div class="col-md-8 col-xs-10 panel panel-default qa">
-<h2>質問する</h2>
-<p>☞一覧にはタイトルのみ表示されるので、内容がわかりやすいものを。</p>
-<%= form_for @newQuestion, :url => {:action => 'create'} do |f| %>
-<p class="indentback"> title: <%= f.text_field :title, :size=>"50x2" %></p><br>
-  question:<%= f.text_area :content, :size=>"60x6"  %>
-  <%= f.submit ' CREATE question ', class:'btn-5 btn-sm' %>
-<% end %>
+<!--ログイン・未ログイン分岐-->
+<div class="container_qa">
+ <div class="rowB qa">
+    <% if user_signed_in? %>
+     <div class="col-md-8 col-xs-10 panel panel-default qa">
+      <h2>質問する</h2>
+       <p>☞一覧にはタイトルのみ表示されるので、内容がわかりやすいものを。</p>
+        <%= form_for @newQuestion, :url => {:action => 'create'} do |f| %>
+       <p>
+        title: <%= f.text_field :title, :size=>"50x2" %>
+       <br>
+        question:<%= f.text_area :content, :size=>"60x6"  %>
+       <br>
+       <!--キーワードを入れたい-->
+        keyword:<%= f.text_area :content, :size=>"50x1"  %></p>
+        <%= f.submit ' CREATE question ', class:'btn-5 btn-sm' %>
+       <% end %>
+     </div>  
+    <% else %>
+     <div class="col-md-8 col-xs-10 panel panel-default qa">
+      <h2>質問する</h2>
+      <h4>「質問する」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
+      <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+      <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
+     </div>
+    <% end %>
+    
+    <br> <br>
+ </div>
+ <br> 
 </div>
-</div>
+<!--分岐終わり-->
+
+
+<div class="container_qa">
+ <div class="rowC qa">
+  <div class="col-md-8 col-xs-10 panel panel-default qa">
+   <h2>みんなの質問</h2>
+    <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
+    
+<!--ログイン・未ログイン分岐-->
+    <% if user_signed_in? %>
+     <ul>
+      <% @questions.each do |question| %>
+      <li><%= link_to question.title, question_path(question.id) %>
+          <%= link_to '[削除]', question_path(question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+      </li>
+      <% end %>
+     </ul>
+   <% else %>
+     <ul>
+      <% @questions.each do |question| %>
+       <li><%=link_to question.title, question_path(question.id) %>
+      <% end %>
+   
+        <h4>「みんなの質問を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+        <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
+     </ul>
+   <% end %>
+   <!--分岐終わり-->
+
+   <br>
+  </div>
+ </div>
 </div>
 
-<div class="container qa">
-<div class="rowC qa">
-<div class="col-md-8 col-xs-10 panel panel-default qa">
- <h2>みんなの質問</h2>
-  <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
-  <ul>
-   <% @questions.each do |question| %>
-   <li><%= link_to question.title, questions_show_path(question.id) %>
-       <%= link_to '[削除]', questions_create_path, method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
-   </li>
-   <% end %>
-  </ul>
-</div>
-</div>
-</div>
+
