@@ -1,3 +1,23 @@
 // Place all the styles related to the labs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+p.text-overflow{
+    width:300px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.lablist{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lab-panel{
+    background-color: #f3f3f3;
+    border: dashed 1px darkgray;
+    padding: 10px;
+    margin: 10px;
+}

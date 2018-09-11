@@ -18,8 +18,8 @@
   <body>
     
   <!--ナビゲーションバー    -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-  	<div class="container-fluid">
+  <nav class="navbar navbar-fixed-top">
+  	<div class="container-fluid na">
   		<div class="navbar-header">
   			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
   				<span class="sr-only">Toggle navigation</span>
@@ -27,21 +27,28 @@
   				<span class="icon-bar"></span>
   				<span class="icon-bar"></span>
   			</button>
-  			<a class="navbar-brand headertitles" href="/">
-  				Nihongo_No_tsukaikata_LAB.
+  			<!--<a class="navbar-brand headertitles" href="/">-->
+  			<!--	Nihongo_No_Tsukaikata_LAB.-->
+  			<!--</a>-->
+  			<!--<a class="navbar-brand headertitles" href="/">-->
+  			<!--	KANGAERU_Nihongo_Kyooshi-->
+  			<!--</a>-->
+        <a class="navbar-brand headertitles" href="/">
+  				にほんごきょうしのほしいもの。
   			</a>
+
   		</div>
   		
   		<div class="collapse navbar-collapse" id="navbarEexample7">
   			<div class="nav navbar-nav">
   	 	   <%# if user_signed_in? %>
-  				<li><%= link_to 'TOP', root_path %></li>
-  				<li class="active"><%= link_to 'ABOUT', abouts_index_path %></li>
-  				<li><%= link_to 'Real Nihongo Collection', topics_path %></li>
+  				<!--<li><%#= link_to 'TOP', root_path %></li>-->
+  				<li class="active"><%= link_to 'このサイトでできること', abouts_index_path %></li>
+  				<li><%= link_to 'ふだんの日本語あつめ', topics_path %></li>
   				<li><%#= link_to 'Column', columns_index_path %></li>
-  				<li class="active"><%= link_to 'QABoard', questions_path %></li>
-  				<li><%= link_to 'Lesson Tips&Idea', ideas_path %></li>
-  				<li class="active"><%= link_to 'Tsukaikata Lab.', labs_path %></li>
+  				<li class="active"><%= link_to '日本語ぶんせき.', labs_path %></li>
+  				<li><%= link_to 'レッスンのコツとアイデア', ideas_path %></li>
+  				<li class="active"><%= link_to 'そうだん', questions_path %></li>
   			<%# else %>
           <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn btn-lightgreen100_ftg btn-lg btnsizec' %>
           <%#= link_to "LOG IN", new_user_session_path, class: 'btn btn-amber200_ftg btn-lg btnsizeb' %>
@@ -49,11 +56,6 @@
         <%# end %>
 
   			</div>
-  			<p class="navbar-text navbar-right">Hello, <a href="#" class="navbar-link">
-  			  <% if user_signed_in? %>
-  			  <%#= image_tag current_user.avatar_url %>
-          <%= current_user.name %></a> さん</p>
-          <% end %>
   		</div>
   	</div>
   </nav>
@@ -73,6 +75,13 @@
       <%= link_to "LOG IN", new_user_session_path, class: 'btn btn-4' %>
       <%= link_to "TOP", root_path, class: 'btn btn-2' %>
     <% end %>
+    
+    <p class="navbar-text navbar-right">Hello, <a href="#" class="navbar-link">
+		  <% if user_signed_in? %>
+		  <%#= image_tag current_user.avatar_url %>
+      <%= current_user.name %></a> さん</p>
+      <% end %>
+    
     </div>
     </div>
    <br>
@@ -134,12 +143,15 @@
     <%= yield %>
   
       <!-- Footer -->
-    <footer class="py-5 bg-black">
+    <footer class="py-5 bg-black fixed-bottom">
       <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; Nihongo_No_Tsukaikata_LAB. 2018</p>
+        <p>Copyright &copy; にほんごきょうしのほしいもの。 2018</p>
       </div>
       <!-- /.container -->
     </footer>
+    
+    
+    
     
   </body>
 </html>

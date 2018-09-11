@@ -1,21 +1,19 @@
-
 // @media only screen and (max-width: 750px) {
 // img { max-width: 100%; }
 // }
 
 .space{
-  height:350px;
+  height:10px;
   width: auto;
 }
 
-.logowrap{
-  width: 600px;
-  height: 300px;
-}
-
-.linkwrap{
-  width: 600px;
-  height: 300px;
+.logo{
+  width: 100%;
+  height: 100%;
+  display: flex;
+	align-items: center;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .linkimage{
@@ -26,22 +24,64 @@
 }
 
 
-// [class^="img-flex-"] {
-// 	margin-bottom: 20px;
-// 	display: -webkit-flex;
-// 	display: flex;
-// 	-webkit-justify-content: space-between;
-// 	justify-content: space-between;
-// }
+// 5列の横並び
+*, *:before, *:after {
+	box-sizing: border-box;
+}
 
-// .img-flex-2 img { width: 49%; height: 49%; }
-// .img-flex-3 img { width: 32%; height: 32%; }
-// .img-flex-4 img { width: 24%; height: 24%; }
+.col_5{
+	width: 100%;
+	margin: 10px 10px;
+// 	display: flex;
+// 	display: -ms-flexbox; /* IE10 */
+// 	flex-wrap: wrap;
+// 	-ms-flex-wrap: wrap; /* IE10 */
+	vertical-align: middle;
+}
+
+.col_5 > div{
+	width: 60%;
+	padding: 10px;
+// 	margin-right:10px;
+// 	margin-left:10px;
+	margin: 20px;
+}
+
+.col_5 > div > div{
+ 	position: relative;
+	overflow: hidden
+}
+
+.toplink{
+  background: #cdd3c6;
+  width: 100%;
+  border: 3px dotted powderblue;
+  height: 150px;
+  border-radius: 18px;
+}
+
+@media screen and (max-width: 960px) {
+	.col_5 > div{
+		width: 25%;
+	}
+}
+@media screen and (max-width: 480px) {
+	.col_5 > div{
+		width: 33.33333%;
+	}
+}
+
+
+
+@import url(//fonts.googleapis.com/css?family=Vibur);
+html,body{
+  height:100%
+}
 
 // 円の描画
-.parent {
+.parent a{
   text-align: center;
-  padding-top: -100px;
+  padding-top: -50px;
 }
 
 .circle{
@@ -55,12 +95,16 @@
 }
 // 円終わり
 
-@import url(//fonts.googleapis.com/css?family=Vibur);
-html,body{
-  height:100%
-}
+
 .top {
-  background:#ddd url(graywall.jpg) no-repeat center center;
+  width: 100%;
+// もともとの書き方　ローカルではOK  
+  background:#ddd url(top.jpg) no-repeat center center;
+  background-attachment: fixed;
+
+// herokuデプロイ時の書き方…うまくいかない
+  // background-image: image-url("graywall.jpg") no-repeat center center;
+
   background-size:cover;
 //   background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
 //   background-size:cover;
@@ -76,25 +120,35 @@ html,body{
 .logo {
   text-align: center;
   width: 50%;
-  height: 150px;
-  padding: 140px;
+  height: 30px;
+  padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+}
+
+// フリーフォント
+@font-face {
+font-family:'shirokuma';
+  src: url('/SHIROKUMA.TTF'); 
 }
 
 .logo b{
-  font: 100 9vh "Vibur";
+  // font: 100 9vh "Vibur";
+  font: 100 12vh "shirokuma";
   // color: #fee;
-  color: #ffff66;
+  color: #302833;
   // text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em white, 0 0 0.5em lightyellow, 0 0 0.1em beige, 0 10px 3px #000;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em white, 0 0 0.5em #FFF59D, 0 0 0.1em #FFF9C4, 0 10px 3px #546E7A;
 }
+
+
 .logo b span{
+  font: 100 9vh "shirokuma";
   animation: blink linear infinite 10s;
 }
 @keyframes blink {
@@ -155,3 +209,6 @@ html,body{
   box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
   opacity:0.4
 }#btn-twtr:hover{color:#fff;opacity:1}
+
+
+

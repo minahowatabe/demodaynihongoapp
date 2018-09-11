@@ -1,3 +1,68 @@
 // Place all the styles related to the ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .table{
+//   table-layout: fixed;
+// }
+
+// p.text-overflow{
+//     width:300px;
+//     overflow:hidden;
+//     white-space:nowrap;
+//     text-overflow:ellipsis;
+// }
+
+.titleonly{
+    width: 45%;
+    font-size:2rem;
+}
+
+.labshowbtn{
+    width: 10%;
+}
+
+.ellipsis {
+    width: 30%;
+    position: fixed;
+    height: 40px;
+    overflow: hidden;
+    line-height: 20px;
+    font-size:1.5rem;
+}
+ 
+.ellipsis:before, .ellipsis:after {
+    position: absolute;
+    // background: #fff;
+}
+ 
+.ellipsis:before {
+    content: "･･･";
+    bottom: 0;
+    right: 0;
+}
+
+.ellipsis:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+
+
+
+// show
+.ideaarticle{
+    background-color: #f3f3f3;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ideatitle{
+    padding-bottom: 10px;
+}
+
+
+.ideacontent{
+    line-height:2
+}

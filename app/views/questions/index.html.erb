@@ -1,10 +1,10 @@
-<h1 class="titles">QA Board</h1>
+<h1 class="titles">そうだん</h1>
 
 <div class="container_qa">
 <div class="rowA qa">
  <div class="col-md-8 col-xs-10 panel panel-default qa">
  	<div class="panel-heading">
- 		QABoardの使い方
+ 		"そうだん”の使い方
  	</div>
  	<div class="panel-body">
  		授業の準備中に、なかなかいい伝え方が浮かばなくて長い時間悩んだり、
@@ -21,21 +21,86 @@
 </div>
 </div>
 
+
 <!--ログイン・未ログイン分岐-->
 <div class="container_qa">
  <div class="rowB qa">
+ 
+ <!--ransack -->
+  <%= search_form_for @search do |f| %>
+  <div class="form-group">
+    <%= f.label :content_cont, "質問を検索" %>
+    <%= f.text_field :content_cont, :size=>"50x1"  %>
+    <%= f.submit "Search" %></div>
+  </div>
+ <% end %>
+ 
+</div>
+
+  <div class="container_qa">
+ <div class="rowC qa">
+  <div class="col-md-8 col-xs-10 panel panel-default qa">
+   <h2>みんなの質問</h2>
+    <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
+    
+    
+<!--ログイン・未ログイン分岐-->
+    <% if user_signed_in? %>
+     <ul>
+      <% @questions.each do |question| %>
+      <li><%= link_to question.title, question_path(question.id) %>
+          <%= link_to '[削除]', question_path(question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+      </li>
+      <% end %>
+     </ul>
+   <% else %>
+     <ul>
+      <% @questions.each do |question| %>
+       <li><%#=link_to question.title, question_path(question.id) %>
+       <li><%= question.title %>
+      <% end %>
+   
+        <h4>「みんなの質問を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+        <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
+     </ul>
+   <% end %>
+   <!--分岐終わり-->
+
+   <br>
+  </div>
+ </div>
+</div>
+
+
     <% if user_signed_in? %>
      <div class="col-md-8 col-xs-10 panel panel-default qa">
+      
+      <!--バリデーション--エラー中>
+      <!--<%#= form_with(model: @question, local: true) do |form| %>-->
+      <!-- <%# if @question.errors.any? %>-->
+      <!--   <div id="error_explanation">-->
+      <!--     <h2><%#= @question.errors.count %>件のエラーがあります。</h2>-->
+      <!--     <ul>-->
+     
+      <!--     <%# @question.errors.full_messages.each do |msg| %>-->
+      <!--       <li><%#= msg %></li>-->
+      <!--     <%# end %>-->
+      <!--     </ul>-->
+      <!--   </div>-->
+      <!-- <%# end %>-->
+      <!--<%# end %>-->
+      
       <h2>質問する</h2>
-       <p>☞一覧にはタイトルのみ表示されるので、内容がわかりやすいものを。</p>
+       <p>☞一覧にはタイ\トルのみ表示されるので、内容がわかりやすいものを。</p>
         <%= form_for @newQuestion, :url => {:action => 'create'} do |f| %>
        <p>
-        title: <%= f.text_field :title, :size=>"50x2" %>
+        　　title: <%= f.text_field :title, :size=>"50x2" %>
        <br>
         question:<%= f.text_area :content, :size=>"60x6"  %>
        <br>
        <!--キーワードを入れたい-->
-        keyword:<%= f.text_area :content, :size=>"50x1"  %></p>
+        keyword:<%= f.text_area :keyword, :size=>"50x1"  %></p>
         <%= f.submit ' CREATE question ', class:'btn-5 btn-sm' %>
        <% end %>
      </div>  
@@ -53,39 +118,5 @@
  <br> 
 </div>
 <!--分岐終わり-->
-
-
-<div class="container_qa">
- <div class="rowC qa">
-  <div class="col-md-8 col-xs-10 panel panel-default qa">
-   <h2>みんなの質問</h2>
-    <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
-    
-<!--ログイン・未ログイン分岐-->
-    <% if user_signed_in? %>
-     <ul>
-      <% @questions.each do |question| %>
-      <li><%= link_to question.title, question_path(question.id) %>
-          <%= link_to '[削除]', question_path(question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
-      </li>
-      <% end %>
-     </ul>
-   <% else %>
-     <ul>
-      <% @questions.each do |question| %>
-       <li><%=link_to question.title, question_path(question.id) %>
-      <% end %>
-   
-        <h4>「みんなの質問を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
-        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
-        <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
-     </ul>
-   <% end %>
-   <!--分岐終わり-->
-
-   <br>
-  </div>
- </div>
-</div>
 
 

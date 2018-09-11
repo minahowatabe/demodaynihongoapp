@@ -4,23 +4,34 @@
  
   <div class="main">
     <h4>文法項目：</h4><h2>【<%= @topic.title %>】</h2>
-    
-    <br>
-    
-    <div class="searchbox">
-     <%= form_tag topic_path, :method => 'get' do %>
-      <p class = "searchbox">
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search",:name => nil %>
-      </p>
-     <% end %>
-    </div>
-    <br>
+ 
+  <div>
+    <h5>そのほかの文法項目</h5>
+  
+   <!--文法項目一覧-->
+    <table border="1 index">
+    <tr>
+     <th>文法項目</th>  
+     <th>総回答数</th>
+     <th>クリア</th> 
+    </tr>
+     <%# @topics.each do |topic| %>
+    <tr>
+     <td><%#= link_to topic.title, topic_path(topic.id) %></td>
+     下のtdに総回答数
+     <td></td>
+     下のtdに回答済みならスタンプ
+     <td></td>
+    </tr>
+   <%# end %>
+   </table>
+   <!--一覧終わり    -->
 
 
+    <p><%#= topic.title: topic_id, Topic.all, :id, :title %></p>
+  </div>
+ 
  </div>
-</div>
-
 
   <div class = "examplepost">
    
@@ -33,9 +44,7 @@
       <p><%= link_to '[削除]', post_path(@topic.id), 
                             method: :delete, 
                             data: {confirm: "削除してもよろしいですか？"}  %></p>
-
      </div>
-  
 　  <% end %>
   </div>
 
@@ -46,3 +55,16 @@
 </div>
 
 </body>
+
+
+    <!--<div class="searchbox">-->
+    <!-- <%#= form_tag topic_path, :method => 'get' do %>-->
+    <!--  <p class = "searchbox">-->
+    <!--    <%#= text_field_tag :search, params[:search] %>-->
+    <!--    <%#= submit_tag "Search",:name => nil %>-->
+    <!--  </p>-->
+    <!-- <%# end %>-->
+    <!--</div>-->
+    <!--<br>-->
+
+

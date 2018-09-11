@@ -1,4 +1,4 @@
-<h1 class="titles">Tsukaikata LAB.</h1>
+<h1 class="titles">日本語ぶんせき</h1>
 
 
 <!--<div class="container">-->
@@ -22,12 +22,12 @@
 <!-- </div>-->
 <!--</div>   -->
 
-
+    <div class="lablist">
     <% if user_signed_in? %>
      <% @labs.each do |lab| %>
-       <div class="lab-panel col-md-6">
+       <div class="lab-panel col-md-5">
          <h3><%= link_to lab.title, lab_path(lab.id)  %></h3>
-         <p><%= lab.content %></p>
+         <p class="text-overflow"><%= lab.content %></p>
        </div>     
      <% end %>  
     <% else %>
@@ -38,5 +38,6 @@
        </div>     
      <% end %>
     <% end %>
+    </div>
  </div>
 </div>   

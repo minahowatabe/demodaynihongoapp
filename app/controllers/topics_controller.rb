@@ -2,9 +2,6 @@ class TopicsController < ApplicationController
   def top
   end
   
-  def about
-  end
-    
   def index
     @topics = Topic.all
     @newTopic = Topic.new
@@ -12,17 +9,17 @@ class TopicsController < ApplicationController
     @newpost = Post.new(topic_id: params[:id])     
   end
 
-  def create
-    @topic = Topic.new(params[:topic].permit(:title))
-    @topic.save
-    redirect_to topics_index_path
-  end
+  # def create
+  #   @topic = Topic.new(params[:topic].permit(:title))
+  #   @topic.save
+  #   redirect_to topics_path
+  # end
 
-  def delete
-    @topic = Topic.find(params[:id])
-    @topic.destroy
-    redirect_to topics_index_path
-  end
+  # def delete
+  #   @topic = Topic.find(params[:id])
+  #   @topic.destroy
+  #   redirect_to topics_path
+  # end
   
   def show
    @topic = Topic.find(params[:id])

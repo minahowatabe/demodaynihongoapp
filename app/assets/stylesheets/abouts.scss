@@ -5,14 +5,29 @@
 // about画面
 
 
+#about{
+  background-image: url(top.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .container_about{
     width: 70%;
     height: 200px;
     margin-left:auto;
     margin-right:auto;
     text-align :center;
+    // padding-bottom: 150px;
 }
 
+
+.shushi{
+  font-family: 'shirokuma';
+  font-size: 3rem;
+  color: #FFF59D;
+}
 
 // リストの黒丸削除
 
@@ -29,15 +44,16 @@ p{
 
 .titles{
   text-align: center;
-  font-family: 'Julius Sans One', sans-serif;
+  // font-family: 'Julius Sans One', sans-serif;
+  font-family: 'shirokuma';
   padding: 10px;
   background-color: lightyellow;
 }
 
 
-.text-js{
-  opacity: 0;
-}
+// .text-js{
+//   opacity: 0;
+// }
 .cursor{
   display: block;
   position: absolute;
@@ -73,7 +89,7 @@ p{
   background:white;
 //   background: linear-gradient(135deg,#00C4FF,#9D1BB2);
   height: 100vh;
-  padding-top:20px;
+  padding-top:40px;
   display: flex;
   align-items: center;
   justify-content: center;

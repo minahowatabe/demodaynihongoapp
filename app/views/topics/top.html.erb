@@ -1,48 +1,131 @@
 <body class = "top">
-    
-<!--<div class="logowrap">-->
-<!--  <div class="rowA">-->
-<!--   <div class="centerlogo">-->
+ 
+<!--Herokuデプロイ時の書き方…うまくいかない   もともとは記述なしでOKだった -->
+<!--<img src="<%#= asset_path "graywall.jpg" %>" />-->
+<!--<div style="background-image:url(<%#= asset_path "graywall.jpg" %>)" />    -->
+
+<div class="containe-fluid top">
+  <div class="rowA">
+   <div class="col-md-offset-1 col-md-5">
+     <br><br><br><br><br><br><br><br><br><br><br><br>
      
-    <!--<a class="circle" href="~"></a>-->
+ <!--<a class="circle" href="~"></a>-->
 
   <!--ロゴ横長-->
     <!--<div class="logo"><b>N<span>ih</span>ong<span>o_</span>No</b><b>_T<span>su</span>kai<span>k</span>a<span>t</span>a</b><b>_L<span>A</span>B.</b></div>-->
-  
+
+
+  <!--ロゴ横長-->
+    <!--<div class="logo"><b>に<span>ほ</span>ん<span>ご</span>き</b><b>ょ<span>う</span>し<span>の</span>ほ<span>し</span>い</b><b>も<span>の</span>。</b></div>-->
+
   <!--ロゴ３行-->
-    <div class="logo"><b>N<span>ih</span>ong<span>o_</span>No</b>
+    <!--<div class="logo"><b>N<span>ih</span>ong<span>o_</span>No</b>-->
+    <!--<br>-->
+    <!--<b>T<span>su</span>kai<span>k</span>a<span>t</span>a</b>-->
+    <!--<br>-->
+    <!--<b>_L<span>A</span>B.</b></div>-->
+ 
+  <!--ロゴ３行-->
+    <!--<div class="logo"><b>Ka<span>ng</span>Ae<span>R</span>o!</span></b>-->
+    <!--<br>-->
+    <!--<b>Ni<span>h</span>on<span>g</span>o<span></span></b>-->
+    <!--<br>-->
+    <!--<b>K<span>y</span>oo<span>Shi</span></b>-->
+    <!--</div>-->
+ 
+ <!--ロゴ３行 大文字-->
+    <!--<div class="logo"><b>Ka<span>N</span>GAe<span>R</span>U</span></b>-->
+    <!--<br>-->
+    <!--<b>NI<span>H</span>oN<span>G</span>o<span>_</span></b>-->
+    <!--<br>-->
+    <!--<b>K<span>Y</span>oo<span>SHI</span></b>-->
+    <!--</div>-->
+ 
+ <!--ロゴ３行 大文字-->
+    <!--<div class="logo"><b>Ni<span>h</span>ong<span>o_</span></b>-->
+    <!--<br>-->
+    <!--<b>Ga<span>k</span>u<span>sh</span>u<span>u</span></b>-->
+    <!--<br>-->
+    <!--<b>S<span>upp</span>ort<span>e</span>r'<span>s</span>_L<span>AB.</span></b>-->
+    <!--</div>-->
+
+  <!--ロゴ３行-->
+    <!--<div class="logo"><b>Ni<span>h</span>ong<span>o_</span></b>-->
+    <!--<br>-->
+    <!--<b>O<span>sh</span>ie<span>r</span>u<span></span></b>-->
+    <!--<br>-->
+    <!--<b>_L<span>a</span>B.</b></div>-->
+
+  <!--ロゴ３行-->
+    <div class="logo"><b>に<span>ほ</span>ん<span>ご</span></b>
     <br>
-    <b>T<span>su</span>kai<span>k</span>a<span>t</span>a</b>
+    <b>き<span>ょ</span>う<span>し</span><span>の</span></b>
     <br>
-    <b>_L<span>A</span>B.</b></div>
+    <b>ほ<span>し</span>い<span>も</span>の。</b></div>
 
-<!--   </div>-->
-<!--  </div>-->
-<!--</div>-->
+<!--ロゴ３行-->
+    <!--<div class="logo"><b>ニ<span>ホ</span>ン<span>ゴ</span></b>-->
+    <!--<br>-->
+    <!--<b>キ<span>ョ</span>ウ<span>シ</span><span>ノ</span></b>-->
+    <!--<br>-->
+    <!--<b>ホ<span>シ</span>イ<span>モ</span>ノ。</b></div>-->
 
+   </div>
 
-<!--<div class="linkwrap">-->
-<!--  <div class="rowB">-->
-    
-    <%#= link_to image_tag('btn.png'), '/books/index' %>
-    <%#= link_to image_tag('hontokodomo.png'), root_path, :size =>'200x200' %>
 
    <div class="space"></div>
 
-   <div class ="linkimage col-md-12 xs-12">
-     <div class="col-md-2 col-xs-3 linkimage">
-      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
-     </div>
-     <div class="col-md-2 col-xs-3 linkimage">
-      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
-     </div>
-     <div class="col-md-2 col-xs-3 linkimage">
-      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
-     </div>
-     <div class="col-md-2 col-xs-3 linkimage">
-      <%= image_tag 'hontokodomo.png', :size =>'300x300' %>
-     </div>
-  </div>  
+   <div class="col-md-5">
+
+    <%#= link_to image_tag('btn.png'), '/books/index' %>
+    <%#= link_to image_tag('hontokodomo.png'), root_path, :size =>'200x200' %>
+
+
+  <!-- <div class ="linkimage col-md-12 xs-12">-->
+  <!--   <div class="col-md-2 col-xs-3 linkimage">-->
+  <!--    <%#= image_tag 'hontokodomo.png', :size =>'300x300' %>-->
+  <!--   </div>-->
+  <!--   <div class="col-md-2 col-xs-3 linkimage">-->
+  <!--    <%#= image_tag 'hontokodomo.png', :size =>'300x300' %>-->
+  <!--   </div>-->
+  <!--   <div class="col-md-2 col-xs-3 linkimage">-->
+  <!--    <%#= image_tag 'hontokodomo.png', :size =>'300x300' %>-->
+  <!--   </div>-->
+  <!--   <div class="col-md-2 col-xs-3 linkimage">-->
+  <!--    <%#= image_tag 'hontokodomo.png', :size =>'300x300' %>-->
+  <!--   </div>-->
+  <!--</div>  -->
+  
+<br> 
+  
+ <!-- <div class="col_5">-->
+  
+ <!-- 	<div class="toplink">-->
+ <!-- 	<b>	Real Nihongo Collecton </b>-->
+ <!-- 	<br>・・・・・・・・・・・・・・・-->
+ <!-- 	<br>:今日誰と、何を、どんなふうに話しましたか。「今、使われている日本語」を集めて、日本語自体への理解、使い方・機能・意味の分析に役立てます。-->
+ <!-- 	</div>-->
+  
+ <!-- 	<div class="toplink">-->
+ <!-- 		ここに内容-->
+ <!-- 	</div>-->
+  
+ <!-- 	<div class="toplink">-->
+ <!-- 		ここに内容-->
+ <!-- 	</div>-->
+  
+ <!-- 	<div class="toplink">-->
+ <!-- 		ここに内容-->
+ <!-- 	</div>-->
+  
+ <!-- 	<div class="toplink">-->
+ <!-- 		ここに内容-->
+ <!-- 	</div>-->
+
+ <!--</div>-->
+  
+</div>  
+  
   
 <!--  </div>-->
 <!--</div>-->

@@ -1,6 +1,10 @@
 class Post < ApplicationRecord
   belongs_to :topic
   
+  validates :example, :memo, presence: true
+  
+  
+  # 検索窓　いらないかも
   def self.search(search) #self.でクラスメソッドとしている
     if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
       Post.where(['example LIKE ? or memo LIKE ?', "%#{search}%"])

@@ -3,18 +3,24 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @newQuestion = Question.new
+  # ransack
+    @search = Question.search(params[:q])
+    @questions = @search.result
   end
   
   def create
-    @question = Question.new(params[:question].permit(:title, :content))
-    @question.save
-    redirect_to questions_index_path
+    @question = Question.new(params[:question].permit(:title, :content, :keyword))
+      if @question.save
+        redirect_to questions_path, notice:'質問を投稿しました！'
+      else
+        render 'index'
+      end  
   end
 
   def delete
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to questions_index_path
+    redirect_to questions_path
   end
 
   def show

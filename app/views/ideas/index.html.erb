@@ -1,4 +1,4 @@
-<h1 class="titles">Lesson Tips & Idea</h1>
+<h1 class="titles">レッスンのコツとアイデア</h1>
 
 <div class="table-responsive">
   <table class="table table-striped">
@@ -15,9 +15,9 @@
     <tbody>
       <% @ideas.each do |idea| %>
         <tr>
-          <td><%= idea.title %></td>
-          <td><%= idea.content %></td>
-          <td><%= link_to 'Show', idea, class: 'btn btn-1' %></td>
+          <td class="titleonly"><%= idea.title %></td>
+          <td><p class="ellipsis"><%= idea.content %></p></td>
+          <td class="labshowbtn"><%= link_to 'Show', idea, class: 'btn btn-2' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -33,7 +33,7 @@
     <tbody>
       <% @ideas.each do |idea| %>
         <tr>
-          <td><%= idea.title %></td>
+          <td class="titleonly"><%= idea.title %></td>
         </tr>
      <% end %>
     </tbody>

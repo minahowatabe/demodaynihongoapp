@@ -1,15 +1,20 @@
-<h1>lab. show</h1>
+<h1 class="titles">Nihongo LAB. -artcle-</h1>
 
 
 <div class="container_qa">
 <div class="rowA qa">
  <div class="col-md-10 col-xs-10 panel panel-default">
     <div class="panel-heading">
- 	  Title: <%= @lab.title %>
+ 	  Title: <h2><%= @lab.title %></h2>
  	</div>
  	<div class="panel-body">
-       Content: <%= @lab.content %>	
+       Content: <h4><%= @lab.content %></h4>	
  	</div>
  </div>
 </div>
+</div>
+
+
+<div class ="linkbtn">
+  <%= link_to "  index  ", labs_path, class: "btn btn-2" %>
 </div>

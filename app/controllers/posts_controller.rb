@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post].permit(:topic_id, :example, :memo))
+    # 選んだもののtopic_idを引っ張る記述
+    binding.pry
     @post.save
-    redirect_to topics_show_path(params[:post]['topic_id'])
+    redirect_to topic_path(params[:post]['topic_id'])
   end
   
-  def delete
+  def destroy
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:id])
     @post.destroy
-    redirect_to topics_show_path(@topic)
+    redirect_to topic_path(@topic)
   end
   
   def show

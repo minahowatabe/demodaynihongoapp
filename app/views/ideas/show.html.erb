@@ -1,14 +1,21 @@
-<h1>idea. show</h1>
+<h1 class="titles">Lesson Tips & Idea -artcle-</h1>
+
 
  <div class="shows">
   <div class = "row">
 
-   <div class="col-md-11">
+   <div class="col-md-11 ideaarticle">
     <ul class="row">
-      <li class="col-offset-md-1 col-md-5">Title: <%= @idea.title %></li>
-      <li class="col-md-6" >Content: <%= @idea.content %></li>
+      <li class="col-md-offset-1 col-md-10">Title: <h2 class="ideatitle"><%= @idea.title %></h2></li>
+
+      <li class="col-md-offset-1 col-md-10" >Content: <h4 class="ideacontent"><%= @idea.content %></h4></li>
     </ul>
    </div>
 
   </div>
  </div>
+
+
+<div class ="linkbtn">
+  <%= link_to "  index  ", ideas_path,class: "btn btn-2" %>
+</div>
