@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+   mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+ 
   root to: "topics#top"
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
