@@ -16,9 +16,14 @@
   </head>
 
   <body>
+  <!--ヘッダー-->
+    <header>
+    <div class="logospace"></div>
+    
+    <div class="thinline"></div>
     
   <!--ナビゲーションバー    -->
-  <nav class="navbar navbar-fixed-top">
+  <nav class="navbar">
   	<div class="container-fluid na">
   		<div class="navbar-header">
   			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
@@ -27,13 +32,7 @@
   				<span class="icon-bar"></span>
   				<span class="icon-bar"></span>
   			</button>
-  			<!--<a class="navbar-brand headertitles" href="/">-->
-  			<!--	Nihongo_No_Tsukaikata_LAB.-->
-  			<!--</a>-->
-  			<!--<a class="navbar-brand headertitles" href="/">-->
-  			<!--	KANGAERU_Nihongo_Kyooshi-->
-  			<!--</a>-->
-        <a class="navbar-brand headertitles" href="/">
+  	    <a class="navbar-brand headertitles" href="/">
   				にほんごきょうしのほしいもの。
   			</a>
 
@@ -61,10 +60,12 @@
   </nav>
 <!--navbar終わり-->
 
-<!--ログインnavbar-->
+<!--space-->
     <nav class="thinline">
     </nav>
-    
+
+<!--ログインnavbar-->
+
     <div class="container-fluid">
     <div class="rowB">
     <% if user_signed_in? %>
@@ -87,6 +88,10 @@
    <br>
 <!--ログインnavbarおわり-->
 
+<!--space-->
+    <nav class="thinline">
+    </nav>
+ 
    <div class="noticearea">
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
@@ -95,21 +100,11 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
    </div>
-  
-    <!--<nav class="thinline">-->
-    <!--</nav>-->
-
+   
+  </header>
+   
 
 <!--全画面メニュースマホ用-->
-
-
-
-
-
-
-
-
-
 
 <!--全画面メニュースマホ用おわり-->
 
@@ -141,9 +136,9 @@
 <!--終わり-->
     
     <%= yield %>
-  
-      <!-- Footer -->
-    <footer class="py-5 bg-black fixed-bottom">
+    
+<!-- Footer -->
+    <footer class="py-5 bg-black">
       <div class="container">
         <p>Copyright &copy; にほんごきょうしのほしいもの。 2018</p>
       </div>

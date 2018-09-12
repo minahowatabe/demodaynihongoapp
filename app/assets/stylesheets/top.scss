@@ -1,82 +1,70 @@
-// @media only screen and (max-width: 750px) {
-// img { max-width: 100%; }
-// }
 
 .space{
   height:10px;
   width: auto;
 }
 
-.logo{
-  width: 100%;
-  height: 100%;
-  display: flex;
-	align-items: center;
-	display: table-cell;
-	vertical-align: middle;
-}
 
-.linkimage{
-  // width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
+// .linkimage{
+//   // width: 80%;
+//   margin-left: auto;
+//   margin-right: auto;
+//   text-align: center;
+// }
 
 
-// 5列の横並び
-*, *:before, *:after {
-	box-sizing: border-box;
-}
+// // 5列の横並び
+// *, *:before, *:after {
+// 	box-sizing: border-box;
+// }
 
-.col_5{
-	width: 100%;
-	margin: 10px 10px;
-// 	display: flex;
-// 	display: -ms-flexbox; /* IE10 */
-// 	flex-wrap: wrap;
-// 	-ms-flex-wrap: wrap; /* IE10 */
-	vertical-align: middle;
-}
+// .col_5{
+// 	width: 100%;
+// 	margin: 10px 10px;
+// // 	display: flex;
+// // 	display: -ms-flexbox; /* IE10 */
+// // 	flex-wrap: wrap;
+// // 	-ms-flex-wrap: wrap; /* IE10 */
+// 	vertical-align: middle;
+// }
 
-.col_5 > div{
-	width: 60%;
-	padding: 10px;
-// 	margin-right:10px;
-// 	margin-left:10px;
-	margin: 20px;
-}
+// .col_5 > div{
+// 	width: 60%;
+// 	padding: 10px;
+// // 	margin-right:10px;
+// // 	margin-left:10px;
+// 	margin: 20px;
+// }
 
-.col_5 > div > div{
- 	position: relative;
-	overflow: hidden
-}
+// .col_5 > div > div{
+// 	position: relative;
+// 	overflow: hidden
+// }
 
-.toplink{
-  background: #cdd3c6;
-  width: 100%;
-  border: 3px dotted powderblue;
-  height: 150px;
-  border-radius: 18px;
-}
+// .toplink{
+//   background: #cdd3c6;
+//   width: 100%;
+//   border: 3px dotted powderblue;
+//   height: 150px;
+//   border-radius: 18px;
+// }
 
-@media screen and (max-width: 960px) {
-	.col_5 > div{
-		width: 25%;
-	}
-}
-@media screen and (max-width: 480px) {
-	.col_5 > div{
-		width: 33.33333%;
-	}
-}
+// @media screen and (max-width: 960px) {
+// 	.col_5 > div{
+// 		width: 25%;
+// 	}
+// }
+// @media screen and (max-width: 480px) {
+// 	.col_5 > div{
+// 		width: 33.33333%;
+// 	}
+// }
 
 
-
-@import url(//fonts.googleapis.com/css?family=Vibur);
-html,body{
-  height:100%
-}
+// @import url(//fonts.googleapis.com/css?family=Vibur);
+// html,body{
+//   height:100%
+// }
 
 // 円の描画
 .parent a{
@@ -110,26 +98,28 @@ html,body{
 //   background-size:cover;
   margin:0
 
-
-  /* 表示画像の高さ ÷ 表示画像の幅 × 100 */ 
-  // 1285 / 1920 * 100 = 66.9
-  // padding-top:70%;
-  // background-size: contain;
 }
+
 
 .logo {
   text-align: center;
-  width: 50%;
+  width: 100%;
   height: 30px;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
 }
+
+// 不要
+// .logo{
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+// 	display: table-cell;
+// 	vertical-align: middle;
+// }
+
+
 
 // フリーフォント
 @font-face {
@@ -151,6 +141,7 @@ font-family:'shirokuma';
   font: 100 9vh "shirokuma";
   animation: blink linear infinite 10s;
 }
+
 @keyframes blink {
   78% {
     color: inherit;
@@ -186,29 +177,44 @@ font-family:'shirokuma';
 }
 
 
-/* follow me @nodws */
-#btn-twtr{
-  clear:both;
-  color:#fff;
-  border:2px solid;
-  border-radius:3px;
-  text-align:center;
-  text-decoration:none;
-  display:block;
-  font-family:sans-serif;
-  font-size:14px;
-  width:13em;
-  padding:5px 10px;
-  font-weight:600;
-  position:absolute;
-  bottom:20px;
-  left:0;
-  right:0;
-  margin:0 auto;
-  background:rgba(0,0,0,0.2);
-  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
-  opacity:0.4
-}#btn-twtr:hover{color:#fff;opacity:1}
 
 
 
+
+/*メディアクエリの設定*/
+@media screen and (max-width:600px){
+ /*画面サイズが600px以下の時に適用 */
+ 
+ body{
+   font-size: 3.5vw
+ }
+ 
+ h1{
+   font-size: 7.5vw
+ } 
+ 
+ h2{
+   font-size: 6vw
+ }
+ 
+ header{
+   width: auto;
+   margin: 0.5%;
+ }
+ 
+ footer{
+   margin:0.5%;
+ }
+
+ 
+ #top{
+   background-image: url('poitit.jpg');
+ }
+ 
+ .logo{
+   font-size:10vw;
+   font-family: 'shirokuma';
+}
+
+}
+/*スマホサイズおわり*/

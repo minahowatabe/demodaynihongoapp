@@ -16,6 +16,71 @@
  */
 
 
+/*メディアクエリの設定*/
+@media screen and (max-width:600px){
+ /*画面サイズが600px以下の時に適用 */
+ 
+ body{
+   font-size: 3.5vw
+ }
+ 
+ h1{
+   font-size: 7.5vw
+ } 
+ 
+ h2{
+   font-size: 6vw
+ }
+ 
+ header{
+   width: auto;
+   margin: 0.5%;
+ }
+ 
+ footer{
+   margin:0.5%;
+ }
+
+ 
+ #top{
+   background-image: url('poitit.jpg');
+ }
+ 
+}
+/*スマホサイズおわり*/
+
+
+.body{
+  position: relative;
+}
+
+
+.logospace{
+  width:100%;
+  padding-top: 20px;
+}
+
+.thinline{
+    width: 100%;
+    height:20px;
+    margin-top: 5px;
+}
+
+.headerbtn{
+    text-align:right;
+}
+
+.rowB{
+  padding-top: 10px;
+}
+
+.linkbtn{
+  text-align: center;
+}
+
+
+
+
 /*フリーフォント*/
 @font-face {
 font-family:'shirokuma';
@@ -31,36 +96,14 @@ font-family:'shirokuma';
 footer {
     position: fixed;
     bottom: 0;
+    top: 50;
     width: 100%;
-    height: 100px;
     text-align: center;
-    margin-top: 50 50 150 50;
 }
 
 footer p{
   font-family: 'shirokuma' 
 }
-
-.thinline{
-    width: 100%;
-    height:20px;
-    margin-top: 5px;
-}
-
-.headerbtn{
-    text-align:right;
-}
-
-.rowB{
-  padding-top: 40px;
-}
-
-.linkbtn{
-  text-align: center;
-}
-
-
-
 
 /* <- Demo Stuff Start */
 

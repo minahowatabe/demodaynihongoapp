@@ -47,7 +47,8 @@ ul.list > li {
   line-height: 44px;
   border-bottom: 1px solid #333;
   text-decoration: none;
-  color: #333; }
+  color: #333; } 
+
 
 /* スマホ　767px以下 */
 @media only screen and (max-width: 767px) {
@@ -68,6 +69,8 @@ ul.list > li {
     width: 90%;
     margin-left: auto;
     margin-right: auto; } }
+    
+    
 .examplepost {
   margin-left: auto;
   margin-right: auto;
