@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
- has_many :answers    
- has_many :keywords
+ has_many :answers, dependent: :destroy    
+ has_many :keywords, dependent: :destroy
  
- validates :title, :content, :keyword, presence: true
+ validates :title, :content, presence: true
 end

@@ -1,6 +1,27 @@
 <h1 class="titles">ふだんの日本語あつめ</h1>
 
+<!--投稿後自動表示モーダルウィンドウ-->
 
+
+
+
+
+
+<div class="shushi">
+<h3>「今、話されている日本語」をあつめています！
+   <br>「作例」ではなく、</h3>
+   <h1>「あなたが本当に使った、聞いた日本語」</h1>
+   <h3>の投稿を、あつめています。
+　 <br>
+   <br>「さっき話した言葉」「だれかにもらったメッセージ」「通勤中に聞こえてきた会話」
+   <br>「中吊りに書いてあった文言」「ドラマで聞いたセリフ」・・・などなど、お待ちしています。
+   <br>
+   <br>日本語を不自由なく話せても、いざそれを人に伝えようとなると、
+   <br>自分が考えている意味や機能、使い方が本当に正しいのか、意外と自信がなくなるものです。
+   <br>そんな時、基本に、実例に立ち返って、そこにあるものを見つめる作業、
+   <br>＝分析をする時に「リアルなサンプル」は重要なリソースになります。
+</h3>  
+</div>
 
 <!--<div class="container_topics">-->
 <!-- <div class="row">-->
@@ -21,7 +42,7 @@
 
 
 <!--ログイン・未ログイン分岐-->
-<% if user_signed_in? %>
+<%# if user_signed_in? %>
 
 <div class="container-fluid">
   <div class="rowA">
@@ -29,23 +50,27 @@
      
      <div class="rowa">
 
-      <div class="col-md-4 col-xs-8">
-       <h3>投稿する</h3><br>
+    <!--投稿手順・プルダウン・投稿欄-->
+      <div class="col-md-4 col-xs-8 postbox">
+       <h3><b>投稿する</b></h3><br>
        
         <h4>【手順】</h4>
-        <p>1. 下のプルダウンメニューから項目を選ぶ。<br>
-           2. ダイアログ（対話）またはセンテンス記入する。<br>
-           3. どんな状況での発話だったかも記入する。<br>
-           4. [create]ボタンを押して投稿する。</p>
+        <p><b>1. 下のプルダウンメニューから項目を選ぶ。<br>
+           2. ダイアログ（対話）またはセンテンスで記入する。<br>
+           3. どんな状況での発話だったか記入する。<br>
+           4. [create]ボタンを押して投稿する。</b></p>
         <br>
         <%= form_for @newpost, :url => posts_path do |f| %>
-        <!--ドロップダウンメニュー-->
+        <!--プルダウンメニュー-->
         <h3><%= f.label :"文法項目" %></h3>
          <%= f.label :topic_id %>
          <%= f.collection_select :topic_id, Topic.all, :id, :title %>
-        
-        <%#= f.select カラム名, [["表示する文字”, "データベースに登録する値”] %>
-        <%#= f.select :topic, [["NというN", "NというN"], ["Vている", "Vている"], ["Adjそう（様態）", "Adjそう（様態）"], ["Sので、～", "Sので、～"], ["Vてはいけない", "Vてはいけない"], ["Vたほうがいい", "Vたほうがいい"]] , :size=>"30x2" %>
+       
+         <!--プルダウンいろいろお試し-->
+         <%#= select_tag :topic_id, options_from_collection_for_select (Topic.all, :id, :title) %>
+         <%#= f.select :topic_id, Topic.pluck(:title), { prompt: '選択してください' }, { class: 'topic' }%> 
+         <%#= select_tag 'topic[title]', options_for_select(Topic.all, :id) %>
+       
        <br>
        <h3><%= f.label :"話した・聞いた日本語の実例" %></h3>
         <p><%= f.text_area :example, :size=>"100x6" %></p>
@@ -56,63 +81,75 @@
         <%= f.submit ' CREATE ', class: 'btn-5 btn-sm'  %>
         <% end %>
       </div>
+      <!--投稿手順・プルダウン・投稿欄終わり-->
       
+
       <br>
       
-      <div class="col-md-5 col-xs-10 panel panel-default">
+   <!--文法項目一覧パネル-->
+      <div class="col-md-5 col-xs-10 panel panel-default last">
         <div class="panel-heading">
-	        <p> ふだんの日本語あつめ </p> 
+	        <p> ふだんの日本語あつめ　文法項目一覧 </p> 
 	       </div>
      	  <div class="panel-body">
-      		  ★ねらい
-      		   <br>「今、話されている日本語」を収集しています！
-      		   <br>あなたが「実際に使った、聞いた日本語」を投稿してください。
-      		   <br>日本語表現の意味や機能を分析する時に「リアルなサンプル」は重要なリソースになります。
-      		   <br>
-      		   <br>「さっき話した言葉」「だれかにもらったメッセージ」「通勤中聞こえてきた会話」
-      		   <br>「中吊りに書いてある文言」「ドラマで聞いたセリフ」……などなど、お待ちしています。
-      	  </div>
+      	
+        <!--table式文法項目一覧-->
+         <table>
+           <tr>
+            <th>  文法項目  </th>  
+           </tr>
+            <% @topics.each do |topic| %>
+           <tr>
+            <td><%= link_to topic.title, topic_path(topic.id) %></td>
+           </tr>
+            <% end %>
+         </table>
+        <!--一覧終わり    -->
+        </div>
+      </div>
+    <!--パネルのdiv終わり-->
+      
       </div>　　    
-
-     </div>
+　　 </div>
   </div>
 </div>
 
     
-<% else %>
-<div class="container-fluid">
-  <div class="rowA">
-    <div class="col-md-offset-2 col-md-10 col-xs-8">
+<%# else %>
+<!--<div class="container-fluid">-->
+<!--  <div class="rowA">-->
+<!--    <div class="col-md-offset-2 col-md-10 col-xs-8">-->
      
-     <div class="rowa">
+<!--     <div class="rowa">-->
 
-      <div class="col-md-8 col-xs-10 panel panel-default">
-        <div class="panel-heading">
-	        <p> ふだんの日本語あつめ </p> 
-	       </div>
-     	  <div class="panel-body">
-      		  ★ねらい
-      		   <br>「今、話されている日本語」を収集しています！
-      		   <br>あなたが「実際に使った、聞いた日本語」を投稿してください。
-      		   <br>日本語表現の意味や機能を分析する時に「リアルなサンプル」は重要なリソースになります。
-      		   <br>
-      		   <br>「さっき話した言葉」「だれかにもらったメッセージ」「通勤中聞こえてきた会話」
-      		   <br>「中吊りに書いてある文言」「ドラマで聞いたセリフ」……などなど、お待ちしています。
-      	  </div>
-      	   <h4>「投稿された実例を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
-           <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
-           <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
-          <br>
-     </div>
-     <br>
+<!--      <div class="col-md-8 col-xs-10 panel panel-default last">-->
+<!--        <div class="panel-heading">-->
+<!--	        <p> ふだんの日本語あつめ </p> -->
+<!--	       </div>-->
+<!--     	  <div class="panel-body">-->
+<!--      		  ★ねらい-->
+<!--      		   <br>「今、話されている日本語」を収集しています！-->
+<!--      		   <br>あなたが「実際に使った、聞いた日本語」を投稿してください。-->
+<!--      		   <br>日本語表現の意味や機能を分析する時に「リアルなサンプル」は重要なリソースになります。-->
+<!--      		   <br>-->
+<!--      		   <br>「さっき話した言葉」「だれかにもらったメッセージ」「通勤中聞こえてきた会話」-->
+<!--      		   <br>「中吊りに書いてある文言」「ドラマで聞いたセリフ」……などなど、お待ちしています。-->
+<!--      	  </div>-->
+<!--      	   <h4>「投稿された実例を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>-->
+<!--           <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>-->
+<!--           <%#= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>-->
+<!--          <br>-->
+<!--     </div>-->
+<!--     <br>-->
     
-    </div>
-  </div>
-</div>
-<% end %> 
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<%# end %> -->
 
 </body>   
   
+
    <!--<div class="col-md-1 col-xs-2 image"><%= image_tag 'language.png',:width =>'250px' %></div>-->
   
 
@@ -241,3 +278,25 @@
 <!--【教育上のメリット】-->
 <!--・リアルな日本語の使われ方がわかる-->
 <!--・文法の意味・機能分析に役立つ-->
+
+
+      		   <!--文法項目一覧-->
+        <!--<%# @topics.each do |topic| %>-->
+          <%#= @topic.title %>
+        <!--<%# end %>  -->
+        
+        <!--<%#= form_for @newpost, :url => posts_path do |f| %>-->
+        
+        <!--ドロップダウンメニュー-->
+        <!--<h3><%#= f.label :"文法項目" %></h3>-->
+        <!-- <%#= f.label :topic_id %>-->
+        <!-- <%#= f.collection_select :topic_id, Topic.all, :id, :title %>-->
+        <!--<%# end %>-->
+         <!--  <ul>-->
+         <!--   <%# @topics.each do |topic| %>-->
+         <!--   <li><%#= link_to topic.title, topic_path(@topic.id) %>-->
+                <%#= link_to '[削除]', topic_path(@topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+         <!--   </li>-->
+         <!--   <%# end %>-->
+         <!--  </ul>-->
+         <!--一覧終わり    -->

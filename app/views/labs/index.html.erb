@@ -23,21 +23,21 @@
 <!--</div>   -->
 
     <div class="lablist">
-    <% if user_signed_in? %>
+    <%# if user_signed_in? %>
      <% @labs.each do |lab| %>
        <div class="lab-panel col-md-5">
          <h3><%= link_to lab.title, lab_path(lab.id)  %></h3>
          <p class="text-overflow"><%= lab.content %></p>
        </div>     
      <% end %>  
-    <% else %>
-     <p>ログイン後、詳細ページに移ります。please login/sign up</p>    
-     <% @labs.each do |lab| %>
-       <div class="lab-panel col-md-6">
-         <h2><%= lab.title %></h2>
-       </div>     
-     <% end %>
-    <% end %>
+    <%# else %>
+    <!-- <p>ログイン後、詳細ページに移ります。please login/sign up</p>    -->
+    <!-- <%# @labs.each do |lab| %>-->
+    <!--   <div class="lab-panel col-md-6">-->
+    <!--     <h2><%#= lab.title %></h2>-->
+    <!--   </div>     -->
+    <!-- <%# end %>-->
+    <!--<%# end %>-->
     </div>
  </div>
 </div>   

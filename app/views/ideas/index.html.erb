@@ -3,7 +3,7 @@
 <div class="table-responsive">
   <table class="table table-striped">
       
-   <% if user_signed_in? %>  
+   <%# if user_signed_in? %>  
     <thead>
       <tr>
         <th>Title</th>
@@ -22,21 +22,21 @@
       <% end %>
     </tbody>
    
-   <% else %>
-   <p> ログイン後、詳細ページに移ります。</p>
-     <thead>
-      <tr>
-        <th>Title</th>
-      </tr>
-    </thead>
+   <%# else %>
+   <!--<p> ログイン後、詳細ページに移ります。</p>-->
+   <!--  <thead>-->
+   <!--   <tr>-->
+   <!--     <th>Title</th>-->
+   <!--   </tr>-->
+   <!-- </thead>-->
     
-    <tbody>
-      <% @ideas.each do |idea| %>
-        <tr>
-          <td class="titleonly"><%= idea.title %></td>
-        </tr>
-     <% end %>
-    </tbody>
-   <% end %>
+   <!-- <tbody>-->
+   <!--   <%# @ideas.each do |idea| %>-->
+   <!--     <tr>-->
+   <!--       <td class="titleonly"><%#= idea.title %></td>-->
+   <!--     </tr>-->
+   <!--  <%# end %>-->
+   <!-- </tbody>-->
+   <!--<%# end %>-->
   </table>
 </div>

@@ -17,20 +17,20 @@ class QuestionsController < ApplicationController
       end  
   end
 
-  def delete
+  def destroy
     @question = Question.find(params[:id])
-    @question.destroy
+    @question.delete
     redirect_to questions_path
   end
 
   def show
     @question = Question.find(params[:id])
-    @newanswer = Answer.new(:question_id => params[:id])
+    @newAnswer = Answer.new(:question_id => params[:id])
     @answers = Answer.where(question_id: params[:id])
   end
 
-  # def question_params
-  #   params.require(:question).permit(:title, :content, :keyword_list)
-  # end
+  def question_params
+    params.require(:question).permit(:title, :content, :keyword)
+  end
 end
 

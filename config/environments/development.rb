@@ -10,8 +10,9 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
+  
   config.consider_all_requests_local = true
-
+  
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
@@ -27,7 +28,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.default_url_options = { host: 'https://nihongokyooshinohoshiimono.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'nihongokyooshinohoshiimono.herokuapp.com/' }
   config.action_mailer.delivery_method = :letter_opener
 
   config.action_mailer.raise_delivery_errors = false
@@ -54,4 +55,5 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
 end

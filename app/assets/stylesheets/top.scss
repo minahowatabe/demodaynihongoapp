@@ -1,9 +1,14 @@
 
 .space{
-  height:10px;
+  height:100px;
   width: auto;
 }
 
+
+.top-link{
+ padding-left: -50px;  
+  
+}
 
 // .linkimage{
 //   // width: 80%;
@@ -13,7 +18,7 @@
 // }
 
 
-// // 5列の横並び
+// 5列の横並び
 // *, *:before, *:after {
 // 	box-sizing: border-box;
 // }
@@ -21,10 +26,10 @@
 // .col_5{
 // 	width: 100%;
 // 	margin: 10px 10px;
-// // 	display: flex;
-// // 	display: -ms-flexbox; /* IE10 */
-// // 	flex-wrap: wrap;
-// // 	-ms-flex-wrap: wrap; /* IE10 */
+// 	display: flex;
+// 	display: -ms-flexbox; /* IE10 */
+// 	flex-wrap: wrap;
+// 	-ms-flex-wrap: wrap; /* IE10 */
 // 	vertical-align: middle;
 // }
 
@@ -41,13 +46,13 @@
 // 	overflow: hidden
 // }
 
-// .toplink{
-//   background: #cdd3c6;
-//   width: 100%;
-//   border: 3px dotted powderblue;
-//   height: 150px;
-//   border-radius: 18px;
-// }
+// // .toplink{
+// //   background: #cdd3c6;
+// //   width: 100%;
+// //   border: 3px dotted powderblue;
+// //   height: 150px;
+// //   border-radius: 18px;
+// // }
 
 // @media screen and (max-width: 960px) {
 // 	.col_5 > div{
@@ -179,8 +184,6 @@ font-family:'shirokuma';
 
 
 
-
-
 /*メディアクエリの設定*/
 @media screen and (max-width:600px){
  /*画面サイズが600px以下の時に適用 */
@@ -206,7 +209,6 @@ font-family:'shirokuma';
    margin:0.5%;
  }
 
- 
  #top{
    background-image: url('poitit.jpg');
  }
@@ -215,6 +217,9 @@ font-family:'shirokuma';
    font-size:10vw;
    font-family: 'shirokuma';
 }
+
+
+
 
 }
 /*スマホサイズおわり*/

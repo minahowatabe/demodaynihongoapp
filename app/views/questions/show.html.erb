@@ -21,7 +21,8 @@
    回答する
   </div>
   <br>
-<%= form_for @newanswer, :url => question_path do |f| %>
+<%= form_for @newAnswer, :url => answers_path do |f| %>
+
   <p>お名前:<%= f.text_field :name, :size=>"15x2"  %></p>
   <p>回答：<%= f.text_area :body, :size=>"80x4" %></p>
   <%= f.hidden_field :question_id %>
@@ -45,7 +46,7 @@
   </p>
 <!--投稿したユーザー本人だけが削除できる  未実装-->
  <%# if user_id == current_user.id %>
-  <p><%= link_to '[削除]', answer_path(@question.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
+  <p><%= link_to '[削除]',answer_path(@question.id), method: :destroy, data: {confirm: "削除してもよろしいですか？"} %></p>
  <%# else %>
   <p></p>
  <%# end %>  

@@ -6,20 +6,23 @@ Rails.application.routes.draw do
   root to: "topics#top"
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  # devise_for :users
  
-#  質問掲示板ページ
+# 質問掲示板ページ
   resources :questions
   resources :answers
+  
+  # # nestする書き方
+  # resources :questions do
+  #   resources :answers
+  # end
+  
   # get 'questions/index'
   # get 'questions/show/:id' => 'questions#show', as: :questions_show
   # post 'questions/create' => 'questions#create'
   # delete 'questions/delete/:id' => 'questions#delete', as: :question_delete
   # post 'answers/create' => 'answer#create', as: :answer_create
   # delete 'answers/delete/:id' => 'answer#delete', as: :answer_delete
-
-# コラム
-  get 'columns/index'
 
 # RealNihongoCollectionページ
   resources :topics
@@ -35,10 +38,10 @@ Rails.application.routes.draw do
 # ABOUTページ  
   get 'abouts/index'
 
-# labページ
+# 日本語ぶんせきページ
   resources :labs
 
-# tips&ideaページ
+# コツとアイデアページ
   resources :ideas
 
 

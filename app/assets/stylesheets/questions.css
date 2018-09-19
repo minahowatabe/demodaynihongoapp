@@ -1,8 +1,32 @@
-// Place all the styles related to the questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*// Place all the styles related to the questions controller here.*/
+/*// They will automatically be included in application.css.*/
+/*// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+.panel-heading{
+    text-decoration: none
+}
 
 
+.panel-body{
+    text-decoration: none
+}
+
+
+.search{
+    padding: 10px;
+    text-decoration: none;
+}
+
+
+h4, h2, p{
+    text-decoration: none;
+}
+
+
+.last{
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+}
 
 .balloon1 p{
     color: black;
@@ -16,6 +40,11 @@
     font-size: 1.5rem;
 }
 
+
+.last{
+    margin-bottom: 100px;
+}
+
 .qaimage{
     width: 200px;
     height: 200px;
@@ -24,6 +53,7 @@
 .qa li{
     list-style: none;
     font-size: 1.5rem;
+    text-decoration: none;
 }
 
 .indentback{

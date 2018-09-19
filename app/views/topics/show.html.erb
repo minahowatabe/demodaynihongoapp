@@ -3,28 +3,38 @@
  <div class="wrap">
  
   <div class="main">
-    <h4>文法項目：</h4><h2>【<%= @topic.title %>】</h2>
  
+   <div class="panel-heading">
+  	  <h4>文法項目</h4>
+  	</div>
+  	<div class="panel-body">
+  		 <h2>【<%= @topic.title %>】</h2>
+ 	 </div>
+   
   <div>
-    <h5>そのほかの文法項目</h5>
-  
+    <h4>そのほかの文法項目</h4>
+    
+    <!--table式文法項目一覧 each do エラー中--> 
+        <!-- <table>-->
+        <!--   <tr>-->
+        <!--    <th>  文法項目  </th>  -->
+        <!--   </tr>-->
+            <%# @topics.each do |topic| %>
+        <!--   <tr>-->
+            <td><%#= link_to topic.title, topic_path(topic.id) %></td>
+        <!--   </tr>-->
+            <%# end %>
+        <!-- </table>-->
+        <!--一覧終わり    -->
    <!--文法項目一覧-->
-    <table border="1 index">
-    <tr>
-     <th>文法項目</th>  
-     <th>総回答数</th>
-     <th>クリア</th> 
-    </tr>
-     <%# @topics.each do |topic| %>
-    <tr>
-     <td><%#= link_to topic.title, topic_path(topic.id) %></td>
-     下のtdに総回答数
-     <td></td>
-     下のtdに回答済みならスタンプ
-     <td></td>
-    </tr>
-   <%# end %>
-   </table>
+    
+     <ul>
+      <% @posts.each do |post| %>
+      <li><%= link_to @topic.title, topic_path(@topic.id) %>
+          <%#= link_to '[削除]', topic_path(@topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
+      </li>
+      <% end %>
+     </ul>
    <!--一覧終わり    -->
 
 
@@ -68,3 +78,20 @@
     <!--<br>-->
 
 
+   <!-- <table border="1 index">-->
+   <!-- <tr>-->
+   <!--  <th>文法項目</th>  -->
+   <!--  <th>総回答数</th>-->
+   <!--  <th>クリア</th> -->
+   <!-- </tr>-->
+     <%# @topics.each do |topic| %>
+   <!-- <tr>-->
+     <td><%#= link_to topic.title, topic_path(topic.id) %></td>
+     <!--下のtdに総回答数-->
+   <!--  <td></td>-->
+     <!--下のtdに回答済みならスタンプ-->
+     <!--<td></td>-->
+   <!-- </tr>-->
+   <%# end %>
+   <!--</table>-->
+   

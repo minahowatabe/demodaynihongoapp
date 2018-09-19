@@ -3,6 +3,7 @@
 // index2カラムレイアウト
 /* pc 768px以上 */
 
+
 .wrapper{
 	overflow: hidden;
 	width: 960px;
@@ -16,6 +17,16 @@
     margin-right: auto;
 }　 
 
+.shushi{
+  width: 700px;
+  margin-left: 250px;
+  margin-right: auto;
+  font-family: 'shirokuma';
+  font-size: 3rem;
+  color: #FFF59D;
+  text-decoration:none;
+  text-align: center;
+}
 
 // .left{
 // 	float: left;
@@ -88,6 +99,7 @@
 	height: auto;
 // 	background-color: #ddd;
 }
+
 .examplepost{
 	float: right;
 	width: 530px;
@@ -100,6 +112,11 @@
 	border-bottom: 1px solid #333;
 	text-decoration: none;
 	color: #333;
+}
+
+.last{
+    padding-bottom: 100px;
+    padding-top: 50px;
 }
 
 

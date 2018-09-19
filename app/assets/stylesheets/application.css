@@ -78,9 +78,6 @@
   text-align: center;
 }
 
-
-
-
 /*フリーフォント*/
 @font-face {
 font-family:'shirokuma';
@@ -90,19 +87,30 @@ font-family:'shirokuma';
 .nav a{
    font-family:'shirokuma';
    font-size:3.2rem;  
-   color: #F06292;
+   /*color: #9fb9c1;*/
+   color: #fdd835;
+}
+
+.navbar-text{
+  font-family: 'shirokuma';
+  font-size: 2.5rem
 }
 
 footer {
     position: fixed;
     bottom: 0;
     top: 50;
+    padding-top:100px;  
     width: 100%;
     text-align: center;
 }
 
 footer p{
   font-family: 'shirokuma' 
+}
+
+.bottom{
+  height:100px;
 }
 
 /* <- Demo Stuff Start */
@@ -226,6 +234,7 @@ body{
   /*font-family: 'Unica One', cursive;*/
   /*font-family: 'Electrolize', sans-serif;*/
   font-family: 'Kite One', sans-serif;
+  color: #fdd835;
   font-family: 'shirokuma';
   font-size: 4.5rem
 }

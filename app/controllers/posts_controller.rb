@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
   def create
-    @post = Post.new(params[:post].permit(:topic_id, :example, :memo))
+    # binding.pry
+    topic_id = Topic.find(params[:topic_id])
+    topic_id =@topic.id 
+    
+      @post = Post.new(params[:post].permit(:topic_id, :example, :memo))
     # 選んだもののtopic_idを引っ張る記述
-    binding.pry
+    # binding.pry
     @post.save
     redirect_to topic_path(params[:post]['topic_id'])
   end
