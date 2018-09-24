@@ -1,98 +1,40 @@
 <h1 class="titles">ふだんの日本語あつめ</h1>
 
-<!--投稿後自動表示モーダルウィンドウ-->
-
-
-
-
-
-
-<div class="shushi">
-<h3>「今、話されている日本語」をあつめています！
-   <br>「作例」ではなく、</h3>
-   <h1>「あなたが本当に使った、聞いた日本語」</h1>
-   <h3>の投稿を、あつめています。
-　 <br>
-   <br>「さっき話した言葉」「だれかにもらったメッセージ」「通勤中に聞こえてきた会話」
-   <br>「中吊りに書いてあった文言」「ドラマで聞いたセリフ」・・・などなど、お待ちしています。
-   <br>
-   <br>日本語を不自由なく話せても、いざそれを人に伝えようとなると、
-   <br>自分が考えている意味や機能、使い方が本当に正しいのか、意外と自信がなくなるものです。
-   <br>そんな時、基本に、実例に立ち返って、そこにあるものを見つめる作業、
-   <br>＝分析をする時に「リアルなサンプル」は重要なリソースになります。
-</h3>  
-</div>
-
-<!--<div class="container_topics">-->
-<!-- <div class="row">-->
-<!--  <div class="col-md-8 xs-10"> -->
-   
-<!--   <%# @posts.each_with_index do |post , idx| %>-->
-<!--     <div class = eachpost>   -->
-<!--      <span class="box-title"><%#= idx + 1 %>.</span>-->
-<!--      <p>実例:<%#= simple_format(post.example) %></p>-->
-<!--      <hr>-->
-<!--     </div>-->
-  
-<!-- <%# end %>-->
-   
-<!--  </div>-->
-<!-- </div>-->
-<!--</div>-->
-
-
-<!--ログイン・未ログイン分岐-->
-<%# if user_signed_in? %>
-
-<div class="container-fluid">
-  <div class="rowA">
-    <div class="col-md-offset-2 col-md-10 col-xs-8">
-     
-     <div class="rowa">
-
-    <!--投稿手順・プルダウン・投稿欄-->
-      <div class="col-md-4 col-xs-8 postbox">
-       <h3><b>投稿する</b></h3><br>
-       
-        <h4>【手順】</h4>
-        <p><b>1. 下のプルダウンメニューから項目を選ぶ。<br>
-           2. ダイアログ（対話）またはセンテンスで記入する。<br>
-           3. どんな状況での発話だったか記入する。<br>
-           4. [create]ボタンを押して投稿する。</b></p>
-        <br>
-        <%= form_for @newpost, :url => posts_path do |f| %>
-        <!--プルダウンメニュー-->
-        <h3><%= f.label :"文法項目" %></h3>
-         <%= f.label :topic_id %>
-         <%= f.collection_select :topic_id, Topic.all, :id, :title %>
-       
-         <!--プルダウンいろいろお試し-->
-         <%#= select_tag :topic_id, options_from_collection_for_select (Topic.all, :id, :title) %>
-         <%#= f.select :topic_id, Topic.pluck(:title), { prompt: '選択してください' }, { class: 'topic' }%> 
-         <%#= select_tag 'topic[title]', options_for_select(Topic.all, :id) %>
-       
-       <br>
-       <h3><%= f.label :"話した・聞いた日本語の実例" %></h3>
-        <p><%= f.text_area :example, :size=>"100x6" %></p>
-        <br>
-       <h3><%= f.label :"発話状況" %></h3>
-        <p><%= f.text_area :memo, :size=>"80x3" %></p>
-        <%= f.hidden_field :topic_id %>
-        <%= f.submit ' CREATE ', class: 'btn-5 btn-sm'  %>
-        <% end %>
-      </div>
-      <!--投稿手順・プルダウン・投稿欄終わり-->
-      
-
+<!--コンテンツ全体wrap-->
+ <div class="wrap">
+ 
+  <!--日本語あつめの趣旨説明-->
+  <div class="well well-lg fudanshushi" style="font-family:'shirokuma";>
+    <h3 class="fudanshushi">「今、話されている日本語」をあつめています！
+     <br>「つくった、かんがえたもの」ではなく、</h3>
+      <h1 class="fudanshushi" style="font-size: 5rem;" >「あなたがほんとうにつかった、きいた日本語」</h1>
+      <h3 class="fudanshushi">を、あつめています。
       <br>
-      
+      <br>日本語をペラペラ話せても、それを「人につたえよう!」となると、あんがいむずかしいもので、
+      <br>いつも話しているはずなのに、「ほんとうにそうかな…?」と意外と、じしんがなくなるものです。
+      <br><br>そんな時、「きほん」に、「じつぶつ」に立ちかえって、そこにあるものを見つめること、
+      <br>=「ぶんせき」をする時に、リアルなサンプルは、ほんとうに大事なリソースになります。
+      <br><br>「ともだちとのおしゃべり」・・・<br>「だれかからのメッセージ」・・・
+      <br>「みかけたポスター」・・・<br>「ドラマで言っていたセリフ」・・・
+      <br>「ラジオからきこえてきたこえ」・・・”生”の日本語、おまちしています。
+     </h3>  
+  </div>
+  <!--趣旨説明おわり-->
+
+  <!--<div class="main">-->
    <!--文法項目一覧パネル-->
-      <div class="col-md-5 col-xs-10 panel panel-default last">
+<br>
+<h3>☞下の文法項目一覧より項目を選ぶと、投稿ページに移ります。</h3>
+<br>
+      <div class="panel panel-warning fudanpanel">
+      <!--パネルタイトル-->
         <div class="panel-heading">
-	        <p> ふだんの日本語あつめ　文法項目一覧 </p> 
+         <p> 文法項目一覧 </p> 
 	       </div>
-     	  <div class="panel-body">
-      	
+   	  <!--パネルタイトル終わり-->
+   	  <!--パネル本体-->
+   	    <div class="panel-body" style="font-size: 2rem; line-height: 150%;">
+      
         <!--table式文法項目一覧-->
          <table>
            <tr>
@@ -104,199 +46,21 @@
            </tr>
             <% end %>
          </table>
-        <!--一覧終わり    -->
+        <!--table式一覧終わり    -->
+
         </div>
-      </div>
-    <!--パネルのdiv終わり-->
-      
-      </div>　　    
-　　 </div>
-  </div>
-</div>
+      <!--パネル本体終わり-->
 
-    
-<%# else %>
-<!--<div class="container-fluid">-->
-<!--  <div class="rowA">-->
-<!--    <div class="col-md-offset-2 col-md-10 col-xs-8">-->
-     
-<!--     <div class="rowa">-->
-
-<!--      <div class="col-md-8 col-xs-10 panel panel-default last">-->
-<!--        <div class="panel-heading">-->
-<!--	        <p> ふだんの日本語あつめ </p> -->
-<!--	       </div>-->
-<!--     	  <div class="panel-body">-->
-<!--      		  ★ねらい-->
-<!--      		   <br>「今、話されている日本語」を収集しています！-->
-<!--      		   <br>あなたが「実際に使った、聞いた日本語」を投稿してください。-->
-<!--      		   <br>日本語表現の意味や機能を分析する時に「リアルなサンプル」は重要なリソースになります。-->
-<!--      		   <br>-->
-<!--      		   <br>「さっき話した言葉」「だれかにもらったメッセージ」「通勤中聞こえてきた会話」-->
-<!--      		   <br>「中吊りに書いてある文言」「ドラマで聞いたセリフ」……などなど、お待ちしています。-->
-<!--      	  </div>-->
-<!--      	   <h4>「投稿された実例を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>-->
-<!--           <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>-->
-<!--           <%#= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>-->
-<!--          <br>-->
-<!--     </div>-->
-<!--     <br>-->
-    
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--<%# end %> -->
-
-</body>   
-  
-
-   <!--<div class="col-md-1 col-xs-2 image"><%= image_tag 'language.png',:width =>'250px' %></div>-->
-  
-
-<!--<div class="container-fluid">-->
-<!--  <div class="rowB">-->
+   </div>
+   <!--パネル全体終わり-->
  
-<!--  <div class="abstract col-md-5 col-xs-10 panel panel-default">-->
-<!--   <div class="panel-heading">-->
-<!--	   "Nihongo-Hunt!"の使い方-->
-<!--	  </div>-->
-<!--	  <div class="panel-body">-->
-<!--		  ★ねらい-->
-<!--		   <br>"Nihongo-Hunt!!"は、あなたが「実際に使った、聞いた日本語」を集めるページです。-->
-<!--		   日本語を学ぶ人が知りたかったり、理解したかったりするのは「リアルな日本語の表現」です。-->
-<!--		   また、教える時に日本語の表現の意味や機能を分析する時にも、「リアルなサンプル」はとても大切なリソースになります。-->
-<!--		   <br>-->
-<!--		   <br>-->
-<!--		  ★huntしてほしいもの-->
-<!--		   <br>「あなたがさっき話した言葉」「だれかにもらったメッセージ」「通勤中聞こえてきた会話」「中吊りに書いてあった文言」「ドラマで聞いたセリフ」……などなど、-->
-<!--	    全部、有用なリソースになります。みなさんのまわりにある日本語、たくさんhuntして教えてください。	 -->
-<!--		   <br>-->
-<!--		   <br>-->
-<!--		   ★使い方-->
-<!--		   <br>➡	文法項目リストから 項目を選んで、リアルな日本語の表現とそのhuntした状況を、投稿ページからご投稿ください！-->
-<!--     <br>-->
-<!--		   <br>★ あなたの投稿が明日の日本語教育に役立ちます！-->
-<!--	  </div>-->
-<!--  </div>-->
-
-
-<!--タイトルバー・検索窓・文法項目一覧 右寄せ-->
-<!--<div class="container">-->
-<!-- <div class ="rowB">-->
-
-<!--  <h3 class ="post offset-col-md-6 col-md-6 col-xs-12">➡ 文法項目一覧</h3>  -->
-<!--  <p class ="explanation offset-col-md-6 col-md-6 col-xs-12">文法項目を選択すると、投稿ページに移ります。 </p>-->
-  
-<!-- </div>-->
-<!--  <br>-->
-<!--</div>-->
-
-<!--<div class="container">-->
-<!-- <div class ="rowC">-->
-
-<!--  <div class="searchbox">-->
-<!--    <div class="offset-col-md-6 col-md-6 col-xs-12"><%#= form_tag topics_index_path, :method => 'post' do %>-->
-<!--     <p class = "searchbox"></p>-->
-<!--    </div>-->
-<!--     <%#= text_field_tag :search, params[:search] %>-->
-<!--     <%#= submit_tag "Item Search",:name => nil %>-->
-<!--     </p>-->
-<!--     <%# end %>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--  </div>-->
+ </div>
+ <!--wrapおわり-->
  
-<!-- </div>-->
-<!--</div> -->
-
-<!--<div class="container">-->
-<!--  <div class="rowD">-->
-<!--   <p class="col-md-6 col-xs-12"></p>-->
-<!--   <p class="col-md-6 col-xs-12">【初級A2レベル】</p>-->
-
-<!--   <p></p>-->
-<!--   <p>【初級A2レベル】</p>-->
-<!--  </div> -->
-<!--   <div class="index col-md-6 col-xs-12">-->
-<!--    <p class ="offset-col-md-6 col-md-6 col-xs-12">【初級A2レベル】</p>-->
- 
-<!--   <p class="col-md-6 col-xs-12"></p>-->
-  
-<!--   table式文法項目一覧-->
-<!--    <table border="1 index">-->
-<!--    <tr>-->
-<!--     <th>文法項目</th>  -->
-<!--     <th>総回答数</th>-->
-<!--     <th>クリア</th> -->
-<!--    </tr>-->
-<!--     <%# @topics.each do |topic| %>-->
-<!--    <tr>-->
-<!--     <td><%#= link_to topic.title, topics_show_path(topic.id) %></td>-->
-<!--     下のtdに総回答数-->
-<!--     <td></td>-->
-<!--     下のtdに回答済みならスタンプ-->
-<!--     <td></td>-->
-<!--    </tr>-->
-<!--   <%# end %>-->
-<!--   </table>-->
-<!--   一覧終わり    -->
-<!--  </div>-->
-  
-<!--   </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--</div>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="modal.js"></script>
 
 
-<!--<div class="wrapper">-->
-<!-- <div class ="left">-->
-
-<!--文法項目の登録は不要-->
-<!--<div class="new">-->
-<!--<h1>新しい文法項目を登録する</h1>-->
-<!--<%#= form_for @newTopic, :url => {:action => 'create'} do |f| %>-->
-<!--  <%#= f.text_area :title, :size=>"30x2" %>-->
-<!--  <br>-->
-<!--  <%#= f.submit ' CREATE ', class: 'btn-5 btn-sm' %>-->
-<!--<%# end %>-->
-<!--</div>-->
-
-    <!--文法項目リスト-->
-     <!--<ul>-->
-     <!-- <%# @topics.each do |topic| %>-->
-     <!-- <li><%#= link_to topic.title, topics_show_path(topic.id) %>-->
-      <%#= link_to '[削除]', topic_delete_path(topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></li>
-      <!--ページ遷移せず編集できるように、編集ボタンをいれたい-->
-     <!-- <%# end %>-->
-     <!--</ul>-->
-    <!--終わり   -->
+</body>
 
 
-<!--【概要】"Nihongo-Quest!!"は、あなたが「実際に使った、聞いた日本語」を投稿して、スタンプを集めていくゲームです。下のリストから  項目を選んで「最近、こんな言い方をしたかも。」「こんな言い方を聞いた！」という、リアルな日本語の表現を、投稿ページからご投稿ください！１つ投稿するごとに、スタンプを１つ獲得でき、獲得したスタンプ数はマイページで確認できます！-->
-
-<!--【教育上のメリット】-->
-<!--・リアルな日本語の使われ方がわかる-->
-<!--・文法の意味・機能分析に役立つ-->
-
-
-      		   <!--文法項目一覧-->
-        <!--<%# @topics.each do |topic| %>-->
-          <%#= @topic.title %>
-        <!--<%# end %>  -->
-        
-        <!--<%#= form_for @newpost, :url => posts_path do |f| %>-->
-        
-        <!--ドロップダウンメニュー-->
-        <!--<h3><%#= f.label :"文法項目" %></h3>-->
-        <!-- <%#= f.label :topic_id %>-->
-        <!-- <%#= f.collection_select :topic_id, Topic.all, :id, :title %>-->
-        <!--<%# end %>-->
-         <!--  <ul>-->
-         <!--   <%# @topics.each do |topic| %>-->
-         <!--   <li><%#= link_to topic.title, topic_path(@topic.id) %>-->
-                <%#= link_to '[削除]', topic_path(@topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
-         <!--   </li>-->
-         <!--   <%# end %>-->
-         <!--  </ul>-->
-         <!--一覧終わり    -->

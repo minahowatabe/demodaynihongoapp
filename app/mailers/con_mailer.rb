@@ -1,2 +1,0 @@
-class ConMailer < ApplicationMailer
-end

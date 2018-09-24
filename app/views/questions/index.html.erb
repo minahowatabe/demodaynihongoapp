@@ -1,8 +1,10 @@
 <h1 class="titles">そうだん</h1>
 
+<!--そうだんの使い方・画像コンテナ-->
 <div class="container_qa">
 <div class="rowA qa">
- <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa">
+ <!--そうだんの使い方パネル-->
+ <div class="col-md-offset-1 col-md-8 col-xs-10 panel panel-default qa">
  	<div class="panel-heading">
  		"そうだん”の使い方
  	</div>
@@ -15,38 +17,45 @@
  	  ここでアドバイスし合って、いい授業をしていきましょう！	
  	</div>
 	</div>
+<!--そうだんの使い方パネルおわり-->
+<!--画像-->
  <div class="col-md-3 col-xs-11">
    <%= image_tag 'postit.jpg', :size =>'300x200' %>
  </div>
+<!--画像終わり-->
  <br>
 </div>
 </div>
+<!--そうだんの使い方・画像コンテナ終わり-->
 
 
 <!--ログイン・未ログイン分岐-->
+<!--質問検索-->
 <div class="container_qa">
  <div class="rowB qa">
-  <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa search">
+  <div class="col-md-offset-1 col-md-8 col-xs-10 panel panel-default qa search">
  <!--ransack -->
   <%= search_form_for @search do |f| %>
   <div class="form-group">
     <%= f.label :content_cont, "質問を検索" %>
-    <%= f.text_field :content_or_title_or_keyword_cont, :size=>"50x1"  %>
+    <%= f.text_field :content_or_title_or_keyword_cont %>
     <%= f.submit "Search" %></div>
   </div>
  <% end %>
  </div>
 </div>
+<!--質問検索終わり-->
 
-
+<!--みんなの質問一覧-->
 <div class="container_qa">
  <div class="rowC qa">
   <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa">
    <h2>みんなの質問</h2>
     <p>☞タイトルを選ぶと、詳細ページに移ります。</p>
     
-    
+   
 <!--ログイン・未ログイン分岐-->
+<!--ログインしてたら、タイトルにリンクがつく-->
     <%# if user_signed_in? %>
      <ul>
       <% @questions.each do |question| %>
@@ -55,7 +64,8 @@
       </li>
       <% end %>
      </ul>
-   
+     
+<!--ログインしていなかったら、タイトル（リンクなし）表示のみ＋ログイン促進ボタン   -->
    <%# else %>
    <!--  <ul>-->
    <!--   <%# @questions.each do |question| %>-->
@@ -67,16 +77,20 @@
    <!--     <%#= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>-->
    <!--  </ul>-->
    <!--<%# end %>-->
-   <!--分岐終わり-->
+<!--分岐終わり-->
 
    <br>
   </div>
  </div>
 </div>
+<!--みんなの質問一覧おわり-->
 
 
+<!--質問する-->
+
+<!--ログインしてたら、質問投稿欄-->
     <%# if user_signed_in? %>
-     <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa last">
+     <div class="col-md-offset-1 col-md-8 col-xs-10 panel panel-default qa last">
       
       <!--バリデーション--エラー中>
       <!--<%#= form_with(model: @question, local: true) do |form| %>-->
@@ -92,20 +106,23 @@
       <!--   </div>-->
       <!-- <%# end %>-->
       <!--<%# end %>-->
+
       
       <h2>質問する</h2>
        <p>☞一覧にはタイトルのみ表示されるので、内容がわかりやすいものを。</p>
         <%= form_for @newQuestion, :url => {:action => 'create'} do |f| %>
        <p>
-        　　title: <%= f.text_field :title, :size=>"70x2" %>
+        title: <%= f.text_field :title %>
        <br>
-        question:<%= f.text_area :content, :size=>"80x6"  %>
+        question:<%= f.text_area :content %>
        <br>
        <!--キーワードを入れたい-->
-        keyword:<%= f.text_area :keyword, :size=>"70x1"  %></p>
+        keyword:<%= f.text_area :keyword %></p>
         <%= f.submit ' CREATE question ', class:'btn-5 btn-sm' %>
        <% end %>
      </div>  
+ 
+  <!--ログインしていなかったら、ログイン促進ボタン表示-->
     <%# else %>
     <!-- <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa last">-->
     <!--  <h2>質問する</h2>-->
@@ -120,5 +137,5 @@
  <br> 
 </div>
 <!--分岐終わり-->
-
+<!--質問する終わり-->
 

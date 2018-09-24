@@ -1,97 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+   <!-- ビューポートの設定 -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- スタイルシートの読み込み -->
+   <link href="topics.scss" rel="stylesheet">
+
+</head>
+
 <body class ="posts">
 
  <div class="wrap">
  
-  <div class="main">
- 
-   <div class="panel-heading">
-  	  <h4>文法項目</h4>
-  	</div>
-  	<div class="panel-body">
-  		 <h2>【<%= @topic.title %>】</h2>
- 	 </div>
-   
-  <div>
-    <h4>そのほかの文法項目</h4>
+  <div class="main" style="font-size: 1.5rem; text-align:left;">
+    <h3>投稿する</h3>
+     <h4>【手順】</h4>
+     <p>1. ダイアログ（対話）またはセンテンス記入する。<br>
+        2. どんな状況での発話だったかも記入する。<br>
+        3. [create]ボタンを押して投稿する。</br>
+        4. 投稿されたら、[投稿完了しました！]ボタンを押す。</p>
+     <br>
     
-    <!--table式文法項目一覧 each do エラー中--> 
-        <!-- <table>-->
-        <!--   <tr>-->
-        <!--    <th>  文法項目  </th>  -->
-        <!--   </tr>-->
-            <%# @topics.each do |topic| %>
-        <!--   <tr>-->
-            <td><%#= link_to topic.title, topic_path(topic.id) %></td>
-        <!--   </tr>-->
-            <%# end %>
-        <!-- </table>-->
-        <!--一覧終わり    -->
-   <!--文法項目一覧-->
-    
-     <ul>
-      <% @posts.each do |post| %>
-      <li><%= link_to @topic.title, topic_path(@topic.id) %>
-          <%#= link_to '[削除]', topic_path(@topic.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %>
-      </li>
-      <% end %>
-     </ul>
-   <!--一覧終わり    -->
+    <%= form_for @newpost, :url => posts_path do |f| %>
+    <h3><%= f.label :"話した・聞いた日本語の実例" %></h3>
+     <p><%= f.text_area :example, :size=>"50x6" %></p>
+     <br>
+    <h3><%= f.label :"発話状況" %></h3>
+     <p><%= f.text_area :memo, :size=>"40x3" %></p>
+     <%= f.hidden_field :topic_id %>
+     <%= f.submit ' CREATE ', class: 'btn-5 btn-sm button-link' %>
+     <% end %>
 
-
-    <p><%#= topic.title: topic_id, Topic.all, :id, :title %></p>
+  <br>
+  <p>☞右側にあなたの投稿が表示されたら、<br>
+  下の「投稿完了しました！」ボタンをおしてください。</p>
+  <br>
+  <!--投稿完了ボタン-->
+  <div class="linkbtn">
+    <button type="button" id="modal-open" class="btn-4 btn-lg  button-link">投稿完了しました！</button>
+  <!-- ここまでモーダルウィンドウ -->
   </div>
- 
+  
  </div>
+<!--main終わり -->
 
-  <div class = "examplepost">
-   
+<!--投稿されたもの一覧-->
+ 
+  <div class = "examplepost" style="font-size: 1.5rem; text-align:left;">
+  <h2>文法項目：【<%= @topic.title %>】</h2>
+    <br>  
     <% @posts.each_with_index do |post , idx| %>
-     <div class = eachpost>   
+     <div class ="well well-sm eachpost">   
       <span class="box-title"><%= idx + 1 %>.</span>
       <p>実例:<%= simple_format(post.example) %></p>
-      <hr>
+      <hr width="500" size="1" color="#fdd835" style="border-style:dotted">
       <p>発話状況: <%= simple_format(post.memo) %></p>
-      <p><%= link_to '[削除]', post_path(@topic.id), 
-                            method: :delete, 
-                            data: {confirm: "削除してもよろしいですか？"}  %></p>
+　　  <p><%= post.created_at %><%= link_to '[削除]', post_path(@topic.id), 
+                               method: :delete, 
+                               data: {confirm: "削除してもよろしいですか？"}  %></p>
      </div>
-　  <% end %>
+    <% end %>
   </div>
+<!--投稿終わり-->
 
-</div>
+ </div>
+ <!--wrapおわり-->
 
+
+<!--ボタン-->
 <div class ="linkbtn">
   <%= link_to "  index  ", topics_path,class: "btn btn-2" %>
 </div>
+<!--ボタン終わり-->
+
+
+<!-- ここからモーダルウィンドウ -->
+  <div id="modal-content">
+  	 <!--モーダルウィンドウのコンテンツ開始 -->
+  	<h2 class="modaltext">♡とうこう、ほんとうにありがとうございます！♡</h2>
+  	<h3 class="modaltext">あなたの”とうこう”が、きっとやくだちます！</h3>
+  	<h3 class="modaltext">ブラウザをとじるまで、すべてのコンテンツが見られます。</h3>
+  	
+  	 <!--モーダルウィンドウのコンテンツ終了 -->
+  </div>
+<!-- ここまでモーダルウィンドウ -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="modal.js"></script>
 
 </body>
+</html>
 
-
-    <!--<div class="searchbox">-->
-    <!-- <%#= form_tag topic_path, :method => 'get' do %>-->
-    <!--  <p class = "searchbox">-->
-    <!--    <%#= text_field_tag :search, params[:search] %>-->
-    <!--    <%#= submit_tag "Search",:name => nil %>-->
-    <!--  </p>-->
-    <!-- <%# end %>-->
-    <!--</div>-->
-    <!--<br>-->
-
-
-   <!-- <table border="1 index">-->
-   <!-- <tr>-->
-   <!--  <th>文法項目</th>  -->
-   <!--  <th>総回答数</th>-->
-   <!--  <th>クリア</th> -->
-   <!-- </tr>-->
-     <%# @topics.each do |topic| %>
-   <!-- <tr>-->
-     <td><%#= link_to topic.title, topic_path(topic.id) %></td>
-     <!--下のtdに総回答数-->
-   <!--  <td></td>-->
-     <!--下のtdに回答済みならスタンプ-->
-     <!--<td></td>-->
-   <!-- </tr>-->
-   <%# end %>
-   <!--</table>-->
-   

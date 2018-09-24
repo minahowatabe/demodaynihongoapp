@@ -2,36 +2,9 @@
 /*// They will automatically be included in application.css.*/
 /*// You can use Sass (SCSS) here: http://sass-lang.com/*/
 
-.panel-heading{
-    text-decoration: none
-}
+/*questions/index*/
 
-
-.panel-body{
-    text-decoration: none
-}
-
-
-.search{
-    padding: 10px;
-    text-decoration: none;
-}
-
-
-h4, h2, p{
-    text-decoration: none;
-}
-
-
-.last{
-    padding-bottom: 20px;
-    margin-bottom: 100px;
-}
-
-.balloon1 p{
-    color: black;
-}
-
+/*各コンテナ*/
 .container_qa{
     padding-left: 40px;
     margin-left: auto;
@@ -40,24 +13,47 @@ h4, h2, p{
     font-size: 1.5rem;
 }
 
+/*そうだんの使い方パネルのヘッダー*/
+.panel-heading{
+    text-decoration: none
+}
 
+/*そうだんの使い方パネルのボディー*/
+.panel-body{
+    text-decoration: none
+}
+
+/*検索窓*/
+.search{
+    padding: 10px;
+    text-decoration: none;
+}
+
+/*セクションタイトル・指示文*/
+h4, h2, p{
+    text-decoration: none;
+}
+
+/*質問する部分のコンテナのクラス*/
 .last{
+    padding-bottom: 20px;
     margin-bottom: 100px;
 }
 
-.qaimage{
-    width: 200px;
-    height: 200px;
-}
 
+/*みんなの質問一覧の質問タイトル*/
 .qa li{
     list-style: none;
     font-size: 1.5rem;
     text-decoration: none;
 }
 
-.indentback{
-    text-indent:3rem;
+/*questions/show*/
+
+
+/*みんなの回答吹き出し*/
+.balloon1 p{
+    color: black;
 }
 
 /* 吹き出し本体 - 普通の吹き出し */
@@ -66,10 +62,11 @@ h4, h2, p{
   padding: 10px;
   background-color: #fff3ad;
   border-radius: 10px;         /* 角丸を指定 */
-  width: 70%;
+  width: 90%;
   height: auto;
   margin: 10px;
 }
+
 /* 三角アイコン - 普通の吹き出し */
 .balloon1::before{
   content: '';

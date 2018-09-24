@@ -16,49 +16,157 @@
  */
 
 
-/*メディアクエリの設定*/
-@media screen and (max-width:600px){
- /*画面サイズが600px以下の時に適用 */
- 
- body{
-   font-size: 3.5vw
- }
- 
- h1{
-   font-size: 7.5vw
- } 
- 
- h2{
-   font-size: 6vw
- }
- 
- header{
-   width: auto;
-   margin: 0.5%;
- }
- 
- footer{
-   margin:0.5%;
- }
+/*モバイルファースト*/
+/*==================
+ ▼ブレイクポイントのルール▼
+ -スマホを基本設計にする-
+ *〜479px：SP縦
+ *480px〜：SP横
+ *600px〜タブレット
+ *960px〜小型PC
+ *1280px〜大型PC
+==================*/
 
- 
- #top{
-   background-image: url('poitit.jpg');
- }
- 
+/*  画面サイズが480pxまで  */
+/*p {}*/
+
+
+/*@media screen and (min-width:480px) and ( max-width:600px) { */
+    /*　画面サイズが480pxからはここを読み込む　*/
+/*p {}*/
+/*.headertitles{*/
+/*   font-size: 3vh;*/
+/*}*/
+/*}*/
+
+/*@media screen and (min-width:600px) and ( max-width:960px) {*/
+    /*　画面サイズが600pxから960pxまではここを読み込む　*/
+/*p {}*/
+/*}*/
+
+/*@media screen and (min-width:960px) and ( max-width:1280px) {*/
+    /*　画面サイズが960pxから1280pxまではここを読み込む　*/
+/*p {}*/
+/*}*/
+
+/*@media screen and (min-width:1280px) {*/
+    /*　画面サイズが1280pxからはここを読み込む　*/
+/*p {}*/
+/*}*/
+
+/*モバイルファースト終わり*/
+
+
+/*デスクトップファースト　メディアクエリ設定*/
+
+@media screen and (max-width: 1024px) {
+/* 1024pxまでの幅の場合に適応される */
+    body {
+        background-color:#2262D1;
+    }
 }
-/*スマホサイズおわり*/
+@media screen and (max-width: 768px) {
+/* 768pxまでの幅の場合に適応される */
+     body {
+        background-color:#f10010;
+    }
+}
+@media screen and (max-width: 480px) {
+/* 480pxまでの幅の場合に適応される スマホ縦サイズ*/
+    .shushi {
+        width: 60%;
+    }
+    .logo{
+       width: 60%;
+    }
+    .logo b{
+      font: 100 10vh "shirokuma";
+      color: #302833;
+      text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em white, 0 0 0.5em #FFF59D, 0 0 0.1em #FFF9C4, 0 10px 3px #546E7A;
+    }
+
+    .logo b span{
+      font: 100 8vh "shirokuma";
+      animation: blink linear infinite 10s;
+    }
+
+    .logoandlink.mb{
+      /*width: 100%;*/
+      /*height:100px;*/
+      margin-top: 100px;
+      margin-bottom: 20px;
+    }
+     
+    .toplink.mb.container{
+      margin-bottom: 100px;
+    }
+    
+    .toplink img .toplink.mb{
+      width: 80%;
+      height: 80%;
+      text-align: center;
+    }
+}
+@media screen and (max-width: 320px) {
+/* 320pxまでの幅の場合に適応される */
+    body {
+        background-color: #68B876;
+    }
+}
+
+/*デスクトップファースト設定*/
 
 
-.body{
-  position: relative;
+
+/*★全ページ共通の設定*/
+
+
+/*表示・非表示の切り替え*/
+/*クラスを付けるだけ*/
+
+/**PCの場合*　PCだったら、表示する*/
+.pc	{ display:inline!important; }
+.mb	{ display:none!important; }
+
+@media screen and (max-width: 768px) {
+
+/*タブレット、スマホの場合　タブレット・スマホだったら、表示しない*/
+.pc	{ display:none!important; }
+.mb { display:inline!important; }
+}
+
+/*例*/
+/*PCの時に表示させたい画像*/
+/*<img class="pc" src="/top_pc.png">*/
+/*スマホの時に表示させたい画像*/
+/*<img class="mb" src="/top_mb.png">*/
+
+
+
+/*フリーフォント*/
+@font-face {
+  font-family:'shirokuma';
+  src: url('/SHIROKUMA.TTF'); 
 }
 
 
-.logospace{
+/*ヘッダー*/
+header{
   width:100%;
-  padding-top: 20px;
 }
+
+
+
+.headertitles{
+  /*font-family: 'Baloo', cursive;*/
+  /*font-family: 'Unica One', cursive;*/
+  /*font-family: 'Electrolize', sans-serif;*/
+  font-family: 'Kite One', sans-serif;
+  color: #fdd835;
+  font-family: 'shirokuma';
+  font-size: 4vw
+}
+
 
 .thinline{
     width: 100%;
@@ -66,41 +174,59 @@
     margin-top: 5px;
 }
 
+
 .headerbtn{
     text-align:right;
 }
 
-.rowB{
-  padding-top: 10px;
+
+
+/*ナビゲーションバー*/
+/*ナビゲーションバー上の隙間*/
+.logospace{
+  width:100%;
+  padding-top: 20px;
 }
 
-.linkbtn{
-  text-align: center;
-}
-
-/*フリーフォント*/
-@font-face {
-font-family:'shirokuma';
-  src: url('/SHIROKUMA.TTF'); 
-}
-
+/*ナビゲーションバーのリンク*/
 .nav a{
    font-family:'shirokuma';
-   font-size:3.2rem;  
+   font-size:2vw;  
    /*color: #9fb9c1;*/
    color: #fdd835;
 }
 
+/*「hello～さん」の設定*/
 .navbar-text{
   font-family: 'shirokuma';
-  font-size: 2.5rem
+  font-size: 2vw;
 }
 
+
+/*コンテンツ全体の背景*/
+body{
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 150px;
+  /*background-color: #f3f3f3;*/
+  background-image: url(top-denim-ver.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+/*ページタイトル*/
+.titles{
+   font-family: 'shirokuma'; 
+}
+
+/*フッター*/
 footer {
     position: fixed;
     bottom: 0;
     top: 50;
-    padding-top:100px;  
+    padding-top:10px;  
     width: 100%;
     text-align: center;
 }
@@ -109,23 +235,63 @@ footer p{
   font-family: 'shirokuma' 
 }
 
-.bottom{
-  height:100px;
+
+
+/*メディアクエリの設定*/
+/*@media screen and (max-width:600px){*/
+ /*画面サイズが600px以下の時に適用 */
+ 
+/* body{*/
+/*   font-size: 3.5vw*/
+/* }*/
+ 
+/* h1{*/
+/*   font-size: 7.5vw*/
+/* } */
+ 
+/* h2{*/
+/*   font-size: 6vw*/
+/* }*/
+ 
+/* header{*/
+/*   width: auto;*/
+/*   margin: 0.5%;*/
+/* }*/
+ 
+/* footer{*/
+/*   margin:0.5%;*/
+/* }*/
+
+ 
+/*#top{*/
+/*   background-image: url('poitit.jpg');*/
+/* }*/
+ 
+/*スマホサイズおわり*/
+
+
+
+/*不明なもの*/
+/*.body{*/
+/*  position: relative;*/
+/*}*/
+
+/*.rowB{*/
+/*  padding-top: 10px;*/
+/*}*/
+
+
+.linkbtn{
+  text-align: center;
 }
+
+/*.bottom{*/
+/*  height:100px;*/
+/*}*/
+
+
 
 /* <- Demo Stuff Start */
-
-body{
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 150px;
-  /*background-color: #f3f3f3;*/
-  background-image: url(top-denim-ver.jpg);
-    /*background-image: url(top.jpg);*/
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
 .menu.container {
   display: flex;
@@ -159,6 +325,7 @@ body{
 
 /* <- Magic Stuff Start */
 
+/*マーブルボタン*/
 .btn:hover {
   background-position: right center; /* change the direction of the change here */
 }
@@ -184,6 +351,7 @@ body{
 }
 
 /* Magic Stuff End -> */
+
 
 
 /*メニュー*/
@@ -229,15 +397,7 @@ body{
   transition: all 0.3s ease;
 }
 
-.headertitles{
-  /*font-family: 'Baloo', cursive;*/
-  /*font-family: 'Unica One', cursive;*/
-  /*font-family: 'Electrolize', sans-serif;*/
-  font-family: 'Kite One', sans-serif;
-  color: #fdd835;
-  font-family: 'shirokuma';
-  font-size: 4.5rem
-}
+
 
 .menuOpen {
   width: 20px;
@@ -359,3 +519,368 @@ body{
 #menuToggle:not(:checked) ~ .menuEffects ul {
   transform: translateY(-30%);
 }
+
+
+
+/*9月21日以前のもの*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require_tree .
+ *= require_self
+ */
+
+
+/*メディアクエリの設定*/
+/*@media screen and (max-width:600px){*/
+ /*画面サイズが600px以下の時に適用 */
+ 
+/* body{*/
+/*   font-size: 3.5vw*/
+/* }*/
+ 
+/* h1{*/
+/*   font-size: 7.5vw*/
+/* } */
+ 
+/* h2{*/
+/*   font-size: 6vw*/
+/* }*/
+ 
+/* header{*/
+/*   width: auto;*/
+/*   margin: 0.5%;*/
+/* }*/
+ 
+/* footer{*/
+/*   margin:0.5%;*/
+/* }*/
+
+ 
+/* #top{*/
+/*   background-image: url('poitit.jpg');*/
+/* }*/
+ 
+/*}*/
+/*スマホサイズおわり*/
+
+
+/*.body{*/
+/*  position: relative;*/
+/*}*/
+
+
+/*.logospace{*/
+/*  width:100%;*/
+/*  padding-top: 20px;*/
+/*}*/
+
+/*.thinline{*/
+/*    width: 100%;*/
+/*    height:20px;*/
+/*    margin-top: 5px;*/
+/*}*/
+
+/*.headerbtn{*/
+/*    text-align:right;*/
+/*}*/
+
+/*.rowB{*/
+/*  padding-top: 10px;*/
+/*}*/
+
+/*.linkbtn{*/
+/*  text-align: center;*/
+/*}*/
+
+/*フリーフォント*/
+/*@font-face {*/
+/*font-family:'shirokuma';*/
+/*  src: url('/SHIROKUMA.TTF'); */
+/*}*/
+
+/*.nav a{*/
+/*   font-family:'shirokuma';*/
+/*   font-size:3.2rem;  */
+   /*color: #9fb9c1;*/
+/*   color: #fdd835;*/
+/*}*/
+
+/*.navbar-text{*/
+/*  font-family: 'shirokuma';*/
+/*  font-size: 2.5rem*/
+/*}*/
+
+/*footer {*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*    top: 50;*/
+/*    padding-top:100px;  */
+/*    width: 100%;*/
+/*    text-align: center;*/
+/*}*/
+
+/*footer p{*/
+/*  font-family: 'shirokuma' */
+/*}*/
+
+/*.bottom{*/
+/*  height:100px;*/
+/*}*/
+
+/* <- Demo Stuff Start */
+
+/*body{*/
+/*  font-family: 'Montserrat', sans-serif;*/
+/*  margin-bottom: 150px;*/
+  /*background-color: #f3f3f3;*/
+/*  background-image: url(top-denim-ver.jpg);*/
+    /*background-image: url(top.jpg);*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: center center;*/
+/*  background-attachment: fixed;*/
+/*  background-size: cover;*/
+/*}*/
+
+/*.menu.container {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  align-content: center;*/
+/*  flex-wrap: wrap;*/
+/*  width: 80vw;*/
+/*  margin: 0 auto;*/
+/*  min-height: 100vh;*/
+/*}*/
+
+
+/*.btn {*/
+/*  flex: 1 1 auto;*/
+/*  margin: 6px;*/
+/*  padding: 20px;*/
+/*  text-align: center;*/
+/*  text-transform: uppercase;*/
+/*  transition: 0.5s;*/
+/*  background-size: 200% auto;*/
+/*  color:darkgray;*/
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+/*  box-shadow: 0 0 20px #eee;*/
+/*  border-radius: 10px;*/
+/* }*/
+
+/* Demo Stuff End -> */
+
+
+
+/* <- Magic Stuff Start */
+
+/*.btn:hover {*/
+  background-position: right center; /* change the direction of the change here */
+/*}*/
+
+/*.btn-1 {*/
+/*  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);*/
+/*}*/
+
+/*.btn-2 {*/
+/*  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);*/
+/*}*/
+
+/*.btn-3 {*/
+/*  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);*/
+/*}*/
+
+/*.btn-4 {*/
+/*  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);*/
+/*}*/
+
+/*.btn-5 {*/
+/*  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);*/
+/*}*/
+
+/* Magic Stuff End -> */
+
+
+/*メニュー*/
+/*menu*/
+/*input {*/
+/*  display: none;*/
+/*}*/
+
+/*.open {*/
+/*  background-color: #ffff66;*/
+/*  width: 24px;*/
+/*  height: 4px;*/
+/*  display: block;*/
+/*  border-radius: 2px;*/
+/*  cursor: pointer;*/
+/*  position: relative;*/
+/*  top: 8px;*/
+/*}*/
+
+/*.open:before {*/
+/*  content: "";*/
+/*  background-color: #ffff66;*/
+/*  width: 24px;*/
+/*  height: 4px;*/
+/*  display: block;*/
+/*  border-radius: 2px;*/
+/*  position: relative;*/
+/*  top: -8px;*/
+/*  transform: rotate(0deg);*/
+/*  transition: all 0.3s ease;*/
+/*}*/
+
+/*.open:after {*/
+/*  content: "";*/
+/*  background-color: #ffff66;*/
+/*  width: 24px;*/
+/*  height: 4px;*/
+/*  display: block;*/
+/*  border-radius: 2px;*/
+/*  position: relative;*/
+/*  top: 4px;*/
+/*  transform: rotate(0deg);*/
+/*  transition: all 0.3s ease;*/
+/*}*/
+
+/*.headertitles{*/
+  /*font-family: 'Baloo', cursive;*/
+  /*font-family: 'Unica One', cursive;*/
+  /*font-family: 'Electrolize', sans-serif;*/
+/*  font-family: 'Kite One', sans-serif;*/
+/*  color: #fdd835;*/
+/*  font-family: 'shirokuma';*/
+/*  font-size: 4.5rem*/
+/*}*/
+
+/*.menuOpen {*/
+/*  width: 20px;*/
+/*  height: 16px;*/
+/*  display: block;*/
+/*  padding: 10px;*/
+/*  cursor: pointer;*/
+/*  float: right;*/
+/*}*/
+
+/*.menuOpen:hover .open:before {*/
+/*  top: -9px;*/
+/*}*/
+
+/*.menuOpen:hover .open:after {*/
+/*  top: 5px;*/
+/*}*/
+
+/*.menu {*/
+/*  position: fixed;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  background: #ffff66;*/
+  /*background: rgba(255, 135, 2, 0.9);*/
+/*}*/
+
+/*.menu label {*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*  position: absolute;*/
+/*  right: 20px;*/
+/*  top: 20px;*/
+/*  background-size: 100%;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.menu .menuContent {*/
+/*  position: relative;*/
+/*  top: 10%;*/
+/*  font-size: 35px;*/
+/*  text-align: center;*/
+/*  padding-bottom: 10px;*/
+/*  margin-top: 10px;*/
+/*}*/
+
+/*.menu ul {*/
+/*  list-style: none;*/
+/*  padding: 0;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.menu ul li a {*/
+/*  text-align: left;*/
+/*  margin-left: 30px;*/
+/*  display: block;*/
+/*  color: silver;*/
+/*  text-decoration: noconne;*/
+/*  transition: color 0.2s;*/
+/*  font-family: Trebuchet MS;*/
+/*  text-transform: uppercase;*/
+/*  padding: 10px 0;*/
+/*}*/
+
+/*.menu ul li a:hover {*/
+/*  color: darkgray;*/
+/*}*/
+
+/*.menu ul li:hover {*/
+/*  background: #ffff8f;*/
+/*}*/
+
+/*.menuEffects {*/
+/*  opacity: 0;*/
+/*  visibility: hidden;*/
+/*  transition: opacity 0.5s, visibility 0.5s;*/
+/*}*/
+
+/*.menuEffects ul {*/
+/*  transform: translateY(0%);*/
+  /*transition: all 0.5s;*/
+/*}*/
+
+/*#menuToggle:checked ~ .menuEffects {*/
+/*  opacity: 1;*/
+/*  visibility: visible;*/
+/*  transition: opacity 0.5s;*/
+/*}*/
+
+/*#menuToggle:checked ~ .menuEffects ul {*/
+/*  opacity: 1;*/
+/*}*/
+
+/*#menuToggle:checked ~ .menuOpen .open {*/
+  /*background-color: transparent;*/
+/*}*/
+
+/*#menuToggle:checked ~ .menuOpen .open:before {*/
+/*  content: "";*/
+/*  background-color: white;*/
+/*  transform: rotate(45deg);*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  right: 0;*/
+/*  z-index: 1;*/
+/*}*/
+
+/*#menuToggle:checked ~ .menuOpen .open:after {*/
+/*  content: "";*/
+/*  background-color: white;*/
+/*  transform: rotate(-45deg);*/
+/*  position: relative;*/
+/*  top: 0;*/
+/*  right: 0;*/
+/*  z-index: 1;*/
+/*}*/
+
+/*#menuToggle:not(:checked) ~ .menuEffects ul {*/
+/*  transform: translateY(-30%);*/
+/*}*/

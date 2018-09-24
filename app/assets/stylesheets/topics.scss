@@ -1,165 +1,75 @@
- 
 
-// index2カラムレイアウト
-/* pc 768px以上 */
+// ★★★topics/index
 
-
-.wrapper{
-	overflow: hidden;
-	width: 960px;
-	margin-left: auto;
-	margin-right: auto;
+コンテンツ全体
+.wrap{
+  overflow: hidden;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
 }
+   
 
-.centerlogo{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}　 
-
-.shushi{
-  width: 700px;
-  margin-left: 250px;
+// 日本語あつめの趣旨
+.fudanshushi{
+  width: 80% !important;
+  margin-left: auto;
   margin-right: auto;
-  font-family: 'shirokuma';
-  font-size: 3rem;
-  color: #FFF59D;
-  text-decoration:none;
-  text-align: center;
+  font-family:'shirokuma';
+  color: darkgray;
 }
 
-// .left{
-// 	float: left;
-// 	width: 500px;
-// 	height: auto;
-// 	text-align: center;
-// // 	background-color: #ddd;
-// }
+// 適用されていない★★★
+// 文法項目一覧パネル
+.fudanpanel{
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-// .right{
-// 	float: right;
-// 	width: 530px;
-// 	border-top: 1px solid #333;
-// }
+// 適用されていないここまで★★★
 
+// ★★★topics/show
 
-
-.image{
+// show画面のbody全体
+.posts{
     text-align: left;
 }
 
-// 表を大きくしたい paddingとりたい 効いてない
-.table td{
-    padding: 10px;
-}
-
-.index tr{
-    padding: 10px;
-}
-
-.index.abstract p{
-	font-size: 2rem;
-}
-.explanation{
-    text-align:right;
-}
-
-// .right{
-//     width:600px;
-// }
-
-.post{
-    padding-top: 10px;
-}
-
-
-.posts{
-    text-align: center;
-	}
-
-.new{
-   margin-left :auto;
-   margin-right :auto;
-   background-color: #FFCCCC;
-   border : 2px dashed #444444;
-   width: 60%;
-}
-
-// show2カラムレイアウト
-/* pc 768px以上 */
 .wrap{
 	overflow: hidden;
 	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+// 投稿手順と投稿欄（画面左側）
 .main{
 	float: left;
 	width: 400px;
 	height: auto;
-// 	background-color: #ddd;
 }
 
+// 投稿されたものの表示（画面右側）
 .examplepost{
 	float: right;
 	width: 530px;
-	border-top: 1px solid #333;
-}
-.examplepost li a{
-	display: block;
-	height: 44px;
-	line-height: 44px;
-	border-bottom: 1px solid #333;
-	text-decoration: none;
-	color: #333;
+    // border-top: 1px solid #333;
 }
 
-.last{
-    padding-bottom: 100px;
-    padding-top: 50px;
-}
-
-
-
-/* スマホ　767px以下 */
-@media only screen and (max-width: 767px) {
-	.wrap{
-		width: 100%;
-	}
-	.main{
-		float: none;
-		width: 90%;
-		height: 200px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 30px;
-	}
-	.examplepost{
-		/*floatを解除 */
-		float: none;
-		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-.examplepost{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left; 
-}
-
-// 投稿ごとの枠線
+// 投稿ごとの黄色の枠線
 .eachpost{
 // width:400px;
 // height: auto;
    margin:10px 0px;
-   border-color: #FF99CC;
-   border-style:solid;
+   border-color: #fdd835;
+   border-style: solid;
 }
 
-// 投稿番号
+// 投稿ごとの左上の番号表示
 .eachpost .box-title {
+    background: #fdd835;
     position: relative;
     display: inline-block;
     top: -2px;
@@ -169,60 +79,509 @@
     line-height: 25px;
     vertical-align: middle;
     font-size: 17px;
-    background: lightpink;
     color: #ffffff;
     font-weight: bold;
 }
-.eachpost p {
-    margin: 0; 
-    padding: 0;
+
+// modal-window設定
+// モーダルそのもの
+#modal-content {
+	width: 50% ;
+	margin: 0 ;
+	padding: 10px 20px ;
+	border: 2px solid #aaa ;
+	background: #fff ;
+	position: fixed ;
+	display: none ;
+	z-index: 2;
+    font-family:'shirokuma';
+}
+  
+// モーダルの背景  
+#modal-overlay {
+	z-index: 1 ;
+	display: none ;
+	position: fixed ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 120% ;
+	background-color: rgba( 0,0,0, 0.75 ) ;
+}
+
+.button-link {
+	color: #00f ;
+	text-decoration: none;
+}
+ 
+.button-link:hover {
+	cursor: pointer ;
+	color: #f00 ;
 }
 
 
 
-hr {
-//   border-width: 1px 0px 0px 0px; /* 太さ */
-   border-style: dashed; /* 線種 */
-   border-color: #FF99CC;
-}
-
-.index li{
-	font-size: 2rem;
-}
-
-.index ul  {
-  border: solid 2px lightpink;
-  padding: 0 0.5em;
-  position: relative;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-ul li {
-  text-align:left;    
-  line-height: 1.5;
-  padding: 0.5em 0 0.5em 1.4em;
-  border-bottom: dashed 1px silver;
-  list-style-type: none!important;
-}
-
-// ul li:before {
-//   font-family: "Font Awesome 5 Free";
-//   content: "\f138";/*アイコン種類*/
-//   position: absolute;
-//   left : 0.5em; /*左端からのアイコンまで*/
-//   color: lightpink; /*アイコン色*/
+// .modaltext h3,p{
+//     font-family:'shirokuma';
 // }
 
-ul li:last-of-type{
-  border-bottom: none;
-}
-
-// ↑ 旧VerのFontAwesomeを使っているときはfont-family: FontAwesome;に変えて下さい。
 
 
+/* スマホ767px以下 */
+// @media only screen and (max-width: 767px) {
+// .wrap{
+//   width: 100%;
+// }
+
+// .main{
+// 	float: none;
+// 	width: 90%;
+// 	height: 200px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	margin-bottom: 30px;
+// }
+
+// .examplepost{
+// 	/*floatを解除 */
+// 	float: none;
+// 	width: 90%;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+
+// .examplepost{
+//     margin-left: auto;
+//     margin-right: auto;
+//     text-align: left; 
+// }
+// }
 
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+// 不要っぽいもの
+// .examplepost li a{
+// 	display: block;
+// 	height: 44px;
+// 	line-height: 44px;
+// 	border-bottom: 1px solid #333;
+// 	text-decoration: none;
+// 	color: #333;
+// }
+
+
+// コンテンツ全体
+// .wrap{
+//   overflow: hidden;
+//   width: 100%;
+//   margin-left: 10px;
+//   margin-right: 10px;
+// }
+
+
+// .wrapper{
+// 	overflow: hidden;
+// 	width: 960px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+
+// .centerlogo{
+//     text-align: center;
+//     margin-left: auto;
+//     margin-right: auto;
+// } 
+
+// .image{
+//     text-align: left;
+// }
+
+// // 表を大きくしたい paddingとりたい 効いてない
+// .table td{
+//     padding: 10px;
+// }
+
+// .index tr{
+//     padding: 10px;
+// }
+
+// .index.abstract p{
+// 	font-size: 2rem;
+// }
+
+// .explanation{
+//     text-align:right;
+// }
+
+// .post{
+//     padding-top: 10px;
+// }
+
+
+
+// .new{
+//   margin-left :auto;
+//   margin-right :auto;
+//   background-color: #FFCCCC;
+//   border : 2px dashed #fdd835;
+//   width: 60%;
+// }
+
+// show2カラムレイアウト
+/* pc 768px以上 */
+
+
+// .wrap{
+// 	overflow: hidden;
+// 	width: 960px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+
+// .main{
+// 	float: left;
+// 	width: 400px;
+// 	height: auto;
+// // 	background-color: #ddd;
+// }
+
+// .examplepost{
+// 	float: right;
+// 	width: 530px;
+// // 	border-top: 1px solid #333;
+
+    
+// }
+// .examplepost li a{
+// 	display: block;
+// 	height: 44px;
+// 	line-height: 44px;
+//     border-bottom: 1px solid #333;
+// 	text-decoration: none;
+// 	color: #333;
+// }
+
+// .last{
+//     padding-bottom: 100px;
+//     padding-top: 50px;
+// }
+
+// .index li{
+// 	font-size: 2rem;
+// }
+
+// .index ul  {
+//   border: solid 2px #fdd835;
+//   padding: 0 0.5em;
+//   position: relative;
+//   width: 50%;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// ul li {
+//   text-align:left;    
+//   line-height: 1.5;
+//   padding: 0.5em 0 0.5em 1.4em;
+//   border-bottom: dashed 1px #fdd835;
+//   list-style-type: none!important;
+// }
+
+// // ul li:before {
+// //   font-family: "Font Awesome 5 Free";
+// //   content: "\f138";/*アイコン種類*/
+// //   position: absolute;
+// //   left : 0.5em; /*左端からのアイコンまで*/
+// //   color: lightpink; /*アイコン色*/
+// // }
+
+// ul li:last-of-type{
+//   border-bottom: none;
+// }
+
+// // ↑ 旧VerのFontAwesomeを使っているときはfont-family: FontAwesome;に変えて下さい。
+
+// 不要っぽいもの終わり（9.22✓）
+
+
+
+
+
+
+// 9月21日以前のもの
+// index2カラムレイアウト
+/* pc 768px以上 */
+
+// index
+
+// .wrapper{
+// 	overflow: hidden;
+// 	width: 960px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+
+// .centerlogo{
+//     text-align: center;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// .shushi{
+//   width: 700px;
+//   margin-left: 250px;
+//   margin-right: auto;
+//   font-family: 'shirokuma';
+//   font-size: 3rem;
+//   color: #FFF59D;
+//   text-decoration:none;
+//   text-align: center;
+// }
+
+// // .left{
+// // 	float: left;
+// // 	width: 500px;
+// // 	height: auto;
+// // 	text-align: center;
+// // // 	background-color: #ddd;
+// // }
+
+// // .right{
+// // 	float: right;
+// // 	width: 530px;
+// // 	border-top: 1px solid #333;
+// // }
+
+
+
+// .image{
+//     text-align: left;
+// }
+
+// // 表を大きくしたい paddingとりたい 効いてない
+// .table td{
+//     padding: 10px;
+// }
+
+// .index tr{
+//     padding: 10px;
+// }
+
+// .index.abstract p{
+// 	font-size: 2rem;
+// }
+// .explanation{
+//     text-align:right;
+// }
+
+// // .right{
+// //     width:600px;
+// // }
+
+// .post{
+//     padding-top: 10px;
+// }
+
+
+// .posts{
+//     text-align: center;
+// 	}
+
+// .new{
+//   margin-left :auto;
+//   margin-right :auto;
+//   background-color: #FFCCCC;
+//   border : 2px dashed #444444;
+//   width: 60%;
+// }
+
+// // show2カラムレイアウト
+// /* pc 768px以上 */
+// .wrap{
+// 	overflow: hidden;
+// 	width: 960px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
+// .main{
+// 	float: left;
+// 	width: 400px;
+// 	height: auto;
+// // 	background-color: #ddd;
+// }
+
+// .examplepost{
+// 	float: right;
+// 	width: 530px;
+// // 	border-top: 1px solid #333;
+// }
+// .examplepost li a{
+// 	display: block;
+// 	height: 44px;
+// 	line-height: 44px;
+// 	border-bottom: 1px solid #333;
+// 	text-decoration: none;
+// 	color: #333;
+// }
+
+// .last{
+//     padding-bottom: 100px;
+//     padding-top: 50px;
+// }
+
+
+
+// /* スマホ 767px以下 */
+// @media only screen and (max-width: 767px) {
+// 	.wrap{
+// 		width: 100%;
+// 	}
+// 	.main{
+// 		float: none;
+// 		width: 90%;
+// 		height: 200px;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		margin-bottom: 30px;
+// 	}
+// 	.examplepost{
+// 		/*floatを解除 */
+// 		float: none;
+// 		width: 90%;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 	}
+// }
+
+// .examplepost{
+//     margin-left: auto;
+//     margin-right: auto;
+//     text-align: left; 
+// }
+
+// // 投稿ごとの枠線
+// .eachpost{
+// // width:400px;
+// // height: auto;
+//   margin:10px 0px;
+//   border-color: #FF99CC;
+//   border-style:solid;
+// }
+
+// // 投稿番号
+// .eachpost .box-title {
+//     position: relative;
+//     display: inline-block;
+//     top: -2px;
+//     left: -2px;
+//     padding: 0 9px;
+//     height: 25px;
+//     line-height: 25px;
+//     vertical-align: middle;
+//     font-size: 17px;
+//     background: lightpink;
+//     color: #ffffff;
+//     font-weight: bold;
+// }
+// .eachpost p {
+//     margin: 0; 
+//     padding: 0;
+// }
+
+
+
+// hr {
+// //   border-width: 1px 0px 0px 0px; /* 太さ */
+//   border-style: dashed; /* 線種 */
+//   border-color: #FF99CC;
+// }
+
+// .index li{
+// 	font-size: 2rem;
+// }
+
+// .index ul  {
+//   border: solid 2px lightpink;
+//   padding: 0 0.5em;
+//   position: relative;
+//   width: 50%;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// ul li {
+//   text-align:left;    
+//   line-height: 1.5;
+//   padding: 0.5em 0 0.5em 1.4em;
+//   border-bottom: dashed 1px silver;
+//   list-style-type: none!important;
+// }
+
+// // ul li:before {
+// //   font-family: "Font Awesome 5 Free";
+// //   content: "\f138";/*アイコン種類*/
+// //   position: absolute;
+// //   left : 0.5em; /*左端からのアイコンまで*/
+// //   color: lightpink; /*アイコン色*/
+// // }
+
+// ul li:last-of-type{
+//   border-bottom: none;
+// }
+
+// // ↑ 旧VerのFontAwesomeを使っているときはfont-family: FontAwesome;に変えて下さい。
+
+
+
+// // modal-window設定
+// // モーダルそのもの
+// #modal-content {
+// 	width: 50% ;
+// 	margin: 0 ;
+// 	padding: 10px 20px ;
+// 	border: 2px solid #aaa ;
+// 	background: #fff ;
+// 	position: fixed ;
+// 	display: none ;
+// 	z-index: 2 ;
+//     font-family:'shirokuma';
+// }
+  
+  
+// #modal-overlay {
+// 	z-index: 1 ;
+// 	display: none ;
+// 	position: fixed ;
+// 	top: 0 ;
+// 	left: 0 ;
+// 	width: 100% ;
+// 	height: 120% ;
+// 	background-color: rgba( 0,0,0, 0.75 ) ;
+// }
+
+// .button-link {
+// 	color: #00f ;
+// 	text-decoration: none;
+// }
+ 
+// .button-link:hover {
+// 	cursor: pointer ;
+// 	color: #f00 ;
+// }
+
+// .modaltext h3,p{
+//     font-family:'shirokuma';
+// }
+// // モーダル終わり
+
+
+
+
+// // Place all the styles related to the topics controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/

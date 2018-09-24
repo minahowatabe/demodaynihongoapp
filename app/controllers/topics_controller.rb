@@ -4,22 +4,22 @@ class TopicsController < ApplicationController
   
   def index
     @topics = Topic.all
-    @newTopic = Topic.new(params[:id])
+    @newTopic = Topic.new
     @topics = @topics.search(params[:search])
-    @newpost = Post.new(topic_id: params[:id])   
+    @newpost = Post.new(topic_id: params[:id])     
   end
 
-  def create
-    @topic = Topic.new(params[:topic].permit(:id,:title))
-    @topic.save
-    redirect_to topics_path
-  end
+  # def create
+  #   @topic = Topic.new(params[:topic].permit(:title))
+  #   @topic.save
+  #   redirect_to topics_path
+  # end
 
-  def delete
-    @topic = Topic.find(params[:id])
-    @topic.destroy
-    redirect_to topics_path
-  end
+  # def delete
+  #   @topic = Topic.find(params[:id])
+  #   @topic.destroy
+  #   redirect_to topics_path
+  # end
   
   def show
    @topic = Topic.find(params[:id])
@@ -27,9 +27,4 @@ class TopicsController < ApplicationController
    @posts = Post.where(topic_id: params[:id]) 
   end
 
-private
-
-  def topic_params
-    params.require(:topic).permit(:title)
-  end
 end

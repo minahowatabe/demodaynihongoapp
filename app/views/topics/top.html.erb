@@ -4,14 +4,15 @@
 <!--<img src="<%#= asset_path "graywall.jpg" %>" />-->
 <!--<div style="background-image:url(<%#= asset_path "graywall.jpg" %>)" />    -->
 
-<div class="containe-fluid top">
-  <div class="rowA">
-   <div class="col-md-offset-2 col-md-4">
-    <div class="col-xs-12">
+
+<!--ロゴ部分のコンテナ-->
+<div class="containe-fluid top pc">
+  <div class="rowA pc">
+   <div class="col-md-offset-2 col-md-4 pc">
      <br>
 
   <!--ロゴ３行-->
-    <div class="logo">
+    <div class="logo pc">
       <b>に<span>ほ</span>ん<span>ご</span></b>
       <br>
       <b>き<span>ょ</span>う<span>し</span><span>の</span></b>
@@ -23,50 +24,117 @@
    </div>
   </div>
 <div>
+<!--ロゴコンテナ終わり-->
 
-   <!--<div class="space"></div>-->
+<!--<div class="logospace"></div>-->
+<!--<br> -->
 
-<br> 
+<!--リンク（5つのイイメージ画像）部分のコンテナ  -->
+<div class="container toplink pc">
+ <div class="row pc">
+ 
+ <!--リンク画像（左側3つ）-->
+ <div class="col-md-2 pc">
+    <!--<div class="col-xs-3 col-xs-offset-2">-->
+      <div class="toplink pc">
+    	<%= link_to(image_tag('link-atsume.png'), topics_path) %> 
+      </div>
+    	<div class="toplink pc">
+    	<%= link_to(image_tag('link-lab.png'), labs_path) %> 
+      </div>
+    	<div class="toplink pc">
+    	<%= link_to(image_tag('link-soodan.png'), questions_path) %> 
+      </div>
+ </div>
+ <!--3つ終わり-->
   
-  <div class="container toplink">
-  <div class="row">
-    <div class="col-md-2">
-      <!--<div class="col-xs-3 col-xs-offset-2">-->
-        <div class="toplink">
-      	<%= link_to(image_tag('link-atsume.png'), topics_path) %> 
-        </div>
-      	<div class="toplink">
-      	<%= link_to(image_tag('link-lab.png'), labs_path) %> 
-        </div>
-      	<div class="toplink">
-      	<%= link_to(image_tag('link-soodan.png'), questions_path) %> 
-        </div>
-     </div>
-    
-  <div class="col-md-2">
-    <div class="col-xs-3 col-xs-offset-3">
-        <br><br>
-      	<div class="toplink">
-      	<br><br>
-        </div>
-      	<div class="toplink">
-      	<%= link_to(image_tag('link-idea.png'), ideas_path) %> 
-        <br><br>
-        </div>
-        <br><br>
-      	<div class="toplink col-md-3 col-md-offset-3">
-      	<%= link_to(image_tag('link-about.png'), abouts_index_path) %> 
-        </div>        <div class="toplink">
-        <br>
-      	</div>
-      
+ <!--リンク画像（右側2つ）-->
+ <div class="col-md-2 pc">
+  <div class="col-xs-3 col-xs-offset-3">
+      <br><br>
+    	<div class="toplink pc">
+    	<br><br>
+      </div>
+    	<div class="toplink pc">
+    	<%= link_to(image_tag('link-idea.png'), ideas_path) %> 
+      <br><br>
+      </div>
+      <br><br>
+    	<div class="toplink col-md-3 col-md-offset-3 pc">
+    	<%= link_to(image_tag('link-about.png'), abouts_index_path) %> 
+      </div>        <div class="toplink pc">
+      <br>
+    	</div>
   </div>
  </div>  
+ <!--2つ終わり-->
+ 
+ </div>  
 </div>  
-  
-<!--  </div>-->
-<!--</div>-->
+<!--リンク5つコンテナ終わり-->
 
+</body>
+
+
+
+
+
+<!--★★★スマホ用表示--★★★>
+<body class = "top mb">
+
+<!--ロゴ部分のコンテナ-->
+<div class="containe-fluid top mb">
+  <div class="rowA mb">
+   <div class="col-xs-offset-2 col-xs-8 mb">
+     <br>
+
+  <!--ロゴ３行-->
+    <div class="logo mb">
+      <b>に<span>ほ</span>ん<span>ご</span></b>
+      <br>
+      <b>き<span>ょ</span>う<span>し</span><span>の</span></b>
+      <br>
+      <b>ほ<span>し</span>い<span>も</span>の。</b>
+    </div>
+    <br><br><br>
+   </div>
+  </div>
+<div>
+<!--ロゴコンテナ終わり-->
+
+<!--リンク（5つのイイメージ画像）部分のコンテナ  -->
+<div class="container toplink mb">
+ <div class="row mb">
+   
+   
+ <!--リンク画像（左側3つ）-->
+ <div class="col-xs-12 mb" style="zoom:0.8;">
+      <div class="col-xs-offset-5 col-xs-5 toplink mb">
+    	<%= link_to(image_tag('link-atsume.png'), topics_path) %> 
+      </div>
+  
+    	<div class="col-xs-5 toplink mb">
+    	<%= link_to(image_tag('link-lab.png'), labs_path) %> 
+      </div>
+  
+    	<div class="col-xs-offset-5 col-xs-5 toplink mb">
+    	<%= link_to(image_tag('link-soodan.png'), questions_path) %> 
+      </div>
+  
+    	<div class="col-xs-5 toplink mb">
+    	<%= link_to(image_tag('link-idea.png'), ideas_path) %> 
+      </div>
+  
+    	<div class="col-xs-offset-5 col-xs-5 toplink mb">
+    	<%= link_to(image_tag('link-about.png'), abouts_index_path) %> 
+      </div>
+ </div>   
+ 
+</div>  
+</div>  
+<!--リンク5つコンテナ終わり-->
+
+<!--スマホ終わり-->
 
 </body>
 
