@@ -13,6 +13,15 @@
     font-size: 1.5rem;
 }
 
+.questionshushi{
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #98c7cd;
+}
+
+
 /*そうだんの使い方パネルのヘッダー*/
 .panel-heading{
     text-decoration: none
