@@ -137,12 +137,12 @@
        <p>☞一覧にはタイトルのみが表示されるので、内容がわかりやすいものを！</p>
         <%= form_for @newQuestion, :url => {:action => 'create'} do |f| %>
        <p>
-        title: <%= f.text_field :title %>
+        title:<br> <%= f.text_field :title, :size =>'20x2'%>
        <br>
-        question:<%= f.text_area :content %>
+        question:<br><%= f.text_area :content, :size =>'40x5', class: "variable-area" %>
        <br>
        <!--キーワードを入れたい-->
-        keyword:<%= f.text_area :keyword %></p>
+        keyword:（カンマで区切って複数入力できます。）<br><%= f.text_field :keyword %></p>
         <%= f.submit ' CREATE question ', class:'btn-5 btn-sm' %>
        <% end %>
      </div>  

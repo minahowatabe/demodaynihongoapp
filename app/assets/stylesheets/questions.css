@@ -38,6 +38,22 @@
     text-decoration: none;
 }
 
+
+/*質問入力欄の高さを広げる*/
+/*質問する(index)・回答する(show)共通*/
+.variable-area{
+  min-height: 3em;
+  border: 2px solid #ccc;
+  background-color: #fff;  
+}
+
+
+
+
+
+
+
+
 /*セクションタイトル・指示文*/
 h4, h2, p{
     text-decoration: none;

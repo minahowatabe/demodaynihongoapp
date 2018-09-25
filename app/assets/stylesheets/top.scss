@@ -79,11 +79,13 @@
 
 .circle{
   display: inline-block;
-  width: 380px;
-  height: 380px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
+  margin-right: 120px;
+  
   background: none;
-  border: dotted 6px #ffff66;
+  border: dotted 4.5px #bbac94;
   // margin: 30px;
 }
 // 円終わり

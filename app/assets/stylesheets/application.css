@@ -89,7 +89,7 @@
      width: 70%;
      font-size: 3vh;
    }
-   
+ 
    /*Aboutページ*/
     .shushi {
         width: 100%;
@@ -120,7 +120,17 @@
       text-align: center;
     }
 
-  
+     /*labページ*/
+    .labshushi{
+        width: 90%;
+        padding: 3px;
+    }
+    
+    h3 .lab-panel{
+         font-size: 2rem;
+    }
+
+    
 }
 
 @media screen and (max-width: 320px) {
@@ -140,7 +150,7 @@
 /*表示・非表示の切り替え*/
 /*クラスを付けるだけ*/
 
-/**PCの場合*　PCだったら、表示する*/
+/**PCの場合*PCだったら、表示する*/
 .pc	{ display:inline!important; }
 .mb	{ display:none!important; }
 

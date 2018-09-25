@@ -11,7 +11,8 @@ gem 'rails_admin'
 gem 'font-awesome-rails'
 gem 'acts-as-taggable-on'
 gem 'ransack'
-
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
