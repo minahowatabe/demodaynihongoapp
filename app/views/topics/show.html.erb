@@ -58,7 +58,7 @@
       <p>実例:<%= simple_format(post.example) %></p>
       <hr width="500" size="1" color="#fdd835" style="border-style:dotted">
       <p>発話状況: <%= simple_format(post.memo) %></p>
-      <p>Image:<%#= image_tag @post.(image:[]) %></p>
+      <p>Image:<%#= image_tag(@post.image) %></p>
 　　  <p><%= post.created_at %><%= link_to '[削除]', post_path(@topic.id), 
                                method: :delete, 
                                data: {confirm: "削除してもよろしいですか？"}  %></p>

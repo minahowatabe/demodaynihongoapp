@@ -101,9 +101,29 @@
   </header>
    
 
-<!--全画面メニュースマホ用-->
+<!--全画面メニュー-->
 
-<!--全画面メニュースマホ用おわり-->
+<div class="cp_fullscreenmenu">
+<input type="checkbox" id="menuToggle" />
+<label for="menuToggle" class="hamburger">
+<div class="open"></div>
+</label>
+<div class="menu menuEffects">
+<label for="menuToggle"></label>
+<div class="menucont">
+<ul>
+	<li><%= link_to 'このサイトでできること', abouts_index_path %></li>
+	<li><%= link_to 'ふだんの日本語あつめ', topics_path %></li>
+	<li><%= link_to '日本語ぶんせき', labs_path %></li>
+	<li><%= link_to 'レッスンのコツとアイデア', ideas_path %></li>
+	<li><%= link_to 'そうだん', questions_path %></li>  
+</ul>
+</div>
+</div>
+</div>
+
+
+<!--全画面メニューおわり-->
 
 
 
