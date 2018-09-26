@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
-  mount_uploaders :image, ImageUploader
+  mount_uploaders :images, ImageUploader
   belongs_to :topic
   
   validates :example, :memo, presence: true
-  
+  default_scope -> { order(created_at: :desc) }
   
   # 検索窓いらないかも
   # def self.search(search) #self.でクラスメソッドとしている

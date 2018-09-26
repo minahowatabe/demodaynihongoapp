@@ -19,29 +19,12 @@
      
       <h1 class="questionshushi" style="font-size: 4vh;" >みんなでたすけあって、<br>たくさんいいクラス、いいレッスンをつくりませんか。</h1>
       <h3 class="questionshushi">だいじょうぶ!　みんなおなじです。
-      <!-- 「あしたなのに、まだぜんぜんいいアイデアがうかばない・・・」<br>「いいれんしゅう方法ないかな・・・」-->
-      <!--<br>「あのしつもん、みんなはどうこたえてるんだろう?・・・」<br>「このアイデアって、ちゃんとつたわるかな…?」-->
-      <!--<br>「これって、なんかへんな気がする…わたしがズレてるのかな?・・・」-->
       <br>わたしたちもたのしんで、happyに前にすすみつづけるために、たすけあいましょう!</h3>  
   </div>
   <!--趣旨説明おわり-->
 </div>
   
- <!--そうだんの使い方パネル-->
-<!-- 	<div class="panel-heading">-->
-<!-- 		"そうだん”の使い方-->
-<!-- 	</div>-->
-<!-- 	<div class="panel-body">-->
-<!-- 		授業の準備中に、なかなかいい伝え方が浮かばなくて長い時間悩んだり、-->
-<!-- 		文法の分析がうまく進まなくて苦しんだり、-->
-<!-- 		違和感のある会話や文を目にして「あれ？これ、どう教えよう…？」と思ったり、-->
-<!-- 		「みんなならどうする？？」って、相談したい時、ありませんか。-->
-<!-- 	  いい授業をするための質問なら、なんでもOK。-->
-<!-- 	  ここでアドバイスし合って、いい授業をしていきましょう！	-->
-<!-- 	</div>-->
-	
-<!--そうだんの使い方パネルおわり-->
-
+ 
 <!--画像-->
  <div class="col-md-3 col-xs-11 pc">
    <%= image_tag 'postit.jpg', :size =>'300x200' %>
@@ -81,7 +64,7 @@
    
 <!--ログイン・未ログイン分岐-->
 <!--ログインしてたら、タイトルにリンクがつく-->
-    <%# if user_signed_in? %>
+    <% if user_signed_in? %>
      <ul>
       <% @questions.each do |question| %>
       <li><%= link_to question.title, question_path(question.id) %>
@@ -91,17 +74,17 @@
      </ul>
      
 <!--ログインしていなかったら、タイトル（リンクなし）表示のみ＋ログイン促進ボタン   -->
-   <%# else %>
-   <!--  <ul>-->
-   <!--   <%# @questions.each do |question| %>-->
+   <% else %>
+     <ul>
+      <% @questions.each do |question| %>
        <li><%#=link_to question.title, question_path(question.id) %>
-   <!--    <li><%#= question.title %>-->
-   <!--   <%# end %>-->
-   <!--     <h4>「みんなの質問を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>-->
-   <!--     <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>-->
-   <!--     <%#= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>-->
-   <!--  </ul>-->
-   <!--<%# end %>-->
+       <li><%= question.title %>
+      <% end %>
+        <h4>「みんなの質問を見る」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
+        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+        <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
+     </ul>
+   <% end %>
 <!--分岐終わり-->
 
    <br>
@@ -114,7 +97,7 @@
 <!--質問する-->
 
 <!--ログインしてたら、質問投稿欄-->
-    <%# if user_signed_in? %>
+    <% if user_signed_in? %>
      <div class="col-md-offset-1 col-md-8 col-xs-10 panel panel-default qa last">
       
       <!--バリデーション--エラー中>
@@ -148,14 +131,14 @@
      </div>  
  
   <!--ログインしていなかったら、ログイン促進ボタン表示-->
-    <%# else %>
-    <!-- <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa last">-->
-    <!--  <h2>質問する</h2>-->
-    <!--  <h4>「質問する」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>-->
-      <%#= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
-      <%#= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
-    <!-- </div>-->
-    <%# end %>
+    <% else %>
+     <div class="col-md-offset-1 col-md-8 col-xs-11 panel panel-default qa last">
+      <h2>質問する</h2>
+      <h4>「質問する」には、下のボタン（または上のリンク）から、ログインをお願いします。</h4>
+      <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+      <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %>
+     </div>
+    <% end %>
     
     <br> <br>
  </div>

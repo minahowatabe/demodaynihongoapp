@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "topics#top"
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # devise_for :users
+  devise_for :users
  
 # 質問掲示板ページ
   resources :questions

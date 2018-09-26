@@ -34,21 +34,23 @@
 <!--</div>   -->
 
     <div class="lablist">
-    <%# if user_signed_in? %>
+    <% if user_signed_in? %>
      <% @labs.each do |lab| %>
        <div class="lab-panel col-md-5">
          <h3><%= link_to lab.title, lab_path(lab.id)  %></h3>
          <p class="text-overflow"><%= lab.content %></p>
        </div>     
      <% end %>  
-    <%# else %>
-    <!-- <p>ログイン後、詳細ページに移ります。please login/sign up</p>    -->
-    <!-- <%# @labs.each do |lab| %>-->
-    <!--   <div class="lab-panel col-md-6">-->
-    <!--     <h2><%#= lab.title %></h2>-->
-    <!--   </div>     -->
-    <!-- <%# end %>-->
-    <!--<%# end %>-->
+    <% else %>
+     <h4>　　投稿をよむには、☞のボタン（または上のリンク）から、ログイン（or サインアップ）をお願いします。   
+       <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+       <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %></h4> 
+     <% @labs.each do |lab| %>
+       <div class="lab-panel col-md-6">
+         <h2><%= lab.title %></h2>
+       </div>
+     <% end %>
+    <% end %>
     </div>
  </div>
 </div>   

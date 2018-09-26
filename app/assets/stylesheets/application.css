@@ -89,6 +89,10 @@
      width: 70%;
      font-size: 3vh;
    }
+   
+  .wrap{
+     width:100%;  
+   }
  
    /*Aboutページ*/
     .shushi {
@@ -400,9 +404,12 @@ a:active {
 text-decoration: none;
 color: inherit;
 }
-input {
-display: none;
-}
+
+/*コメントアウトすると、チェックボックスが出てしまう。有効にすると、他の記入欄が消えてしまう*/
+/*input {*/
+/*display: none;*/
+/*}*/
+
 .cp_fullscreenmenu {
 position: fixed;
 z-index: 1;
@@ -431,7 +438,7 @@ background-size: 100%;
 font-size: 54px;
 position: relative;
 top: 50%;
-margin-top: -350px;
+margin-top: -300px;
 padding-bottom: 20px;
 text-align: center;
 }

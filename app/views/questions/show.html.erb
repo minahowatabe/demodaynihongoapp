@@ -26,7 +26,7 @@
   <br>
 <%= form_for @newAnswer, :url => answers_path do |f| %>
 
-  <p>お名前:<%= f.text_field :name %></p>
+  <p class="answername">お名前:<%= f.text_field :name %></p>
   <p>回答：<%= f.text_area :body, :size =>'40x5', class: "variable-area" %></p>
   <%= f.hidden_field :question_id %>
   <%= f.submit ' ANSWER ', class:'btn-5 btn-sm' %>

@@ -25,13 +25,13 @@
     
     <%= form_for @newpost, :url => posts_path do |f| %>
     <h3><%= f.label :"話した・聞いた日本語の実例" %></h3>
-     <p><%= f.text_area :example, :size=>"50x6" %></p>
+     <p><%= f.text_area :example, :size=>"40x6" %></p>
      <div><%= f.file_field :image, id: :post_image, multiple: true %></div>
      <br>
     <h3><%= f.label :"発話状況" %></h3>
      <p><%= f.text_area :memo, :size=>"40x3" %></p>
      <%= f.hidden_field :topic_id %>
-     <%= f.submit ' CREATE ', class: 'btn-5 btn-sm button-link' %>
+     <%= f.submit ' CREATE ', class: 'btn-5 btn-sm' %>
      <% end %>
 
   <br>

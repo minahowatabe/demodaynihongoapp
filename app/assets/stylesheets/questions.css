@@ -75,6 +75,11 @@ h4, h2, p{
 
 /*questions/show*/
 
+/*回答する欄の名前*/
+.answername{
+    display: inline !important;
+}
+
 
 /*みんなの回答吹き出し*/
 .balloon1 p{

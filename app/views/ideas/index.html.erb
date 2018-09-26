@@ -12,7 +12,7 @@
 <div class="table-responsive">
   <table class="table table-striped">
       
-   <%# if user_signed_in? %>  
+   <% if user_signed_in? %>  
     <thead>
       <tr>
         <th>Title</th>
@@ -31,21 +31,23 @@
       <% end %>
     </tbody>
    
-   <%# else %>
-   <!--<p> ログイン後、詳細ページに移ります。</p>-->
-   <!--  <thead>-->
-   <!--   <tr>-->
-   <!--     <th>Title</th>-->
-   <!--   </tr>-->
-   <!-- </thead>-->
+   <% else %>
+    <h4>　　投稿をよむには、☞のボタン（または上のリンク）から、ログイン（or サインアップ）をお願いします。   
+       <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+       <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %></h4> 
+     <thead>
+      <tr>
+        <th>Title</th>
+      </tr>
+    </thead>
     
-   <!-- <tbody>-->
-   <!--   <%# @ideas.each do |idea| %>-->
-   <!--     <tr>-->
-   <!--       <td class="titleonly"><%#= idea.title %></td>-->
-   <!--     </tr>-->
-   <!--  <%# end %>-->
-   <!-- </tbody>-->
-   <!--<%# end %>-->
+    <tbody>
+      <% @ideas.each do |idea| %>
+        <tr>
+          <td class="titleonly"><%= idea.title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+   <% end %>
   </table>
 </div>
