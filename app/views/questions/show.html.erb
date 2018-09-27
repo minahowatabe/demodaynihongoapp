@@ -6,9 +6,9 @@
    質問
   </div>
 	<div class="panel-body">
-   <h3>Title:  <%= @question.title %></h3>
+   <h3>Title:  <%= simple_format(@question.title) %></h3>
    <h4>Question:
-   <br>「<%= @question.content %>」</h4>
+   <br>「<%= simple_format(@question.content) %>」</h4>
    <h5>Keyword:[ <%= @question.keyword %> ]</h5>
   </div>
 </div>
@@ -47,7 +47,7 @@
 <% @answers.each_with_index do |answer , idx| %>
 <div class="balloon1">
   <p>
-    <%= idx + 1 %>. <%= answer.name %>さん : <%= answer.body %>
+    <%= idx + 1 %>. <%= answer.name %>さん : <%= simple_format(answer.body) %>
   </p>
 <!--投稿したユーザー本人だけが削除できる  未実装-->
  <%# if user_id == current_user.id %>
