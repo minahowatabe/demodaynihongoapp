@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  mount_uploaders :images, ImageUploader
+  mount_uploaders :image, ImageUploader
   belongs_to :topic
   
   validates :example, :memo, presence: true

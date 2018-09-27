@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def create
-    @post = Post.new(params[:post].permit(:topic_id, :example, :memo, {image: []}, :image_cache))
+    @post = Post.new(params[:post].permit(:topic_id, :example, :memo, {image: []}))
     @post.save
     redirect_to topic_path(params[:post]['topic_id'])
   end
@@ -16,6 +16,12 @@ class PostsController < ApplicationController
     @posts_count = Post.where(post_id: @post.id).count
     @posts = @posts.search(params[:search])
   end
+
+private   
+    
+  def post_params
+     params.require(:post).permit(:topic_id, :example, :memo, {image: []}, :image_cache)
+  end 
     
 end
 
