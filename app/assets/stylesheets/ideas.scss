@@ -20,7 +20,7 @@
     margin-left: auto;
     margin-right: auto;
     color: #333333;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 // テーブルの設定
 table.ideatable{
@@ -37,17 +37,18 @@ table.ideatable{
 
 // テーブル内showボタン
 .labshowbtn{
-    width: 10%;
+    width: 16%;
+    margin-right:30px;
 }
 
 // コンテンツ部分
 .ellipsis {
-    width: 30%;
-    position: fixed;
+    width: 40%;
+    position: relative;
     height: 40px;
     overflow: hidden;
     line-height: 20px;
-    font-size:1.5vh;
+    font-size: 1.8vh;
 }
  
 .ellipsis:before, .ellipsis:after {

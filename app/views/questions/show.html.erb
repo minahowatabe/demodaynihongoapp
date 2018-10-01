@@ -8,7 +8,7 @@
 	<div class="panel-body">
    <h3>Title:  <%= simple_format(@question.title) %></h3>
    <h4>Question:
-   <br>「<%= simple_format(@question.content) %>」</h4>
+   <%= simple_format(@question.content) %></h4>
    <h5>Keyword:[ <%= @question.keyword %> ]</h5>
   </div>
 </div>
@@ -51,7 +51,7 @@
   </p>
 <!--投稿したユーザー本人だけが削除できる  未実装-->
  <%# if user_id == current_user.id %>
-  <p><%= link_to '[削除]',answer_path(@question.id), method: :destroy, data: {confirm: "削除してもよろしいですか？"} %></p>
+  <p><%= link_to '[削除]',answer_path(answer.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
  <%# else %>
   <p></p>
  <%# end %>  

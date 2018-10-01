@@ -60,7 +60,8 @@
       <p>発話状況: <%= simple_format(post.memo) %></p>
       <p>Image:<%#= image_tag post.image %></p>
       <p><%#= post.created_at %><%= link_to '[削除]', post_path(@topic.id), 
-                               method: :delete, 
+                               method: :delete,
+                               # method: :destroy,
                                data: {confirm: "削除してもよろしいですか？"}  %></p>
      </div>
     <% end %>
