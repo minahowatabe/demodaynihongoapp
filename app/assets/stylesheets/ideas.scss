@@ -20,25 +20,34 @@
     margin-left: auto;
     margin-right: auto;
     color: #333333;
+    font-size: 3vw;
+}
+// テーブルの設定
+table.ideatable{
+    width: 96%;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-
+// タイトル
 .titleonly{
-    width: 45%;
-    font-size:2rem;
+    width: 40%;
+    font-size:2vh;
 }
 
+// テーブル内showボタン
 .labshowbtn{
     width: 10%;
 }
 
+// コンテンツ部分
 .ellipsis {
     width: 30%;
     position: fixed;
     height: 40px;
     overflow: hidden;
     line-height: 20px;
-    font-size:1.5rem;
+    font-size:1.5vh;
 }
  
 .ellipsis:before, .ellipsis:after {
@@ -58,14 +67,18 @@
     height: 100%;
 }
 
+.minibtn{
+    margin-left: 50px;
+}
+
 
 // show
+
 .ideaarticle{
     background-color: #f3f3f3;
     width: 80%;
     margin-left: 50px !important;
     margin-right: auto;
-    
 }
 
 .ideatitle{

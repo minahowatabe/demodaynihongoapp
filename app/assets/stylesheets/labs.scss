@@ -18,6 +18,10 @@ p.text-overflow{
     text-overflow:ellipsis;
 }
 
+.minibtn{
+    margin-left: 50px;
+}
+
 .lablist{
     width: 90%;
     margin-left: auto;
@@ -29,4 +33,15 @@ p.text-overflow{
     border: dashed 1px darkgray;
     padding: 10px;
     margin: 10px;
+}
+
+.lab-panel h3{
+    font-size: 3.5vh;
+}
+
+.labarticle{
+    background-color: #f3f3f3;
+    width: 80%;
+    margin-left: 50px !important;
+    margin-right: auto;
 }

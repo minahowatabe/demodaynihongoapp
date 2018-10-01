@@ -19,6 +19,7 @@
     margin-left: auto;
     margin-right: auto;
     color: #98c7cd;
+    font-size: 3vh
 }
 
 
@@ -63,8 +64,12 @@ h4, h2, p{
 .last{
     padding-bottom: 20px;
     margin-bottom: 100px;
+    /*margin-left: 8px;*/
 }
 
+.minibtn{
+    margin-left: 50px;
+}
 
 /*みんなの質問一覧の質問タイトル*/
 .qa li{

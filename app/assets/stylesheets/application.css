@@ -134,6 +134,12 @@
          font-size: 2rem;
     }
 
+/*ideasページ*/
+    table.ideatable{
+    max-width: 480px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    }
     
 }
 
