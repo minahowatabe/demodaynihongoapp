@@ -26,7 +26,7 @@
     <%= form_for @newpost, :url => posts_path do |f| %>
     <h3><%= f.label :"話した・聞いた日本語の実例" %></h3>
      <p><%= f.text_area :example, :size=>"40x6" %></p>
-     <div><%= f.file_field :image, id: :post_image, multiple: true %></div>
+     <!--<div><%#= f.file_field :image, id: :post_image, multiple: true %></div>-->
      <br>
     <h3><%= f.label :"発話状況" %></h3>
      <p><%= f.text_area :memo, :size=>"40x3" %></p>
@@ -58,7 +58,9 @@
       <p>実例:<%= simple_format(post.example) %></p>
       <hr width="500" size="1" color="#fdd835" style="border-style:dotted">
       <p>発話状況: <%= simple_format(post.memo) %></p>
-      <p>Image:<%#= image_tag post.image %></p>
+      <!--<p>Image:-->
+      <%#= image_tag post.image %>
+      <!--</p>-->
       <p><%#= post.created_at %><%= link_to '[削除]', post_path(@topic.id), 
                                method: :delete,
                                # method: :destroy,

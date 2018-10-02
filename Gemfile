@@ -15,10 +15,10 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'twitter'
 gem 'dotenv-rails'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'bootstrap-social-rails'
+# gem 'omniauth'
+# gem 'omniauth-twitter'
+# gem 'omniauth-facebook'
+# gem 'bootstrap-social-rails'
 
 
 
