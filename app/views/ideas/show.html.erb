@@ -6,9 +6,14 @@
 
    <div class="col-md-offset-1 col-md-10 ideaarticle">
     <ul class="row">
+     <% if @idea.image.present? %>
       <li class="col-md-10">Title: <h2 class="ideatitle"><%= @idea.title %></h2></li>
       <li class="col-md-10">Title: <h2 class="ideatitle"><%= image_tag @idea.image, :size =>'750x500' %></h2></li>
       <li class="col-md-10" >Content: <h4 class="ideacontent"><%= simple_format(@idea.content) %></h4></li>
+     <% else %>
+      <li class="col-md-10">Title: <h2 class="ideatitle"><%= @idea.title %></h2></li>
+      <li class="col-md-10" >Content: <h4 class="ideacontent"><%= simple_format(@idea.content) %></h4></li>
+     <% end %>
     </ul>
    </div>
 
