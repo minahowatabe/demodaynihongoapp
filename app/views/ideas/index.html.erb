@@ -23,6 +23,7 @@
       </tr>
     </thead>
 
+    <tbody>
       <% @ideas.each do |idea| %>
         <tr>
           <td class="titleonly"><%= idea.title %></td>
@@ -32,9 +33,10 @@
       <% end %>
     </tbody>
    
+   <!--<!--未ログイン-->
    <% else %>
-    <h4>　　投稿をよむには、☞のボタン（または上のリンク）から、ログイン（or サインアップ）をお願いします。   
-       <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+    <h4>　　投稿をよむには、☞のボタン（または上のリンク）から、ログイン（or サインアップ）をお願いします。 <br><br>
+       <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm minibtn' %>
        <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %></h4> 
      <thead>
       <tr>
@@ -49,9 +51,11 @@
         </tr>
       <% end %>
     </tbody>
+    
    <% end %>
   </table>
 </div>
+
 
 
 <!--★★★スマホ画面に適用-->
@@ -60,7 +64,7 @@
       
    <!--ログイン済み-->
    <% if user_signed_in? %>  
-    <thead>
+    <thead class="mbtable">
       <tr>
         <th>Title</th>
         <!--<th>Content</th>-->
@@ -68,18 +72,20 @@
       </tr>
     </thead>
 
-　　　 <% @ideas.each do |idea| %>
+    <tbody class="mbtable">
+      <% @ideas.each do |idea| %>
         <tr>
           <td class="titleonly"><%= idea.title %></td>
           <!--<td><p class="ellipsis"><%= idea.content %></p></td>-->
           <td class="labshowbtn"><%= link_to 'Show', idea, class: 'btn btn-2' %></td>
         </tr>
       <% end %>
-　　  </tbody>
-      
+    </tbody>
+   
+   <!--未ログイン-->
    <% else %>
     <h4>　　投稿をよむには、☞のボタン（または上のリンク）から、ログイン（or サインアップ）をお願いします。   
-       <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
+       <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm minibtn' %>
        <%= link_to "LOG IN", new_user_session_path, class: 'btn-4 btn-sm' %></h4> 
      <thead>
       <tr>
@@ -94,6 +100,8 @@
         </tr>
       <% end %>
     </tbody>
+    
    <% end %>
   </table>
 </div>
+<!--★★★スマホ画面に適用おわり-->

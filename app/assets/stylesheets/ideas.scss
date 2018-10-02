@@ -15,16 +15,16 @@
 
 // ideaページの趣旨
 .ideashushi{
-    width: 70%;
+    width: 80%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     color: #333333;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 // テーブルの設定
 table.ideatable{
-    width: 96%;
+    width: 94%;
     margin-left: auto !important;
     margin-right: auto !important;
 }
@@ -37,18 +37,17 @@ table.ideatable{
 
 // テーブル内showボタン
 .labshowbtn{
-    width: 16%;
-    margin-right:30px;
+    width: 10%;
 }
 
 // コンテンツ部分
 .ellipsis {
-    width: 40%;
-    position: relative;
+    width: 30%;
+    position: fixed;
     height: 40px;
     overflow: hidden;
     line-height: 20px;
-    font-size: 1.8vh;
+    font-size:1.5vh;
 }
  
 .ellipsis:before, .ellipsis:after {

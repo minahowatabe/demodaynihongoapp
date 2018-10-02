@@ -15,6 +15,12 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'twitter'
 gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'bootstrap-social-rails'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'

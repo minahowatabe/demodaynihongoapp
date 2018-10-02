@@ -71,6 +71,12 @@ h4, h2, p{
     margin-left: 50px;
 }
 
+.variable-area {
+  min-height: 3em;
+  border: 2px solid #ccc;
+  background-color: #fff;
+}
+
 /*みんなの質問一覧の質問タイトル*/
 .qa li{
     list-style: none;
