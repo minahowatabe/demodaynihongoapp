@@ -68,6 +68,15 @@
       </tr>
     </thead>
 
+　　　 <% @ideas.each do |idea| %>
+        <tr>
+          <td class="titleonly"><%= idea.title %></td>
+          <!--<td><p class="ellipsis"><%= idea.content %></p></td>-->
+          <td class="labshowbtn"><%= link_to 'Show', idea, class: 'btn btn-2' %></td>
+        </tr>
+      <% end %>
+　　  </tbody>
+      
    <% else %>
     <h4>　　投稿をよむには、☞のボタン（または上のリンク）から、ログイン（or サインアップ）をお願いします。   
        <%= link_to "SIGN UP", new_user_registration_path, class: 'btn-1 btn-sm' %>
