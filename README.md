@@ -3,8 +3,8 @@
 <h2>ABOUT</h2>
 <p>サイト名：にほんごきょうしのほしいもの。</p>
 <p>URL:https://nihongokyooshinohoshiimono.herokuapp.com/</p>
-<img src="topscreen.png" alt="トップページ" title="トップイメージ", :size =>'400x400'>
 
+[topscreen.png]https://github.com/minahowatabe/demodaynihongoapp/issues/1#issue-365961781
 
 <h2>Description</h2>
 <p>日本語でコミュニケーションができるようになりたい！と学んでいる学習者をサポートする日本語教師のためのサイトです。
