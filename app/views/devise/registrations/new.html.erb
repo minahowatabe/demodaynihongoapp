@@ -1,5 +1,5 @@
-<!--deviseのもともとの画面-->
-<h2>Sign up</h2>
+<div class="loginpage">
+<h2 style="font-family:'shirokuma';">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -33,6 +33,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
 
 
 

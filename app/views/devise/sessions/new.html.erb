@@ -40,7 +40,8 @@
 
 
 <!--deviseのもともとの画面-->
-<h2>Log in</h2>
+<div class="loginpage">
+<h2 style="font-family:'shirokuma';">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -66,6 +67,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
 
 
 <!--緑のアニメーションン付き-->
