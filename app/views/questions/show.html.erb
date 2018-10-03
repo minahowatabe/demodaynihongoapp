@@ -49,12 +49,12 @@
   <p>
     <%= idx + 1 %>. <%= answer.name %>さん : <%= simple_format(answer.body) %>
   </p>
-<!--投稿したユーザー本人だけが削除できる  未実装-->
- <%# if user_id == current_user.id %>
+ <!--投稿したユーザー本人だけが削除できる  未実装-->
+ <% if answer.user_id == current_user.id %>
   <p><%= link_to '[削除]',answer_path(answer.id), method: :delete, data: {confirm: "削除してもよろしいですか？"} %></p>
- <%# else %>
+ <% else %>
   <p></p>
- <%# end %>  
+ <% end %>  
 </div>
 
 <% end %>

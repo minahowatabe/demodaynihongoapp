@@ -37,7 +37,7 @@
     <% if user_signed_in? %>
      <% @labs.each do |lab| %>
        <div class="lab-panel col-md-5">
-         <h3><%= link_to lab.title, lab_path(lab.id)  %></h3>
+         <h3 class="labtitleinindex"><%= link_to lab.title, lab_path(lab.id) %></h3>
          <p class="text-overflow"><%= lab.content %></p>
        </div>     
      <% end %>  
