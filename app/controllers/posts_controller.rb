@@ -12,14 +12,14 @@ class PostsController < ApplicationController
   
   def destroy
   #   binding.pry
-    @topic = Topic.find(params[:id])
+    # @topic = Topic.find(params[:id])
     @post = Post.find(params[:id])
     
     # binding.pry
 
     # @post = @topic.posts.find(params[:post_id])
     @post.destroy
-    redirect_to topic_path(@topic)
+    redirect_to topic_path(@post.topic)
     
     # 元々の記述
     # @topic = Topic.find(params[:topic_id])
