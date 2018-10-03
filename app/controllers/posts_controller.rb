@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @post.save
      # ツイッター投稿 \rで改行
      # 同じ投稿だとエラーになるので、Time.currentを追加
-     @client.update!("「ふだんの日本語あつめ」に「実例」が投稿されました！\r #{Time.current} https://nihongokyooshinohoshiimono.herokuapp.com/")
+     @client.update!("「ふだんの日本語あつめ」に「実例」が投稿されました！\r #{Time.current.in_time_zone('Tokyo')} https://nihongokyooshinohoshiimono.herokuapp.com/")
      redirect_to topic_path(params[:post]['topic_id'])
   end
   

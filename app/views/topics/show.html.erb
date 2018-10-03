@@ -61,9 +61,12 @@
       <!--<p>Image:-->
       <%#= image_tag post.image %>
       <!--</p>-->
-      <p><%#= post.created_at %><%= link_to '[削除]', post_path(post.id), 
+        <%# if post.user_id == current_user.id %>
+        <p><%= link_to '[削除]', post_path(post.id), 
                                method: :delete, 
                                data: {confirm: "削除してもよろしいですか？"}  %></p>     
+        <%# else%>
+        <%# end %>
      </div>
     <% end %>
   </div>

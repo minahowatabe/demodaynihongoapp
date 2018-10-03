@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(params[:answer].permit(:question_id, :name, :body))
     @question = Question.find(params[:answer][:question_id])
     @answer = @question.answers.build(answer_params)
+    @answer.user_id = current_user.id
     
     # @answer.save
     # redirect_to question_path(params[:answer]['question_id'])
@@ -12,7 +13,7 @@ class AnswersController < ApplicationController
     # binding.pry
      if @answer.save
        # ツイッター投稿 \rで改行
-       @client.update!("「そうだん」に「回答」が投稿されました！\r （タイトル☞「#{@question.title}」）#{Time.current}https://nihongokyooshinohoshiimono.herokuapp.com/")
+       @client.update!("「そうだん」に「回答」が投稿されました！\r （タイトル☞「#{@question.title}」）#{Time.current.in_time_zone('Tokyo')}https://nihongokyooshinohoshiimono.herokuapp.com/")
         redirect_to question_path(params[:answer]['question_id']), notice:'回答を投稿しました！'
  
       # 「そうだん」に回答がついたら、投稿者にメールでお知らせ 未実装
