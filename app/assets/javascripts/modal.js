@@ -23,7 +23,7 @@ $("#modal-open").click( function(){
 
 		//[#modal-content]と[#modal-overlay]を5秒後にフェードアウトした後に…
       	// $(this).delay(5000).fadeOut("slow");
-		$( "#modal-content,#modal-overlay" ).delay(3000).fadeOut( "slow" , function(){
+		$( "#modal-content,#modal-overlay" ).delay(5000).fadeOut( "slow" , function(){
 			//[#modal-overlay]を削除する
 			$('#modal-overlay').remove() ;
 
