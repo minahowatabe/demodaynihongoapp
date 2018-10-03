@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post].permit(:topic_id, :example, :memo, :image))
+    @post.user_id = current_user.id
     @post.save
      # ツイッター投稿 \rで改行
      # 同じ投稿だとエラーになるので、Time.currentを追加

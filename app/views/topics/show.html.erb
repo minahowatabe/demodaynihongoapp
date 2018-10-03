@@ -20,7 +20,7 @@
      <p>1. ダイアログ（対話）またはセンテンス記入する。<br>
         2. どんな状況での発話だったかも記入する。<br>
         3. [create]ボタンを押して投稿する。</br>
-        4. 投稿されたら、[投稿完了しました！]ボタンを押す。</p>
+        4. 投稿を確認して、[かくにんOK！]ボタンを押す。</p>
      <br>
     
     <%= form_for @newpost, :url => posts_path do |f| %>
@@ -36,11 +36,11 @@
 
   <br>
   <p>☞右側にあなたの投稿が表示されたら、<br>
-  下の「投稿完了しました！」ボタンをおしてください。</p>
+  下の「かくにんOK!」ボタンをおしてください。</p>
   <br>
   <!--投稿完了ボタン-->
   <div class="linkbtn">
-    <button type="button" id="modal-open" class="btn-4 btn-lg  button-link">投稿完了しました！</button>
+    <button type="button" id="modal-open" class="btn-2 btn-lg  button-link" style="font-family:'shirokuma'" >かくにんOK！</button>
   <!-- ここまでモーダルウィンドウ -->
   </div>
   
@@ -61,12 +61,13 @@
       <!--<p>Image:-->
       <%#= image_tag post.image %>
       <!--</p>-->
-        <%# if post.user_id == current_user.id %>
-        <p><%= link_to '[削除]', post_path(post.id), 
-                               method: :delete, 
-                               data: {confirm: "削除してもよろしいですか？"}  %></p>     
-        <%# else%>
-        <%# end %>
+        <% if post.user_id == current_user.id %>
+         <p><%= link_to '[削除]', post_path(post.id), 
+                                  method: :delete, 
+                                  data: {confirm: "削除してもよろしいですか？"}  %></p>     
+        <% else%>
+         <p></p>
+        <% end %>
      </div>
     <% end %>
   </div>
