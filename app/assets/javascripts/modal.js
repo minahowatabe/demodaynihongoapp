@@ -21,13 +21,19 @@ $("#modal-open").click( function(){
 	//[#modal-overlay]、または[#modal-close]をクリックしたら…
 	$( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
-		//[#modal-content]と[#modal-overlay]を5秒後にフェードアウトした後に…
-      	// $(this).delay(5000).fadeOut("slow");
-		$( "#modal-content,#modal-overlay" ).delay(3000).fadeOut( "slow" , function(){
-			//[#modal-overlay]を削除する
-			$('#modal-overlay').remove() ;
-
+		//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+		$( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+		//[#modal-overlay]を削除する
+		$('#modal-overlay').remove() ;
 		} ) ;
+		
+		// //[#modal-content]と[#modal-overlay]を5秒後にフェードアウトした後に…
+  //    	// $(this).delay(5000).fadeOut("slow");
+		// $( "#modal-content,#modal-overlay" ).delay(3000).fadeOut( "slow" , function(){
+		// 	//[#modal-overlay]を削除する
+		// 	$('#modal-overlay').remove() ;
+
+		// } ) ;
 
 	} ) ;
 
