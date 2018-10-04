@@ -27,7 +27,7 @@
       <% @ideas.each do |idea| %>
         <tr>
           <td class="titleonly"><%= idea.title %></td>
-          <td><p class="ellipsis"><%= idea.content %></p></td>
+          <td><p class="ellipsis" style="width: 300px"><%= idea.content %></p></td>
           <td class="labshowbtn"><%= link_to 'Show', idea, class: 'btn btn-2' %></td>
         </tr>
       <% end %>
