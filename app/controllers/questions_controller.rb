@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
   
   def create
     @question = Question.new(params[:question].permit(:title, :content, :keyword))
+    @question.user_id = current_user.id
       if @question.save
      # ツイッター投稿 \rで改行
      @client.update!("「そうだん」に「新しい質問」が投稿されました！\r （タイトル ☞「#{@question.title}」）https://nihongokyooshinohoshiimono.herokuapp.com/")
