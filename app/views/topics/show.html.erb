@@ -15,12 +15,12 @@
  <div class="wrap">
  
   <div class="main" style="font-size: 1.5rem; text-align:left;">
-    <h3>投稿する</h3>
+    <h3><b>投稿する</b></h3>
      <h4>【手順】</h4>
-     <p>1. ダイアログ（対話）またはセンテンス記入する。<br>
+     <p><b>1. ダイアログ（対話）またはセンテンス記入する。<br>
         2. どんな状況での発話だったかも記入する。<br>
         3. [create]ボタンを押して投稿する。</br>
-        4. 投稿を確認して、[かくにんOK！]ボタンを押す。</p>
+        4. 投稿を確認して、[かくにんOK！]ボタンを押す。</b></p>
      <br>
     
     <%= form_for @newpost, :url => posts_path do |f| %>
@@ -35,8 +35,8 @@
      <% end %>
 
   <br>
-  <p>☞右側(最上部）に投稿が表示されたら、<br>
-  下の「かくにんOK!」ボタンをおしてください。</p>
+  <p><b>☞右側(最上部）に投稿が表示されたら、<br>
+  下の「かくにんOK!」ボタンをおしてください。</b></p>
   <br>
   <!--投稿完了ボタン-->
   <div class="linkbtn">
@@ -50,7 +50,7 @@
 <!--投稿されたもの一覧-->
  
   <div class = "examplepost" style="font-size: 1.5rem; text-align:left;">
-  <h2>文法項目：【<%= @topic.title %>】</h2>
+  <h3>文法項目：<u>【<%= @topic.title %>】</u></h3>
     <br>  
     <% @posts.each_with_index do |post , idx| %>
      <div class ="well well-sm eachpost">   
@@ -88,7 +88,7 @@
   <div id="modal-content">
   	 <!--モーダルウィンドウのコンテンツ開始 -->
   	<h2 class="modaltext" style="text-align:center">♡とうこう、ありがとうございます！♡</h2>
-  	<h3 class="modaltext" style="text-align:center">サンプルが１つふえました！</h3>
+  	<h3 class="modaltext" style="text-align:center">サンプルが1つふえました！</h3>
   	<h3 class="modaltext" style="text-align:center">あなたの“とうこう”が、きっとやくだちます！</h3>
   	
   	 <!--モーダルウィンドウのコンテンツ終了 -->
